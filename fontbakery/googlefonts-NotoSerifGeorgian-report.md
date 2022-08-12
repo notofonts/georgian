@@ -30,10 +30,10 @@ Fontbakery version: 0.8.9
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE
-	* uni1CAD
+	* uni1CBE
+	* uni1CAF
 	* uni1CB8
-	* uni1CAF and uni1CBE
+	* uni1CAD and uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -147,10 +147,10 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE
-	* uni1CAD
+	* uni1CBE
+	* uni1CAF
 	* uni1CB8
-	* uni1CAF and uni1CBE
+	* uni1CAD and uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
@@ -1100,10 +1100,10 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-semi-ve
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE
-	* uni1CAD
+	* uni1CBE
+	* uni1CAF
 	* uni1CB8
-	* uni1CAF and uni1CBE
+	* uni1CAD and uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2112,7 +2112,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-semi-ve
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8 and uni1CBE
+	* uni1CBE and uni1CB8
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2206,7 +2206,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8 and uni1CBE
+	* uni1CBE and uni1CB8
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2266,7 +2266,7 @@ The following glyphs do not have the recommended number of contours:
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8 and uni1CBE
+	* uni1CBE and uni1CB8
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2332,7 +2332,7 @@ The following glyphs do not have the recommended number of contours:
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8 and uni1CBE
+	* uni1CBE and uni1CB8
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
@@ -2413,9 +2413,9 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CAD
-	* uni1CB8
-	* uni1CAF and uni1CBE
+	* uni1CBE
+	* uni1CAF
+	* uni1CB8 and uni1CAD
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -3366,7 +3366,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8 and uni1CBE
+	* uni1CBE and uni1CB8
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
