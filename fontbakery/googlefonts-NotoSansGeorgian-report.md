@@ -1,8 +1,8 @@
 ## Fontbakery report
 
-Fontbakery version: 0.8.9
+Fontbakery version: 0.8.13
 
-<details><summary><b>[2] Family checks</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking all files are in the same directory. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/single_directory">com.google.fonts/check/family/single_directory</a>)</summary><div>
+<details><summary><b>[4] Family checks</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking all files are in the same directory. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/single_directory">com.google.fonts/check/family/single_directory</a>)</summary><div>
 
 
 * 🔥 **FAIL** Not all fonts passed in the command line are in the same directory. This may lead to bad results as the tool will interpret all font files as belonging to a single font family. The detected directories are: ['fonts/NotoSansGeorgian/googlefonts/ttf', 'fonts/NotoSansGeorgian/googlefonts/variable-ttf'] [code: single-directory]
@@ -10,19 +10,82 @@ Fontbakery version: 0.8.9
 
 
 * 🔥 **FAIL** PANOSE proportion is not the same across this family. In order to fix this, please make sure that the panose.bProportion value is the same in the OS/2 table of all of this family font files. [code: inconsistency]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-Black.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><details><summary>🔥 <b>FAIL:</b> Check that OS/2.fsSelection bold & italic settings are unique for each NameID1 (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/os2.html#com.adobe.fonts/check/family/bold_italic_unique_for_nameid1">com.adobe.fonts/check/family/bold_italic_unique_for_nameid1</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** Family 'Noto Sans Georgian' has 2 fonts (should be no more than 1) with the same OS/2.fsSelection bold & italic settings: Bold=False, Italic=False [code: unique-fsselection]
+</div></details><details><summary>🔥 <b>FAIL:</b> Verify that family names in the name table are consistent across all fonts in the family. Checks Typographic Family name (nameID 16) if present,  otherwise uses Font Family name (nameID 1) (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/name.html#com.adobe.fonts/check/family/consistent_family_name">com.adobe.fonts/check/family/consistent_family_name</a>)</summary><div>
+
+
+* 🔥 **FAIL** 4 different Font Family names were found:
+
+* 'Noto Sans Georgian' was found in:
+  - NotoSansGeorgian-Black.ttf (nameID 16)
+  - NotoSansGeorgian-Bold.ttf (nameID 1)
+  - NotoSansGeorgian-ExtraBold.ttf (nameID 16)
+  - NotoSansGeorgian-ExtraLight.ttf (nameID 16)
+  - NotoSansGeorgian-Light.ttf (nameID 16)
+  - NotoSansGeorgian-Medium.ttf (nameID 16)
+  - NotoSansGeorgian-Regular.ttf (nameID 1)
+  - NotoSansGeorgian-SemiBold.ttf (nameID 16)
+  - NotoSansGeorgian-Thin.ttf (nameID 16)
+  - NotoSansGeorgian[wdth,wght].ttf (nameID 1)
+
+* 'Noto Sans Georgian Condensed' was found in:
+  - NotoSansGeorgian-Condensed.ttf (nameID 1)
+  - NotoSansGeorgian-CondensedBlack.ttf (nameID 16)
+  - NotoSansGeorgian-CondensedBold.ttf (nameID 1)
+  - NotoSansGeorgian-CondensedExtraBold.ttf (nameID 16)
+  - NotoSansGeorgian-CondensedExtraLight.ttf (nameID 16)
+  - NotoSansGeorgian-CondensedLight.ttf (nameID 16)
+  - NotoSansGeorgian-CondensedMedium.ttf (nameID 16)
+  - NotoSansGeorgian-CondensedSemiBold.ttf (nameID 16)
+  - NotoSansGeorgian-CondensedThin.ttf (nameID 16)
+
+* 'Noto Sans Georgian ExtraCondensed' was found in:
+  - NotoSansGeorgian-ExtraCondensed.ttf (nameID 1)
+  - NotoSansGeorgian-ExtraCondensedBlack.ttf (nameID 16)
+  - NotoSansGeorgian-ExtraCondensedBold.ttf (nameID 1)
+  - NotoSansGeorgian-ExtraCondensedExtraBold.ttf (nameID 16)
+  - NotoSansGeorgian-ExtraCondensedExtraLight.ttf (nameID 16)
+  - NotoSansGeorgian-ExtraCondensedLight.ttf (nameID 16)
+  - NotoSansGeorgian-ExtraCondensedMedium.ttf (nameID 16)
+  - NotoSansGeorgian-ExtraCondensedSemiBold.ttf (nameID 16)
+  - NotoSansGeorgian-ExtraCondensedThin.ttf (nameID 16)
+
+* 'Noto Sans Georgian SemiCondensed' was found in:
+  - NotoSansGeorgian-SemiCondensed.ttf (nameID 1)
+  - NotoSansGeorgian-SemiCondensedBlack.ttf (nameID 16)
+  - NotoSansGeorgian-SemiCondensedBold.ttf (nameID 1)
+  - NotoSansGeorgian-SemiCondensedExtraBold.ttf (nameID 16)
+  - NotoSansGeorgian-SemiCondensedExtraLight.ttf (nameID 16)
+  - NotoSansGeorgian-SemiCondensedLight.ttf (nameID 16)
+  - NotoSansGeorgian-SemiCondensedMedium.ttf (nameID 16)
+  - NotoSansGeorgian-SemiCondensedSemiBold.ttf (nameID 16)
+  - NotoSansGeorgian-SemiCondensedThin.ttf (nameID 16) [code: inconsistent-family-name]
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-Black.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
+
+
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE and uni1CB8
+	* uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -47,12 +110,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 586 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 318:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -83,7 +151,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* f (U+0066): X=143.0,Y=716.0 (should be at cap-height 714?) 
 
-	* And 80 more.
+	* 79 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -111,7 +179,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wcircumflex (U+0174): B<<714.0,235.0>-<721.0,196.0>-<724.0,167.0>>/B<<724.0,167.0>-<727.0,192.0>-<734.0,229.0>> = 12.748914526401432 
 
-	* And 6 more.
+	* 6 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -127,20 +195,30 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 
 	* uni1CBE (U+1CBE): L<<582.0,714.0>--<581.0,556.0>> 
 
-	* And uni1CBE (U+1CBE): L<<75.0,556.0>--<74.0,714.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-Bold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* uni1CBE (U+1CBE): L<<75.0,556.0>--<74.0,714.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-Bold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE and uni1CB8
+	* uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
@@ -158,12 +236,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 572 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -194,7 +277,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* c (U+0063): X=410.5,Y=545.0 (should be at x-height 546?) 
 
-	* And 56 more.
+	* 56 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -222,21 +305,31 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wdieresis (U+1E84): B<<266.0,196.0>-<272.0,161.0>-<275.0,137.0>>/B<<275.0,137.0>-<278.0,162.0>-<284.0,196.5>> = 13.967789761532726 
 
-	* And 5 more.
+	* 5 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-Condensed.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-Condensed.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-Regular.ttf. Got NotoSansGeorgian-Condensed.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-Condensed.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -261,12 +354,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 473 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 288:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -297,7 +395,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* Wdieresis (U+1E84): B<<206.0,179.5>-<214.0,134.0>-<217.0,100.0>>/B<<217.0,100.0>-<223.0,142.0>-<231.5,188.5>> = 13.172553423326871 
 
-	* And 5 more.
+	* 5 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -306,18 +404,28 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* uni1C9F (U+1C9F): L<<407.0,210.0>--<408.0,640.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-CondensedBlack.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-CondensedBlack.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-Black.ttf. Got NotoSansGeorgian-CondensedBlack.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedBlack.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -342,12 +450,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 526 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 323:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -378,7 +491,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* c (U+0063): X=366.5,Y=552.5 (should be at x-height 553?) 
 
-	* And 58 more.
+	* 56 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -406,7 +519,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wcircumflex (U+0174): B<<599.5,266.0>-<606.0,224.0>-<610.0,189.0>>/B<<610.0,189.0>-<612.0,216.0>-<617.0,251.0>> = 10.756196550715789 
 
-	* And 6 more.
+	* 6 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -418,19 +531,29 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 
 	* uni10EA (U+10EA): L<<332.0,552.0>--<503.0,553.0>> 
 
-	* And uni1CAA (U+1CAA): L<<337.0,328.0>--<338.0,476.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-CondensedBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* uni1CAA (U+1CAA): L<<337.0,328.0>--<338.0,476.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-CondensedBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-Bold.ttf. Got NotoSansGeorgian-CondensedBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -455,12 +578,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 503 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 310:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -491,7 +619,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* S (U+0053): X=348.5,Y=712.0 (should be at cap-height 714?) 
 
-	* And 61 more.
+	* 59 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -519,21 +647,31 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wcircumflex (U+0174): B<<579.0,217.5>-<584.0,183.0>-<588.0,152.0>>/B<<588.0,152.0>-<592.0,194.0>-<600.5,248.0>> = 12.79271139089786 
 
-	* And 6 more.
+	* 6 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-CondensedExtraBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-CondensedExtraBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-ExtraBold.ttf. Got NotoSansGeorgian-CondensedExtraBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedExtraBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -558,12 +696,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 513 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 316:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -594,7 +737,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* asciicircum (U+005E): X=222.0,Y=715.0 (should be at cap-height 714?) 
 
-	* And 61 more.
+	* 59 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -622,7 +765,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wcircumflex (U+0174): B<<588.5,240.0>-<594.0,202.0>-<598.0,169.0>>/B<<598.0,169.0>-<600.0,197.0>-<605.0,231.5>> = 10.996843898999522 
 
-	* And 6 more.
+	* 6 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -631,18 +774,28 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* uni10EA (U+10EA): L<<325.0,549.0>--<477.0,550.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[8] NotoSansGeorgian-CondensedExtraLight.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-CondensedExtraLight.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-ExtraLight.ttf. Got NotoSansGeorgian-CondensedExtraLight.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedExtraLight.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -667,29 +820,44 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 455 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 282:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
 	 gravecomb (U+0300), tildecomb (U+0303), uni0306 (U+0306), uni0307 (U+0307), uni030A (U+030A), uni030B (U+030B), uni030C (U+030C), uni0312 (U+0312), uni0326 (U+0326), uni0327 (U+0327) and uni0328 (U+0328) [code: mark-chars]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-CondensedLight.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-CondensedLight.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-Light.ttf. Got NotoSansGeorgian-CondensedLight.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedLight.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -714,12 +882,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 461 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 285:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -750,7 +923,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* n (U+006E) contains a short segment L<<123.0,440.0>--<127.0,440.0>> 
 
-	* And 86 more.
+	* 87 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -766,25 +939,35 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-short-s
 
 	* Wdieresis (U+1E84): B<<382.5,568.0>-<377.0,596.0>-<373.0,632.0>>/B<<373.0,632.0>-<369.0,603.0>-<364.0,575.0>> = 14.193505047888126 
 
-	* And Wgrave (U+1E80): B<<382.5,568.0>-<377.0,596.0>-<373.0,632.0>>/B<<373.0,632.0>-<369.0,603.0>-<364.0,575.0>> = 14.193505047888126 [code: found-jaggy-segments]
+	* Wgrave (U+1E80): B<<382.5,568.0>-<377.0,596.0>-<373.0,632.0>>/B<<373.0,632.0>-<369.0,603.0>-<364.0,575.0>> = 14.193505047888126 [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
 
 
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* uni1C9F (U+1C9F): L<<407.0,207.0>--<408.0,664.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-CondensedMedium.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-CondensedMedium.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-Medium.ttf. Got NotoSansGeorgian-CondensedMedium.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedMedium.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -809,12 +992,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 481 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 295:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -845,7 +1033,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* Wdieresis (U+1E84): B<<212.5,200.5>-<221.0,152.0>-<224.0,116.0>>/B<<224.0,116.0>-<230.0,159.0>-<238.5,207.5>> = 12.707113501316583 
 
-	* And 5 more.
+	* 5 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -854,18 +1042,28 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* uni1C9F (U+1C9F): L<<404.0,214.0>--<405.0,628.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-CondensedSemiBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-CondensedSemiBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-SemiBold.ttf. Got NotoSansGeorgian-CondensedSemiBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedSemiBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -890,12 +1088,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 491 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 302:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -926,21 +1129,31 @@ The following glyphs do not have the recommended number of contours:
 
 	* Wdieresis (U+1E84): B<<220.0,222.5>-<228.0,171.0>-<232.0,133.0>>/B<<232.0,133.0>-<238.0,178.0>-<247.0,229.0>> = 13.60364932608595 
 
-	* And 5 more.
+	* 5 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-CondensedThin.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-CondensedThin.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianCondensed-Thin.ttf. Got NotoSansGeorgian-CondensedThin.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-CondensedThin.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -965,12 +1178,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 450 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 281:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -989,20 +1207,30 @@ The following glyphs do not have the recommended number of contours:
 
 	* exclamdown (U+00A1): L<<86.0,-192.0>--<88.0,351.0>> 
 
-	* And p (U+0070): L<<97.0,527.0>--<98.0,403.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-ExtraBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* p (U+0070): L<<97.0,527.0>--<98.0,403.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-ExtraBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE and uni1CB8
+	* uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1027,12 +1255,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 578 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 320:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1063,7 +1296,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* S (U+0053): X=142.0,Y=1.0 (should be at baseline 0?) 
 
-	* And 85 more.
+	* 85 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1091,7 +1324,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wgrave (U+1E80): B<<283.5,211.5>-<290.0,175.0>-<293.0,151.0>>/B<<293.0,151.0>-<297.0,183.0>-<305.0,226.5>> = 14.25003269780357 
 
-	* And Wgrave (U+1E80): B<<506.5,475.5>-<502.0,500.0>-<501.0,516.0>>/B<<501.0,516.0>-<499.0,500.0>-<494.5,475.5>> = 10.701350723899111 [code: found-jaggy-segments]
+	* Wgrave (U+1E80): B<<506.5,475.5>-<502.0,500.0>-<501.0,516.0>>/B<<501.0,516.0>-<499.0,500.0>-<494.5,475.5>> = 10.701350723899111 [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
 
 
@@ -1103,19 +1336,29 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* uni10EA (U+10EA): L<<376.0,548.0>--<544.0,549.0>> 
 
-	* And uni1CAA (U+1CAA): L<<373.0,324.0>--<374.0,459.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-ExtraCondensed.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* uni1CAA (U+1CAA): L<<373.0,324.0>--<374.0,459.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-ExtraCondensed.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-Regular.ttf. Got NotoSansGeorgian-ExtraCondensed.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensed.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1140,12 +1383,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 430 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 274:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1176,7 +1424,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* braceleft (U+007B): X=221.0,Y=1.0 (should be at baseline 0?) 
 
-	* And 45 more.
+	* 45 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1204,7 +1452,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Atilde (U+00C3): B<<230.5,589.0>-<226.0,615.0>-<223.0,638.0>>/B<<223.0,638.0>-<218.0,590.0>-<206.0,536.0>> = 13.37827102514601 
 
-	* And 16 more.
+	* 15 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -1213,18 +1461,28 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* uni1C9F (U+1C9F): L<<378.0,202.0>--<379.0,640.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-ExtraCondensedBlack.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-ExtraCondensedBlack.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-Black.ttf. Got NotoSansGeorgian-ExtraCondensedBlack.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedBlack.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1249,12 +1507,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 500 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 325:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1285,7 +1548,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* ordfeminine (U+00AA): X=108.0,Y=712.0 (should be at cap-height 714?) 
 
-	* And 51 more.
+	* 51 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1313,21 +1576,31 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Atilde (U+00C3): B<<297.5,522.0>-<292.0,559.0>-<288.0,589.0>>/B<<288.0,589.0>-<285.0,561.0>-<279.5,524.0>> = 13.71014693487685 
 
-	* And 19 more.
+	* 18 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-ExtraCondensedBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-ExtraCondensedBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-Bold.ttf. Got NotoSansGeorgian-ExtraCondensedBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1352,12 +1625,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 473 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 305:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1388,7 +1666,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* ordfeminine (U+00AA): X=104.5,Y=713.5 (should be at cap-height 714?) 
 
-	* And 36 more.
+	* 36 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1416,21 +1694,31 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Atilde (U+00C3): B<<283.0,480.0>-<271.0,551.0>-<263.0,608.0>>/B<<263.0,608.0>-<258.0,552.0>-<243.0,482.0>> = 13.091492018755051 
 
-	* And 17 more.
+	* 16 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-ExtraCondensedExtraBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-ExtraCondensedExtraBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-ExtraBold.ttf. Got NotoSansGeorgian-ExtraCondensedExtraBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedExtraBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1455,12 +1743,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 485 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 314:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1491,7 +1784,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* ordfeminine (U+00AA): X=106.0,Y=712.5 (should be at cap-height 714?) 
 
-	* And 33 more.
+	* 33 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1519,21 +1812,31 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Atilde (U+00C3): B<<283.5,536.0>-<278.0,571.0>-<275.0,599.0>>/B<<275.0,599.0>-<269.0,542.0>-<254.0,466.0>> = 12.12450952377988 
 
-	* And 19 more.
+	* 18 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-ExtraCondensedExtraLight.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-ExtraCondensedExtraLight.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-ExtraLight.ttf. Got NotoSansGeorgian-ExtraCondensedExtraLight.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedExtraLight.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1558,12 +1861,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 405 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 265:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1582,19 +1890,29 @@ The following glyphs do not have the recommended number of contours:
 
 	* Wdieresis (U+1E84): B<<338.5,587.5>-<335.0,610.0>-<330.0,648.0>>/B<<330.0,648.0>-<326.0,614.0>-<322.0,591.0>> = 14.205694447486762 
 
-	* And Wgrave (U+1E80): B<<338.5,587.5>-<335.0,610.0>-<330.0,648.0>>/B<<330.0,648.0>-<326.0,614.0>-<322.0,591.0>> = 14.205694447486762 [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-ExtraCondensedLight.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* Wgrave (U+1E80): B<<338.5,587.5>-<335.0,610.0>-<330.0,648.0>>/B<<330.0,648.0>-<326.0,614.0>-<322.0,591.0>> = 14.205694447486762 [code: found-jaggy-segments]
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-ExtraCondensedLight.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-Light.ttf. Got NotoSansGeorgian-ExtraCondensedLight.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedLight.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1619,12 +1937,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 415 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 269:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1655,7 +1978,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* backslash (U+005C): X=73.0,Y=716.0 (should be at cap-height 714?) 
 
-	* And 86 more.
+	* 86 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1671,25 +1994,35 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wdieresis (U+1E84): B<<350.0,558.5>-<346.0,586.0>-<341.0,628.0>>/B<<341.0,628.0>-<337.0,595.0>-<333.0,567.0>> = 13.700201693463454 
 
-	* And Wgrave (U+1E80): B<<350.0,558.5>-<346.0,586.0>-<341.0,628.0>>/B<<341.0,628.0>-<337.0,595.0>-<333.0,567.0>> = 13.700201693463454 [code: found-jaggy-segments]
+	* Wgrave (U+1E80): B<<350.0,558.5>-<346.0,586.0>-<341.0,628.0>>/B<<341.0,628.0>-<337.0,595.0>-<333.0,567.0>> = 13.700201693463454 [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
 
 
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* uni1C9F (U+1C9F): L<<374.0,198.0>--<375.0,664.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-ExtraCondensedMedium.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-ExtraCondensedMedium.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-Medium.ttf. Got NotoSansGeorgian-ExtraCondensedMedium.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedMedium.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1714,12 +2047,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 443 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 283:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1750,7 +2088,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* s (U+0073): X=89.5,Y=-1.5 (should be at baseline 0?) 
 
-	* And 72 more.
+	* 72 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1778,7 +2116,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Atilde (U+00C3): B<<242.5,577.0>-<238.0,605.0>-<235.0,629.0>>/B<<235.0,629.0>-<230.0,579.0>-<217.0,520.0>> = 12.835609486401424 
 
-	* And 17 more.
+	* 16 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -1787,18 +2125,28 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 * ⚠ **WARN** The following glyphs have semi-vertical/semi-horizontal lines:
 
 	* uni1C9F (U+1C9F): L<<378.0,208.0>--<379.0,630.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-ExtraCondensedSemiBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-ExtraCondensedSemiBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-SemiBold.ttf. Got NotoSansGeorgian-ExtraCondensedSemiBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedSemiBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1823,12 +2171,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 457 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 293:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1859,7 +2212,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* s (U+0073): X=93.0,Y=-2.0 (should be at baseline 0?) 
 
-	* And 57 more.
+	* 57 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -1887,21 +2240,31 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Atilde (U+00C3): B<<256.0,563.5>-<251.0,594.0>-<248.0,619.0>>/B<<248.0,619.0>-<243.0,566.0>-<229.0,502.0>> = 12.232085172604307 
 
-	* And 17 more.
+	* 16 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-ExtraCondensedThin.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-ExtraCondensedThin.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianExtraCondensed-Thin.ttf. Got NotoSansGeorgian-ExtraCondensedThin.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-ExtraCondensedThin.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1926,12 +2289,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 399 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 263:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -1946,20 +2314,25 @@ The following glyphs do not have the recommended number of contours:
 
 	* exclamdown (U+00A1): L<<81.0,-194.0>--<84.0,350.0>> 
 
-	* And p (U+0070): L<<90.0,527.0>--<91.0,404.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[8] NotoSansGeorgian-ExtraLight.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* p (U+0070): L<<90.0,527.0>--<91.0,404.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-ExtraLight.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
-</div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
 
 
-* ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -1984,30 +2357,40 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 570 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
 	 gravecomb (U+0300), tildecomb (U+0303), uni0306 (U+0306), uni0307 (U+0307), uni030A (U+030A), uni030B (U+030B), uni030C (U+030C), uni0312 (U+0312), uni0326 (U+0326), uni0327 (U+0327) and uni0328 (U+0328) [code: mark-chars]
-</div></details><br></div></details><details><summary><b>[8] NotoSansGeorgian-Light.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-Light.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
-</div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
 
 
-* ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2032,30 +2415,45 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 571 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
 	 gravecomb (U+0300), tildecomb (U+0303), uni0306 (U+0306), uni0307 (U+0307), uni030A (U+030A), uni030B (U+030B), uni030C (U+030C), uni0312 (U+0312), uni0326 (U+0326), uni0327 (U+0327) and uni0328 (U+0328) [code: mark-chars]
-</div></details><br></div></details><details><summary><b>[8] NotoSansGeorgian-Medium.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-Medium.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE and uni1CB8
+	* uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2080,30 +2478,45 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 572 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
 	 gravecomb (U+0300), tildecomb (U+0303), uni0306 (U+0306), uni0307 (U+0307), uni030A (U+030A), uni030B (U+030B), uni030C (U+030C), uni0312 (U+0312), uni0326 (U+0326), uni0327 (U+0327) and uni0328 (U+0328) [code: mark-chars]
-</div></details><br></div></details><details><summary><b>[7] NotoSansGeorgian-Regular.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-Regular.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE and uni1CB8
+	* uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
@@ -2121,30 +2534,45 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 572 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
 	 gravecomb (U+0300), tildecomb (U+0303), uni0306 (U+0306), uni0307 (U+0307), uni030A (U+030A), uni030B (U+030B), uni030C (U+030C), uni0312 (U+0312), uni0326 (U+0326), uni0327 (U+0327) and uni0328 (U+0328) [code: mark-chars]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-SemiBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-SemiBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni20BE and uni1CB8
+	* uni20BE
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2169,12 +2597,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 572 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2205,7 +2638,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* C (U+0043): X=485.5,Y=-2.0 (should be at baseline 0?) 
 
-	* And 76 more.
+	* 76 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -2231,19 +2664,29 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wgrave (U+1E80): B<<257.0,182.5>-<263.0,150.0>-<266.0,126.0>>/B<<266.0,126.0>-<269.0,151.0>-<275.0,184.0>> = 13.967789761532726 
 
-	* And Wgrave (U+1E80): B<<678.0,182.0>-<684.0,150.0>-<687.0,126.0>>/B<<687.0,126.0>-<690.0,151.0>-<695.5,183.0>> = 13.967789761532726 [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-SemiCondensed.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* Wgrave (U+1E80): B<<678.0,182.0>-<684.0,150.0>-<687.0,126.0>>/B<<687.0,126.0>-<690.0,151.0>-<695.5,183.0>> = 13.967789761532726 [code: found-jaggy-segments]
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-SemiCondensed.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-Regular.ttf. Got NotoSansGeorgian-SemiCondensed.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensed.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2268,12 +2711,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 520 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 304:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2292,19 +2740,29 @@ The following glyphs do not have the recommended number of contours:
 
 	* Wdieresis (U+1E84): B<<604.0,189.5>-<613.0,145.0>-<618.0,104.0>>/B<<618.0,104.0>-<623.0,145.0>-<631.5,189.5>> = 13.9059149363478 
 
-	* And Wgrave (U+1E80): B<<604.0,189.5>-<613.0,145.0>-<618.0,104.0>>/B<<618.0,104.0>-<623.0,145.0>-<631.5,189.5>> = 13.9059149363478 [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-SemiCondensedBlack.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* Wgrave (U+1E80): B<<604.0,189.5>-<613.0,145.0>-<618.0,104.0>>/B<<618.0,104.0>-<623.0,145.0>-<631.5,189.5>> = 13.9059149363478 [code: found-jaggy-segments]
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-SemiCondensedBlack.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-Black.ttf. Got NotoSansGeorgian-SemiCondensedBlack.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedBlack.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2329,12 +2787,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 554 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 321:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2365,7 +2828,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* c (U+0063): X=396.5,Y=552.0 (should be at x-height 553?) 
 
-	* And 84 more.
+	* 82 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -2393,7 +2856,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wcircumflex (U+0174): B<<652.0,263.0>-<660.0,215.0>-<664.0,179.0>>/B<<664.0,179.0>-<667.0,204.0>-<673.0,240.5>> = 13.182965158540823 
 
-	* And 6 more.
+	* 6 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -2415,19 +2878,29 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 
 	* uni1CBE (U+1CBE): L<<549.0,714.0>--<548.0,561.0>> 
 
-	* And uni1CBE (U+1CBE): L<<78.0,561.0>--<77.0,714.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-SemiCondensedBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* uni1CBE (U+1CBE): L<<78.0,561.0>--<77.0,714.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian-SemiCondensedBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-Bold.ttf. Got NotoSansGeorgian-SemiCondensedBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2452,12 +2925,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 536 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 316:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2488,7 +2966,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* nine (U+0039): X=77.0,Y=-2.0 (should be at baseline 0?) 
 
-	* And 69 more.
+	* 67 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -2514,19 +2992,29 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wgrave (U+1E80): B<<455.5,475.0>-<450.0,508.0>-<448.0,532.0>>/B<<448.0,532.0>-<446.0,511.0>-<440.5,478.5>> = 10.203973721731666 
 
-	* And Wgrave (U+1E80): B<<628.5,207.0>-<634.0,172.0>-<637.0,145.0>>/B<<637.0,145.0>-<640.0,171.0>-<645.5,205.5>> = 12.922136401087942 [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-SemiCondensedExtraBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* Wgrave (U+1E80): B<<628.5,207.0>-<634.0,172.0>-<637.0,145.0>>/B<<637.0,145.0>-<640.0,171.0>-<645.5,205.5>> = 12.922136401087942 [code: found-jaggy-segments]
+</div></details><br></div></details><details><summary><b>[13] NotoSansGeorgian-SemiCondensedExtraBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-ExtraBold.ttf. Got NotoSansGeorgian-SemiCondensedExtraBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedExtraBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2551,12 +3039,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 544 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 318:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2587,7 +3080,7 @@ The following glyphs do not have the recommended number of contours:
 
 	* c (U+0063): X=373.5,Y=1.0 (should be at baseline 0?) 
 
-	* And 77 more.
+	* 75 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any jaggy segments? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_jaggy_segments">com.google.fonts/check/outline_jaggy_segments</a>)</summary><div>
@@ -2615,7 +3108,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 	* Wcircumflex (U+0174): B<<639.0,233.0>-<646.0,192.0>-<650.0,161.0>>/B<<650.0,161.0>-<652.0,187.0>-<658.0,222.0>> = 11.751084714887869 
 
-	* And 6 more.
+	* 6 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]
 </div></details><details><summary>⚠ <b>WARN:</b> Do outlines contain any semi-vertical or semi-horizontal lines? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/<Section: Outline Correctness Checks>.html#com.google.fonts/check/outline_semi_vertical">com.google.fonts/check/outline_semi_vertical</a>)</summary><div>
@@ -2629,19 +3122,29 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-s
 
 	* uni1CB2 (U+1CB2): L<<536.0,137.0>--<537.0,0.0>> 
 
-	* And uni1CBE (U+1CBE): L<<537.0,714.0>--<536.0,577.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[8] NotoSansGeorgian-SemiCondensedExtraLight.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* uni1CBE (U+1CBE): L<<537.0,714.0>--<536.0,577.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-SemiCondensedExtraLight.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-ExtraLight.ttf. Got NotoSansGeorgian-SemiCondensedExtraLight.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedExtraLight.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2666,29 +3169,44 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 510 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 301:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
 	 gravecomb (U+0300), tildecomb (U+0303), uni0306 (U+0306), uni0307 (U+0307), uni030A (U+030A), uni030B (U+030B), uni030C (U+030C), uni0312 (U+0312), uni0326 (U+0326), uni0327 (U+0327) and uni0328 (U+0328) [code: mark-chars]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-SemiCondensedLight.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-SemiCondensedLight.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-Light.ttf. Got NotoSansGeorgian-SemiCondensedLight.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedLight.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2713,12 +3231,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 514 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 302:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2749,21 +3272,31 @@ The following glyphs do not have the recommended number of contours:
 
 	* d (U+0064) contains a short segment L<<410.0,90.0>--<406.0,90.0>> 
 
-	* And 86 more.
+	* 87 more.
 
 Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-SemiCondensedMedium.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-SemiCondensedMedium.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-Medium.ttf. Got NotoSansGeorgian-SemiCondensedMedium.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedMedium.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2788,12 +3321,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 525 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 308:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2812,19 +3350,29 @@ The following glyphs do not have the recommended number of contours:
 
 	* Wdieresis (U+1E84): B<<438.0,536.0>-<433.0,563.0>-<431.0,583.0>>/B<<431.0,583.0>-<429.0,567.0>-<424.5,541.0>> = 12.835609486401424 
 
-	* And Wgrave (U+1E80): B<<438.0,536.0>-<433.0,563.0>-<431.0,583.0>>/B<<431.0,583.0>-<429.0,567.0>-<424.5,541.0>> = 12.835609486401424 [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-SemiCondensedSemiBold.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* Wgrave (U+1E80): B<<438.0,536.0>-<433.0,563.0>-<431.0,583.0>>/B<<431.0,583.0>-<429.0,567.0>-<424.5,541.0>> = 12.835609486401424 [code: found-jaggy-segments]
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-SemiCondensedSemiBold.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-SemiBold.ttf. Got NotoSansGeorgian-SemiCondensedSemiBold.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedSemiBold.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2849,12 +3397,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 530 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 311:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2883,19 +3436,29 @@ The following glyphs do not have the recommended number of contours:
 
 	* Wgrave (U+1E80): B<<446.5,507.5>-<441.0,537.0>-<439.0,559.0>>/B<<439.0,559.0>-<437.0,541.0>-<432.0,512.0>> = 11.534620653644708 
 
-	* And Wgrave (U+1E80): B<<615.5,221.5>-<625.0,170.0>-<630.0,130.0>>/B<<630.0,130.0>-<635.0,170.0>-<644.0,221.0>> = 14.25003269780357 [code: found-jaggy-segments]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-SemiCondensedThin.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* Wgrave (U+1E80): B<<615.5,221.5>-<625.0,170.0>-<630.0,130.0>>/B<<630.0,130.0>-<635.0,170.0>-<644.0,221.0>> = 14.25003269780357 [code: found-jaggy-segments]
+</div></details><br></div></details><details><summary><b>[11] NotoSansGeorgian-SemiCondensedThin.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
-</div></details><details><summary>🔥 <b>FAIL:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+* 🔥 **FAIL** Expected "NotoSansGeorgianSemiCondensed-Thin.ttf. Got NotoSansGeorgian-SemiCondensedThin.ttf. [code: bad-filename]
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** Style name used in "fonts/NotoSansGeorgian/googlefonts/ttf/NotoSansGeorgian-SemiCondensedThin.ttf" is not canonical. You should rebuild the font using any of the following style names: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black", "Thin Italic", "ExtraLight Italic", "Light Italic", "Italic", "Medium Italic", "SemiBold Italic", "Bold Italic", "ExtraBold Italic", "Black Italic". [code: bad-static-filename]
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+
+
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2920,12 +3483,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 507 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 300:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -2944,20 +3512,25 @@ The following glyphs do not have the recommended number of contours:
 
 	* exclamdown (U+00A1): L<<91.0,-189.0>--<93.0,353.0>> 
 
-	* And p (U+0070): L<<105.0,528.0>--<106.0,403.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[9] NotoSansGeorgian-Thin.ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* p (U+0070): L<<105.0,528.0>--<106.0,403.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[10] NotoSansGeorgian-Thin.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
-</div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
 
 
-* ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni1CB8
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Combined length of family and style must not exceed 27 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/family_and_style_max_length">com.google.fonts/check/name/family_and_style_max_length</a>)</summary><div>
 
 
@@ -2982,12 +3555,17 @@ The following glyphs do not have the recommended number of contours:
 
 	- Glyph name: aogonek	Contours detected: 3	Expected: 2 
 
-	- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+	- Glyph name: uogonek	Contours detected: 2	Expected: 1
  [code: contour-count]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** The most common width is 570 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
@@ -3004,39 +3582,73 @@ The following glyphs do not have the recommended number of contours:
 
 	* exclamdown (U+00A1): L<<122.0,354.0>--<124.0,-186.0>> 
 
-	* And exclamdown (U+00A1): L<<96.0,-186.0>--<98.0,354.0>> [code: found-semi-vertical]
-</div></details><br></div></details><details><summary><b>[6] NotoSansGeorgian[wdth,wght].ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check Google Fonts glyph coverage. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyph_coverage">com.google.fonts/check/glyph_coverage</a>)</summary><div>
+	* exclamdown (U+00A1): L<<96.0,-186.0>--<98.0,354.0>> [code: found-semi-vertical]
+</div></details><br></div></details><details><summary><b>[12] NotoSansGeorgian[wdth,wght].ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Check the OS/2 usWeightClass is appropriate for the font's best SubFamily name. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/usweightclass">com.google.fonts/check/usweightclass</a>)</summary><div>
 
 
-* 💔 **ERROR** Failed with IndexError: list index out of range
+* 💔 **ERROR** The condition <FontBakeryCondition:expected_font_names> had an error: KeyError: 'fvar'
+</div></details><details><summary>💔 <b>ERROR:</b> Check font names are correct (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/font_names">com.google.fonts/check/font_names</a>)</summary><div>
+
+
+* 💔 **ERROR** The condition <FontBakeryCondition:expected_font_names> had an error: KeyError: 'fvar'
+</div></details><details><summary>💔 <b>ERROR:</b> Check a font's STAT table contains compulsory Axis Values. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/STAT">com.google.fonts/check/STAT</a>)</summary><div>
+
+
+* 💔 **ERROR** The condition <FontBakeryCondition:expected_font_names> had an error: KeyError: 'fvar'
+</div></details><details><summary>💔 <b>ERROR:</b> Check variable font instances (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/fvar_instances">com.google.fonts/check/fvar_instances</a>)</summary><div>
+
+
+* 💔 **ERROR** The condition <FontBakeryCondition:expected_font_names> had an error: KeyError: 'fvar'
+</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
+
+
+* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
 </div></details><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
 
 
 * 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1101, but got 1068 instead [code: ascent]
-</div></details><details><summary>🔥 <b>FAIL:</b> Validates that when an instance record is included for the default instance, its subfamilyNameID value is set to either 2 or 17, and its postScriptNameID value is set to 6. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/fvar.html#com.adobe.fonts/check/varfont/valid_default_instance_nameids">com.adobe.fonts/check/varfont/valid_default_instance_nameids</a>)</summary><div>
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
 
 
-* 🔥 **FAIL** 'Regular' instance has the same coordinates as the default instance; its subfamilyNameID should be either 2 or 17, instead of 334. [code: invalid-default-instance-subfamily-nameid:334]
+* 🔥 **FAIL** No dotted circle glyph presentand font uses a complex shaper [code: missing-dotted-circle-complex]
+</div></details><details><summary>🔥 <b>FAIL:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+
+
+* 🔥 **FAIL** The dot of soft dotted characters used in orthographies must disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌
+
+The dot of soft dotted characters should disappear in other cases, for example: ĩ̦ ĭ̦ i̦̇ i̦̊ i̦̋ ǐ̦ i̦̒ ĩ̧ ĭ̧ i̧̇ i̧̊ i̧̋ ǐ̧ i̧̒ j̦̀ j̦́ ĵ̦ j̦̃ j̦̄ j̦̆ [code: soft-dotted]
 </div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
 * ⚠ **WARN** This font file does not have a 'meta' table. [code: lacks-meta-table]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
+</div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** No dotted circle glyph present [code: missing-dotted-circle]
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour 1 start point differs in glyph 'uni1C9D0304' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d37303a50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d374a5d10> 
+
+	- Contour 1 start point differs in glyph 'uni1CA30304' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d37303a50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d374a5d10> [code: interpolation-issues]
+</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
+
+
+* ⚠ **WARN** The most common width is 572 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:
+
+Width = 322:
+minus
+ [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check mark characters are in GDEF mark glyph class. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_mark_chars">com.google.fonts/check/gdef_mark_chars</a>)</summary><div>
 
 
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
 	 gravecomb (U+0300), tildecomb (U+0303), uni0306 (U+0306), uni0307 (U+0307), uni030A (U+030A), uni030B (U+030B), uni030C (U+030C), uni0312 (U+0312), uni0326 (U+0326), uni0327 (U+0327) and uni0328 (U+0328) [code: mark-chars]
 </div></details><br></div></details>
+
 ### Summary
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 37 | 67 | 250 | 4414 | 249 | 3138 | 0 |
-| 0% | 1% | 3% | 54% | 3% | 38% | 0% |
+| 4 | 179 | 248 | 4472 | 249 | 3338 | 0 |
+| 0% | 2% | 3% | 53% | 3% | 39% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
 * **SKIP**
