@@ -6,5 +6,9 @@ googleFonts: true
 includeSubsets:
 - from: Noto Serif
   name: GF_Latin_Core
+- from: Noto Serif
+  ranges:
+    - start: 0x2116
+      end: 0x2116
 sources:
 - NotoSerifGeorgian.designspace
