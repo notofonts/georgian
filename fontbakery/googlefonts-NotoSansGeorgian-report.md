@@ -3624,9 +3624,9 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour 1 start point differs in glyph 'uni1C9D0304' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d37303a50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d374a5d10> 
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour 1 start point differs in glyph 'uni1CA30304' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f73c1022010> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f73c03faf90> 
 
-	- Contour 1 start point differs in glyph 'uni1CA30304' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d37303a50> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f0d374a5d10> [code: interpolation-issues]
+	- Contour 1 start point differs in glyph 'uni1C9D0304' between location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f73c1022010> and location <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f73c03faf90> [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
