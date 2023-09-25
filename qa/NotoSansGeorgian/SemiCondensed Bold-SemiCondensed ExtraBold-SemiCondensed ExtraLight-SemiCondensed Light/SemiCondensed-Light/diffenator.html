@@ -1,0 +1,2622 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Glyphs</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+    
+
+        html{
+	  font-family: sans-serif;
+	}
+    @font-face {
+        font-family: "Adobe NotDef";
+        src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+    }
+	.box-title{
+	  width: 100%;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	  width: 100%;
+	  float: left;
+	}
+	.box-text{
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	  z-index: 100;
+	}
+	#font-toggle{
+	}
+	.nav-item{
+		display: block;
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+		text-align: center;
+		color: white;
+		background-color: black;
+		display: block;
+		font-size: 9pt;
+		padding: 5px;
+		margin: 2px;
+	}
+	.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	}
+
+	.tooltip .tooltiptext {
+	font-family: sans-serif;
+	visibility: hidden;
+	width: 500px;
+	background-color: black;
+	color: #fff;
+	text-align: left;
+	font-size: 12pt;
+	line-height: 15pt;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	padding: 10px;
+	visibility: visible;
+	}
+	.tooltipleft {
+		float:left;
+		width: 249px;
+	}
+	.tooltipright {
+		float:right;
+		width:250px;
+	}
+
+			/* Stuff needed for the table differ */
+            body {
+                font-family: Helvetica;
+            }
+            .node {
+                font-family: courier;
+                cursor: pointer;
+                position: relative;
+                left: 30px;
+                padding: 5px;
+                display: block;
+                border: 1px dashed grey;
+            }
+            .header {
+            font-weight: bold;
+            }
+            .attrib-old{
+                color: red;
+                cursor: text;
+            }
+            .attrib-new{
+                color: green;
+                cursor: text;
+            }
+            .leaf {
+            font-weight: bold;
+            }
+            .old .cell .new {
+            	display:  none;
+            }
+            .new .cell .old {
+            	display:  none;
+            }
+            .both .cell .old {
+            	opacity: 0.75;
+            	color:  red;
+            }
+            .both .cell .new {
+            	opacity: 0.75;
+            	position: absolute;
+            	top: 0;
+            	color:  green;
+            }
+			.spacer {
+				display:block;
+				float:left;
+				width:100%;
+			}
+
+	  
+	    @font-face{
+    src: url(old-NotoSansGeorgian[wght].ttf);
+    font-family: "old font";
+    font-weight: 200 700;
+    font-stretch: 62% 100%;
+    font-style: normal;
+}
+	  
+
+	  
+	    @font-face{
+    src: url(new-NotoSansGeorgian-SemiCondensedLight.ttf);
+    font-family: "new font";
+    font-weight: 300;
+    
+    font-style: normal;
+}
+	  
+
+	  
+
+	  
+	    .old-SemiCondensed-Light{
+    font-family: "old font", "Adobe NotDef";
+    font-weight: 300.0;
+    font-stretch: 87.5%;
+    font-style: normal;
+    font-variation-settings: "wght" 300.0, "wdth" 87.5;
+}
+	  
+
+	  
+	    .new-SemiCondensed-Light{
+    font-family: "new font", "Adobe NotDef";
+    font-weight: 300;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 300;
+}
+	  
+
+	  
+	
+.cell{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  width: 50pt;
+  line-height: 48.0px;
+}
+.cell-word{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  line-height: 48.0px;
+}
+.cat-strings .cell {
+  clear: both;
+  position: static;
+  float: none;
+  text-align: left;
+}
+.box-title {
+  clear: both;
+}
+
+
+	   #ot-panel {
+		max-height: 400px;
+		overflow-y: scroll;
+		background: white;
+		padding: 10px;
+		display: none;
+	   }
+    </style>
+</head>
+<body>
+    <div id="nav">
+		
+			<div class="nav-item" id="font-toggle">old</div>
+		
+			<div class="nav-item" id="ot-button">OT features</div>
+			<div id="ot-panel">
+			</div>
+		
+	</div>
+    <div id="content">
+	<h2>
+<b>Diffenator</b>
+</h2>
+	
+  
+    <div class="box">
+    <div class="box-title">Tables</div>
+     <script>var fontdiff = {"MVAR": {"tableTag": ["MVAR", null], "table": {"Version": [65536, null], "Reserved": [0, null], "ValueRecordSize": [8, null], "ValueRecordCount": [2, null], "VarStore": {"Format": [1, null], "VarRegionList": {"RegionAxisCount": [2, null], "RegionCount": [4, null], "Region": {"0": {"VarRegionAxis": {"0": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}}}, "1": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}, "2": {"VarRegionAxis": {"0": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}, "3": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [1.0, null], "EndCoord": [1.0, null]}, "1": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}}}}}, "VarDataCount": [1, null], "VarData": {"0": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [4, null], "VarRegionIndex": {"0": [0, null], "1": [1, null], "2": [2, null], "3": [3, null]}, "Item": {"0": {"0": [-6, null], "1": [1, null], "2": [-2, null], "3": [10, null]}, "1": {"0": [-4, null], "1": [0, null], "2": [-1, null], "3": [6, null]}}}}}, "ValueRecord": {"0": {"ValueTag": ["stro", null], "VarIdx": [1, null]}, "1": {"ValueTag": ["xhgt", null], "VarIdx": [0, null]}}}}, "gasp": {"tableTag": [null, "gasp"], "version": [null, 1], "gaspRange": {"65535": [null, 15]}}, "hhea": {"xMaxExtent": [1082, 939], "minRightSideBearing": [-169, -137], "minLeftSideBearing": [-169, -136], "advanceWidthMax": [1143, 997]}, "avar": {"tableTag": ["avar", null], "segments": {"wght": {"-1.0": [-1.0, null], "-0.49993896484375": [-0.62744140625, null], "0.0": [0.0, null], "0.3333740234375": [0.29510498046875, null], "0.666748046875": [0.62298583984375, null], "1.0": [1.0, null]}, "wdth": {"-1.0": [-1.0, null], "-0.66668701171875": [-0.70001220703125, null], "-0.33331298828125": [-0.36663818359375, null], "0.0": [0.0, null], "1.0": [1.0, null]}}, "table": {"Version": [65536, null], "Reserved": [0, null], "AxisCount": [2, null], "AxisSegmentMap": {"0": {"PositionMapCount": [6, null], "AxisValueMap": {"0": {"FromCoordinate": [-1.0, null], "ToCoordinate": [-1.0, null]}, "1": {"FromCoordinate": [-0.49993896484375, null], "ToCoordinate": [-0.62744140625, null]}, "2": {"FromCoordinate": [0.0, null], "ToCoordinate": [0.0, null]}, "3": {"FromCoordinate": [0.3333740234375, null], "ToCoordinate": [0.29510498046875, null]}, "4": {"FromCoordinate": [0.666748046875, null], "ToCoordinate": [0.62298583984375, null]}, "5": {"FromCoordinate": [1.0, null], "ToCoordinate": [1.0, null]}}}, "1": {"PositionMapCount": [5, null], "AxisValueMap": {"0": {"FromCoordinate": [-1.0, null], "ToCoordinate": [-1.0, null]}, "1": {"FromCoordinate": [-0.66668701171875, null], "ToCoordinate": [-0.70001220703125, null]}, "2": {"FromCoordinate": [-0.33331298828125, null], "ToCoordinate": [-0.36663818359375, null]}, "3": {"FromCoordinate": [0.0, null], "ToCoordinate": [0.0, null]}, "4": {"FromCoordinate": [1.0, null], "ToCoordinate": [1.0, null]}}}}}, "majorVersion": [1, null], "minorVersion": [0, null]}, "OS/2": {"sxHeight": [536, 532], "usWidthClass": [5, 4], "xAvgCharWidth": [667, 585], "usWeightClass": [400, 300], "panose": {"bWeight": [5, 4]}, "yStrikeoutPosition": [322, 319]}, "STAT": {"axis values": {"ExtraCondensed": {"format": [1, null], "AxisIndex": [0, null], "Flags": [0, null], "Value": [62.5, null]}, "Condensed": {"format": [1, null], "AxisIndex": [0, null], "Flags": [0, null], "Value": [75.0, null]}, "SemiCondensed": {"format": [1, null], "AxisIndex": [0, null], "Flags": [0, null], "Value": [87.5, null]}, "Normal": {"format": [1, null], "AxisIndex": [0, null], "Flags": [2, null], "Value": [100.0, null]}, "ExtraLight": {"format": [1, null], "AxisIndex": [1, null], "Flags": [0, null], "Value": [200.0, null]}, "Light": {"format": [1, null], "AxisIndex": [1, null], "Flags": [0, null], "Value": [300.0, null]}, "Regular": {"format": [3, null], "AxisIndex": [1, null], "Flags": [2, null], "Value": [400.0, null]}, "Medium": {"format": [1, null], "AxisIndex": [1, null], "Flags": [0, null], "Value": [500.0, null]}, "SemiBold": {"format": [1, null], "AxisIndex": [1, null], "Flags": [0, null], "Value": [600.0, null]}, "Bold": {"format": [1, null], "AxisIndex": [1, null], "Flags": [0, null], "Value": [700.0, null]}}, "design axis records": {"wdth": {"order": [0, null], "AxisName": ["Width", null]}, "wght": {"order": [1, null], "AxisName": ["Weight", null]}}}, "head": {"flags": [3, 7], "modified": [3739523136, 3778486494], "yMax": [1043, 1016], "fontRevision": [2.0019989013671875, 2.0030059814453125], "checkSumAdjustment": [2276421874, 261184195], "xMin": [-169, -136], "xMax": [1082, 939]}, "prep": {"tableTag": [null, "prep"]}, "fvar": {"axes": {"wght": {"minValue": [200.0, null], "maxValue": [700.0, null], "defaultValue": [400.0, null], "axisName": ["Weight", null]}, "wdth": {"minValue": [62.5, null], "maxValue": [100.0, null], "defaultValue": [100.0, null], "axisName": ["Width", null]}}, "instances": {"ExtraLight": {"coordinates": {"wght": [200.0, null], "wdth": [100.0, null]}, "flags": [0, null]}, "Light": {"coordinates": {"wght": [300.0, null], "wdth": [100.0, null]}, "flags": [0, null]}, "Regular": {"coordinates": {"wght": [400.0, null], "wdth": [100.0, null]}, "flags": [0, null]}, "Medium": {"coordinates": {"wght": [500.0, null], "wdth": [100.0, null]}, "flags": [0, null]}, "SemiBold": {"coordinates": {"wght": [600.0, null], "wdth": [100.0, null]}, "flags": [0, null]}, "Bold": {"coordinates": {"wght": [700.0, null], "wdth": [100.0, null]}, "flags": [0, null]}, "SemiCondensed ExtraLight": {"coordinates": {"wght": [200.0, null], "wdth": [87.5, null]}, "flags": [0, null]}, "SemiCondensed Light": {"coordinates": {"wght": [300.0, null], "wdth": [87.5, null]}, "flags": [0, null]}, "SemiCondensed": {"coordinates": {"wght": [400.0, null], "wdth": [87.5, null]}, "flags": [0, null]}, "SemiCondensed Medium": {"coordinates": {"wght": [500.0, null], "wdth": [87.5, null]}, "flags": [0, null]}, "SemiCondensed SemiBold": {"coordinates": {"wght": [600.0, null], "wdth": [87.5, null]}, "flags": [0, null]}, "SemiCondensed Bold": {"coordinates": {"wght": [700.0, null], "wdth": [87.5, null]}, "flags": [0, null]}, "Condensed ExtraLight": {"coordinates": {"wght": [200.0, null], "wdth": [75.0, null]}, "flags": [0, null]}, "Condensed Light": {"coordinates": {"wght": [300.0, null], "wdth": [75.0, null]}, "flags": [0, null]}, "Condensed": {"coordinates": {"wght": [400.0, null], "wdth": [75.0, null]}, "flags": [0, null]}, "Condensed Medium": {"coordinates": {"wght": [500.0, null], "wdth": [75.0, null]}, "flags": [0, null]}, "Condensed SemiBold": {"coordinates": {"wght": [600.0, null], "wdth": [75.0, null]}, "flags": [0, null]}, "Condensed Bold": {"coordinates": {"wght": [700.0, null], "wdth": [75.0, null]}, "flags": [0, null]}, "ExtraCondensed ExtraLight": {"coordinates": {"wght": [200.0, null], "wdth": [62.5, null]}, "flags": [0, null]}, "ExtraCondensed Light": {"coordinates": {"wght": [300.0, null], "wdth": [62.5, null]}, "flags": [0, null]}, "ExtraCondensed": {"coordinates": {"wght": [400.0, null], "wdth": [62.5, null]}, "flags": [0, null]}, "ExtraCondensed Medium": {"coordinates": {"wght": [500.0, null], "wdth": [62.5, null]}, "flags": [0, null]}, "ExtraCondensed SemiBold": {"coordinates": {"wght": [600.0, null], "wdth": [62.5, null]}, "flags": [0, null]}, "ExtraCondensed Bold": {"coordinates": {"wght": [700.0, null], "wdth": [62.5, null]}, "flags": [0, null]}}}, "GDEF": {"table": {"VarStore": {"Format": [1, null], "VarRegionList": {"RegionAxisCount": [2, null], "RegionCount": [5, null], "Region": {"0": {"VarRegionAxis": {"0": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}}}, "1": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}, "2": {"VarRegionAxis": {"0": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}, "3": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [1.0, null], "EndCoord": [1.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}, "4": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [1.0, null], "EndCoord": [1.0, null]}, "1": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}}}}}, "VarDataCount": [24, null], "VarData": {"0": {"ItemCount": [1, null], "NumShorts": [0, null], "VarRegionCount": [0, null]}, "1": {"ItemCount": [7, null], "NumShorts": [0, null], "VarRegionCount": [1, null], "VarRegionIndex": {"0": [1, null]}, "Item": {"0": {"0": [-20, null]}, "1": {"0": [-10, null]}, "2": {"0": [5, null]}, "3": {"0": [10, null]}, "4": {"0": [20, null]}, "5": {"0": [30, null]}, "6": {"0": [40, null]}}}, "2": {"ItemCount": [8, null], "NumShorts": [0, null], "VarRegionCount": [1, null], "VarRegionIndex": {"0": [2, null]}, "Item": {"0": {"0": [-16, null]}, "1": {"0": [-8, null]}, "2": {"0": [-4, null]}, "3": {"0": [-2, null]}, "4": {"0": [4, null]}, "5": {"0": [8, null]}, "6": {"0": [16, null]}, "7": {"0": [32, null]}}}, "3": {"ItemCount": [6, null], "NumShorts": [0, null], "VarRegionCount": [1, null], "VarRegionIndex": {"0": [3, null]}, "Item": {"0": {"0": [-10, null]}, "1": {"0": [-5, null]}, "2": {"0": [10, null]}, "3": {"0": [20, null]}, "4": {"0": [30, null]}, "5": {"0": [40, null]}}}, "4": {"ItemCount": [3, null], "NumShorts": [0, null], "VarRegionCount": [1, null], "VarRegionIndex": {"0": [4, null]}, "Item": {"0": {"0": [-50, null]}, "1": {"0": [-20, null]}, "2": {"0": [-10, null]}}}, "5": {"ItemCount": [7, null], "NumShorts": [0, null], "VarRegionCount": [2, null], "VarRegionIndex": {"0": [0, null], "1": [2, null]}, "Item": {"0": {"0": [-24, null], "1": [8, null]}, "1": {"0": [-16, null], "1": [16, null]}, "2": {"0": [-8, null], "1": [8, null]}, "3": {"0": [8, null], "1": [-8, null]}, "4": {"0": [8, null], "1": [8, null]}, "5": {"0": [16, null], "1": [-16, null]}, "6": {"0": [16, null], "1": [-8, null]}}}, "6": {"ItemCount": [6, null], "NumShorts": [0, null], "VarRegionCount": [2, null], "VarRegionIndex": {"0": [1, null], "1": [2, null]}, "Item": {"0": {"0": [-20, null], "1": [-16, null]}, "1": {"0": [-10, null], "1": [-8, null]}, "2": {"0": [-10, null], "1": [16, null]}, "3": {"0": [20, null], "1": [-16, null]}, "4": {"0": [20, null], "1": [8, null]}, "5": {"0": [40, null], "1": [-16, null]}}}, "7": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [2, null], "VarRegionIndex": {"0": [0, null], "1": [3, null]}, "Item": {"0": {"0": [-8, null], "1": [-10, null]}, "1": {"0": [8, null], "1": [-10, null]}}}, "8": {"ItemCount": [5, null], "NumShorts": [0, null], "VarRegionCount": [2, null], "VarRegionIndex": {"0": [1, null], "1": [3, null]}, "Item": {"0": {"0": [-20, null], "1": [30, null]}, "1": {"0": [-10, null], "1": [30, null]}, "2": {"0": [10, null], "1": [-20, null]}, "3": {"0": [10, null], "1": [-10, null]}, "4": {"0": [20, null], "1": [-10, null]}}}, "9": {"ItemCount": [7, null], "NumShorts": [0, null], "VarRegionCount": [2, null], "VarRegionIndex": {"0": [2, null], "1": [3, null]}, "Item": {"0": {"0": [-8, null], "1": [-20, null]}, "1": {"0": [-8, null], "1": [-10, null]}, "2": {"0": [4, null], "1": [-5, null]}, "3": {"0": [8, null], "1": [5, null]}, "4": {"0": [8, null], "1": [10, null]}, "5": {"0": [16, null], "1": [20, null]}, "6": {"0": [16, null], "1": [30, null]}}}, "10": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [2, null], "VarRegionIndex": {"0": [2, null], "1": [4, null]}, "Item": {"0": {"0": [-8, null], "1": [-10, null]}, "1": {"0": [-1, null], "1": [-1, null]}}}, "11": {"ItemCount": [10, null], "NumShorts": [0, null], "VarRegionCount": [2, null], "VarRegionIndex": {"0": [3, null], "1": [4, null]}, "Item": {"0": {"0": [-50, null], "1": [50, null]}, "1": {"0": [-20, null], "1": [20, null]}, "2": {"0": [5, null], "1": [-10, null]}, "3": {"0": [10, null], "1": [-20, null]}, "4": {"0": [10, null], "1": [-10, null]}, "5": {"0": [15, null], "1": [-10, null]}, "6": {"0": [20, null], "1": [-20, null]}, "7": {"0": [30, null], "1": [-30, null]}, "8": {"0": [30, null], "1": [10, null]}, "9": {"0": [40, null], "1": [-40, null]}}}, "12": {"ItemCount": [8, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [0, null], "1": [1, null], "2": [2, null]}, "Item": {"0": {"0": [-16, null], "1": [-20, null], "2": [16, null]}, "1": {"0": [-16, null], "1": [-10, null], "2": [16, null]}, "2": {"0": [-8, null], "1": [-20, null], "2": [8, null]}, "3": {"0": [-8, null], "1": [-10, null], "2": [8, null]}, "4": {"0": [-8, null], "1": [10, null], "2": [8, null]}, "5": {"0": [-8, null], "1": [20, null], "2": [8, null]}, "6": {"0": [8, null], "1": [10, null], "2": [-8, null]}, "7": {"0": [8, null], "1": [20, null], "2": [-8, null]}}}, "13": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [0, null], "1": [2, null], "2": [3, null]}, "Item": {"0": {"0": [-8, null], "1": [8, null], "2": [-10, null]}, "1": {"0": [-8, null], "1": [8, null], "2": [30, null]}}}, "14": {"ItemCount": [4, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [1, null], "1": [2, null], "2": [3, null]}, "Item": {"0": {"0": [-10, null], "1": [8, null], "2": [-10, null]}, "1": {"0": [-10, null], "1": [8, null], "2": [-5, null]}, "2": {"0": [10, null], "1": [8, null], "2": [10, null]}, "3": {"0": [20, null], "1": [16, null], "2": [20, null]}}}, "15": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [0, null], "1": [2, null], "2": [4, null]}, "Item": {"0": {"0": [-8, null], "1": [8, null], "2": [-10, null]}, "1": {"0": [8, null], "1": [-16, null], "2": [-10, null]}}}, "16": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [0, null], "1": [3, null], "2": [4, null]}, "Item": {"0": {"0": [-8, null], "1": [10, null], "2": [-10, null]}, "1": {"0": [8, null], "1": [10, null], "2": [-10, null]}}}, "17": {"ItemCount": [16, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [1, null], "1": [3, null], "2": [4, null]}, "Item": {"0": {"0": [-40, null], "1": [30, null], "2": [-30, null]}, "1": {"0": [-30, null], "1": [20, null], "2": [-20, null]}, "2": {"0": [-20, null], "1": [10, null], "2": [-10, null]}, "3": {"0": [-20, null], "1": [20, null], "2": [-20, null]}, "4": {"0": [-10, null], "1": [10, null], "2": [-20, null]}, "5": {"0": [-10, null], "1": [10, null], "2": [-10, null]}, "6": {"0": [-10, null], "1": [20, null], "2": [-20, null]}, "7": {"0": [-10, null], "1": [30, null], "2": [-30, null]}, "8": {"0": [-5, null], "1": [5, null], "2": [-10, null]}, "9": {"0": [-5, null], "1": [10, null], "2": [-10, null]}, "10": {"0": [-5, null], "1": [25, null], "2": [-10, null]}, "11": {"0": [1, null], "1": [-1, null], "2": [1, null]}, "12": {"0": [10, null], "1": [-10, null], "2": [-10, null]}, "13": {"0": [10, null], "1": [10, null], "2": [-10, null]}, "14": {"0": [20, null], "1": [-20, null], "2": [20, null]}, "15": {"0": [20, null], "1": [10, null], "2": [-10, null]}}}, "18": {"ItemCount": [10, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [2, null], "1": [3, null], "2": [4, null]}, "Item": {"0": {"0": [-16, null], "1": [10, null], "2": [-10, null]}, "1": {"0": [-8, null], "1": [-10, null], "2": [-10, null]}, "2": {"0": [-8, null], "1": [10, null], "2": [-20, null]}, "3": {"0": [-8, null], "1": [10, null], "2": [-10, null]}, "4": {"0": [-4, null], "1": [10, null], "2": [-10, null]}, "5": {"0": [4, null], "1": [5, null], "2": [-10, null]}, "6": {"0": [8, null], "1": [10, null], "2": [-10, null]}, "7": {"0": [8, null], "1": [20, null], "2": [-10, null]}, "8": {"0": [8, null], "1": [30, null], "2": [-30, null]}, "9": {"0": [16, null], "1": [-20, null], "2": [-10, null]}}}, "19": {"ItemCount": [3, null], "NumShorts": [0, null], "VarRegionCount": [4, null], "VarRegionIndex": {"0": [0, null], "1": [1, null], "2": [2, null], "3": [4, null]}, "Item": {"0": {"0": [-6, null], "1": [1, null], "2": [-2, null], "3": [10, null]}, "1": {"0": [4, null], "1": [-1, null], "2": [2, null], "3": [-10, null]}, "2": {"0": [6, null], "1": [-1, null], "2": [-1, null], "3": [-10, null]}}}, "20": {"ItemCount": [7, null], "NumShorts": [0, null], "VarRegionCount": [4, null], "VarRegionIndex": {"0": [0, null], "1": [2, null], "2": [3, null], "3": [4, null]}, "Item": {"0": {"0": [-16, null], "1": [16, null], "2": [10, null], "3": [-10, null]}, "1": {"0": [-8, null], "1": [8, null], "2": [-10, null], "3": [10, null]}, "2": {"0": [-8, null], "1": [8, null], "2": [10, null], "3": [-10, null]}, "3": {"0": [-8, null], "1": [8, null], "2": [20, null], "3": [-20, null]}, "4": {"0": [4, null], "1": [-4, null], "2": [-10, null], "3": [10, null]}, "5": {"0": [8, null], "1": [-8, null], "2": [-10, null], "3": [10, null]}, "6": {"0": [8, null], "1": [-8, null], "2": [40, null], "3": [-50, null]}}}, "21": {"ItemCount": [7, null], "NumShorts": [0, null], "VarRegionCount": [4, null], "VarRegionIndex": {"0": [1, null], "1": [2, null], "2": [3, null], "3": [4, null]}, "Item": {"0": {"0": [-20, null], "1": [-8, null], "2": [30, null], "3": [-30, null]}, "1": {"0": [-10, null], "1": [8, null], "2": [20, null], "3": [-10, null]}, "2": {"0": [10, null], "1": [-8, null], "2": [-10, null], "3": [10, null]}, "3": {"0": [10, null], "1": [8, null], "2": [10, null], "3": [-20, null]}, "4": {"0": [10, null], "1": [16, null], "2": [10, null], "3": [-10, null]}, "5": {"0": [10, null], "1": [16, null], "2": [20, null], "3": [-20, null]}, "6": {"0": [10, null], "1": [16, null], "2": [30, null], "3": [-30, null]}}}, "22": {"ItemCount": [29, null], "NumShorts": [0, null], "VarRegionCount": [5, null], "VarRegionIndex": {"0": [0, null], "1": [1, null], "2": [2, null], "3": [3, null], "4": [4, null]}, "Item": {"0": {"0": [-45, null], "1": [-8, null], "2": [-1, null], "3": [7, null], "4": [50, null]}, "1": {"0": [-38, null], "1": [-9, null], "2": [1, null], "3": [7, null], "4": [40, null]}, "2": {"0": [-33, null], "1": [-12, null], "2": [13, null], "3": [15, null], "4": [12, null]}, "3": {"0": [-31, null], "1": [-1, null], "2": [3, null], "3": [5, null], "4": [32, null]}, "4": {"0": [-25, null], "1": [-2, null], "2": [5, null], "3": [5, null], "4": [22, null]}, "5": {"0": [-20, null], "1": [-6, null], "2": [-6, null], "3": [2, null], "4": [28, null]}, "6": {"0": [-18, null], "1": [-116, null], "2": [1, null], "3": [26, null], "4": [30, null]}, "7": {"0": [-17, null], "1": [-71, null], "2": [-1, null], "3": [16, null], "4": [13, null]}, "8": {"0": [-16, null], "1": [-71, null], "2": [-4, null], "3": [20, null], "4": [8, null]}, "9": {"0": [-15, null], "1": [-67, null], "2": [-2, null], "3": [19, null], "4": [15, null]}, "10": {"0": [-14, null], "1": [-75, null], "2": [-3, null], "3": [17, null], "4": [16, null]}, "11": {"0": [-14, null], "1": [-7, null], "2": [-4, null], "3": [2, null], "4": [18, null]}, "12": {"0": [-12, null], "1": [-70, null], "2": [-6, null], "3": [20, null], "4": [7, null]}, "13": {"0": [-12, null], "1": [-69, null], "2": [-10, null], "3": [23, null], "4": [4, null]}, "14": {"0": [-12, null], "1": [-68, null], "2": [-6, null], "3": [11, null], "4": [16, null]}, "15": {"0": [-11, null], "1": [-117, null], "2": [-10, null], "3": [37, null], "4": [13, null]}, "16": {"0": [-8, null], "1": [-73, null], "2": [-7, null], "3": [14, null], "4": [8, null]}, "17": {"0": [-8, null], "1": [-20, null], "2": [8, null], "3": [20, null], "4": [-20, null]}, "18": {"0": [-8, null], "1": [-20, null], "2": [8, null], "3": [30, null], "4": [-30, null]}, "19": {"0": [-8, null], "1": [-10, null], "2": [8, null], "3": [10, null], "4": [-10, null]}, "20": {"0": [-8, null], "1": [10, null], "2": [8, null], "3": [-10, null], "4": [10, null]}, "21": {"0": [-7, null], "1": [-69, null], "2": [-2, null], "3": [9, null], "4": [21, null]}, "22": {"0": [-3, null], "1": [-82, null], "2": [-6, null], "3": [3, null], "4": [28, null]}, "23": {"0": [-2, null], "1": [-11, null], "2": [7, null], "3": [10, null], "4": [-20, null]}, "24": {"0": [-1, null], "1": [-7, null], "2": [6, null], "3": [8, null], "4": [-1, null]}, "25": {"0": [2, null], "1": [-54, null], "2": [-20, null], "3": [2, null], "4": [18, null]}, "26": {"0": [8, null], "1": [10, null], "2": [-8, null], "3": [-10, null], "4": [10, null]}, "27": {"0": [8, null], "1": [10, null], "2": [-8, null], "3": [10, null], "4": [-10, null]}, "28": {"0": [8, null], "1": [20, null], "2": [-8, null], "3": [-10, null], "4": [10, null]}}}, "23": {"ItemCount": [5, null], "NumShorts": [0, null], "VarRegionCount": [5, null], "VarRegionIndex": {"0": [0, null], "1": [1, null], "2": [2, null], "3": [3, null], "4": [4, null]}, "Item": {"0": {"0": [-8, null], "1": [-10, null], "2": [8, null], "3": [-10, null], "4": [0, null]}, "1": {"0": [-8, null], "1": [0, null], "2": [0, null], "3": [0, null], "4": [-10, null]}, "2": {"0": [-2, null], "1": [0, null], "2": [0, null], "3": [0, null], "4": [0, null]}, "3": {"0": [0, null], "1": [10, null], "2": [8, null], "3": [0, null], "4": [-10, null]}, "4": {"0": [8, null], "1": [10, null], "2": [0, null], "3": [0, null], "4": [0, null]}}}}}, "Version": [65539, 65538]}}, "maxp": {"maxSizeOfInstructions": [0, 3596], "maxStackElements": [0, 132], "maxPoints": [102, 93], "maxStorage": [0, 69], "maxCompositePoints": [83, 68], "maxFunctionDefs": [0, 141], "maxTwilightPoints": [0, 30], "maxZones": [1, 2]}, "glyf": {"axisTags": {"0": ["wght", null], "1": ["wdth", null]}}, "GPOS": {"table": {"ScriptList": {"ScriptRecord": {"0": {"Script": {"DefaultLangSys": {"FeatureIndex": {"0": [0, 1], "1": [1, 2], "2": [2, null]}, "FeatureCount": [3, 2]}}}}}, "LookupList": {"Lookup": {"0": {"SubTable": {"0": {"ValueFormat1": [68, 4], "PairSet": {"error": ["There are 152 changes, check manually!", ""]}}, "1": {"Class1Count": [23, 22], "ClassDef1": {"classDefs": {"uni2D24": [3, 2], "uni10C5": [14, 18], "uni10E8": [11, 8], "uni10A1": [12, 19], "uni10B8": [2, 3], "uni2D20": [3, 2], "uni2D06": [8, 6], "uni10BC": [14, 18], "uni10A4": [2, 3], "uni10D8": [6, 5], "uni1C9D": [5, null], "uni10AF": [2, 3], "uni10A5": [13, 15], "uni2D12": [8, 6], "uni1C95": [18, 16], "uni2D0D": [3, 2], "uni10D0": [15, 14], "uni10F0": [17, 11], "uni2D17": [3, 2], "uni2D22": [8, 6], "uni1CA2": [5, null], "uni10C2": [9, 10], "uni1CA6": [19, 17], "uni1CBF": [5, null], "uni10B6": [2, 3], "uni1C9A": [19, 17], "uni1C99": [18, 16], "uni10A2": [12, 19], "uni2D14": [8, 6], "uni10E1": [15, 14], "uni10F1": [17, 11], "uni10EB": [11, 8], "uni10A7": [13, 15], "uni10DD": [6, 5], "uni10D7": [6, 5], "uni10C3": [2, 3], "uni10B7": [2, 3], "uni2D04": [20, 12], "uni10C0": [10, 9], "uni2D0F": [3, 2], "uni2D1E": [3, 2], "uni10DB": [11, 8], "uni2D18": [3, 2], "uni10E0": [6, 5], "uni10A6": [10, 9], "uni10AC": [9, 10], "uni1C97": [5, null], "uni2D02": [22, 20], "uni2D0E": [3, 2], "uni10AE": [2, 3], "uni1CBE": [5, null], "uni2D11": [3, 2], "uni10D4": [16, 13], "uni1C98": [5, null], "uni2D09": [20, 12], "uni10A8": [2, 3], "uni10BE": [2, 3], "uni10AA": [10, 9], "uni10A3": [9, 10], "uni10E3": [16, 13]}}, "Coverage": {"glyphs": {"11": ["uni1CBE", "uni10C2"], "12": ["uni10C2", "uni10C5"], "13": ["uni10C5", "uni10A8"], "14": ["uni1C98", "uni1C99"], "15": ["uni10A8", "uni1CA5"], "16": ["uni1C99", "uni1C9A"], "17": ["uni1CA5", "uni10AA"], "18": ["uni1CBF", "uni1C9B"], "19": ["uni1C9A", "uni10AC"], "20": ["uni10AA", "uni10AE"], "21": ["uni1C9B", "uni1CA7"], "22": ["uni10AC", "uni10B7"], "23": ["uni1C9D", "uni1CA0"], "24": ["uni10AE", "uni1CA8"], "25": ["uni1CA7", "uni10B8"], "26": ["uni10B7", "uni10A7"], "27": ["uni1CA0", "uni1CA3"], "28": ["uni1CA8", "uni1C95"], "29": ["uni10B8", "uni10A5"], "30": ["uni1C97", "uni10C3"], "31": ["uni10A7", "uni1CAE"], "32": ["uni1CA2", "uni10BE"], "33": ["uni1CA3", "uni1C96"], "34": ["uni1C95", "uni10A6"], "35": ["uni10A5", "uni10AF"], "36": ["uni10C3", "uni10FD"], "37": ["uni1CAE", "uni10D0"], "38": ["uni10BE", "uni2D00"], "39": ["uni1C96", "uni10D1"], "40": ["uni10A6", "uni2D1A"], "41": ["uni10AF", "uni2D1D"], "42": ["uni10FD", "uni2D19"], "43": ["uni10D0", "uni2D1C"], "44": ["uni2D00", "uni10D3"], "45": ["uni10D1", "uni10D4"], "46": ["uni2D1A", "uni2D04"], "47": ["uni2D1D", "uni10F6"], "48": ["uni2D19", "uni2D02"], "49": ["uni2D1C", "uni10E6"], "50": ["uni10D3", "uni2D16"], "51": ["uni10D4", "uni10F0"], "52": ["uni2D04", "uni2D20"], "53": ["uni10F6", "uni2D24"], "54": ["uni2D02", "uni10FE"], "55": ["uni10E6", "uni10F1"], "56": ["uni2D16", "uni2D22"], "57": ["uni10F0", "uni2D25"], "58": ["uni2D20", "uni10D8"], "59": ["uni2D24", "uni2D08"], "60": ["uni10FE", "uni10EB"], "61": ["uni10F1", "uni2D1B"], "62": ["uni2D22", "uni2D09"], "63": ["uni2D25", "uni10FF"], "64": ["uni10D8", "uni10DA"], "65": ["uni2D08", "uni2D0A"], "66": ["uni10EB", "uni10DB"], "67": ["uni2D1B", "uni10DC"], "68": ["uni2D09", "uni2D0C"], "69": ["uni10FF", "uni10DD"], "70": ["uni10DA", "uni2D0D"], "71": ["uni2D0A", "uni2D0E"], "72": ["uni10DB", "uni2D14"], "73": ["uni10DC", "uni2D17"], "74": ["uni2D0C", "uni10E0"], "75": ["uni10DD", "uni2D10"], "76": ["uni2D0D", "uni10E1"], "77": ["uni2D0E", "uni2D11"], "78": ["uni2D14", "uni10E8"], "79": ["uni2D17", "uni2D18"], "80": ["uni10E0", "uni10D7"], "81": ["uni2D10", "uni2D07"], "82": ["uni10E1", "uni2D12"], "83": ["uni2D11", "uni10F9"], "84": ["uni10E8", "uni10E3"], "85": ["uni2D18", "uni2D05"], "86": ["uni10D7", "uni10EE"], "87": ["uni2D07", "uni2D1E"], "88": ["uni2D12", "uni10D6"], "89": ["uni10F9", "uni2D06"], "90": ["uni10E3", "uni2D0F"], "91": ["uni2D05", null], "92": ["uni10EE", null], "93": ["uni2D1E", null], "94": ["uni10D6", null], "95": ["uni2D06", null], "96": ["uni2D0F", null]}}, "Class1Record": {"0": {"Class2Record": {"1": {"Value1": {"XAdvDevice": {"StartSize": [12, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}, "XAdvance": [-10, -3]}}, "4": {"Value1": {"XAdvance": [0, -16]}}, "6": {"Value1": {"XAdvDevice": {"StartSize": [8, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, 0]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "1": {"Class2Record": {"8": {"Value1": {"XAdvDevice": {"StartSize": [22, null], "EndSize": [19, null], "DeltaFormat": [32768, null]}, "XAdvance": [-10, -17]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "2": {"Class2Record": {"4": {"Value1": {"XAdvance": [0, -16]}}, "12": {"Value1": {"XAdvDevice": {"StartSize": [2, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}}}, "16": {"Value1": {"XAdvDevice": {"StartSize": [5, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-10, 0]}}, "20": {"Value1": {"XAdvance": [-10, null]}}}}, "3": {"Class2Record": {"6": {"Value1": {"XAdvDevice": {"StartSize": [1, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, 0]}}, "11": {"Value1": {"XAdvance": [0, -2]}}, "18": {"Value1": {"XAdvance": [0, -7]}}, "19": {"Value1": {"XAdvance": [0, -10]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "4": {"Class2Record": {"13": {"Value1": {"XAdvance": [0, -18]}}, "15": {"Value1": {"XAdvDevice": {"StartSize": [21, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, 0]}}, "17": {"Value1": {"XAdvance": [0, -2]}}, "18": {"Value1": {"XAdvDevice": {"StartSize": [2, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}}}, "19": {"Value1": {"XAdvDevice": {"StartSize": [11, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "5": {"Class2Record": {"8": {"Value1": {"XAdvance": [0, -12]}}, "15": {"Value1": {"XAdvDevice": {"StartSize": [0, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}}}, "18": {"Value1": {"XAdvDevice": {"StartSize": [0, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}}}, "19": {"Value1": {"XAdvDevice": {"StartSize": [0, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "6": {"Class2Record": {"4": {"Value1": {"XAdvance": [0, -27]}}, "8": {"Value1": {"XAdvDevice": {"StartSize": [17, null], "EndSize": [8, null], "DeltaFormat": [32768, null]}, "XAdvance": [-10, 0]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "7": {"Class2Record": {"3": {"Value1": {"XAdvDevice": {"StartSize": [12, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}, "XAdvance": [-10, -3]}}, "5": {"Value1": {"XAdvance": [-10, 0]}}, "6": {"Value1": {"XAdvance": [0, -10]}}, "13": {"Value1": {"XAdvance": [0, -26]}}, "15": {"Value1": {"XAdvDevice": {"StartSize": [17, null], "EndSize": [12, null], "DeltaFormat": [32768, null]}, "XAdvance": [-30, 0]}}, "16": {"Value1": {"XAdvance": [0, -2]}}, "19": {"Value1": {"XAdvDevice": {"StartSize": [18, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "8": {"Class2Record": {"6": {"Value1": {"XAdvDevice": {"StartSize": [20, null], "EndSize": [5, null], "DeltaFormat": [32768, null]}, "XAdvance": [-30, 0]}}, "8": {"Value1": {"XAdvance": [0, -22]}}, "15": {"Value1": {"XAdvance": [0, -7]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "9": {"Class2Record": {"4": {"Value1": {"XAdvDevice": {"StartSize": [3, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "XAdvance": [-40, 0]}}, "5": {"Value1": {"XAdvance": [0, -44]}}, "7": {"Value1": {"XAdvance": [-10, 0]}}, "11": {"Value1": {"XAdvDevice": {"StartSize": [1, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-30, -60]}}, "12": {"Value1": {"XAdvDevice": {"StartSize": [11, null], "EndSize": [8, null], "DeltaFormat": [32768, null]}, "XAdvance": [-40, 0]}}, "13": {"Value1": {"XAdvance": [-10, 0]}}, "14": {"Value1": {"XAdvance": [0, -20]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "10": {"Class2Record": {"4": {"Value1": {"XAdvDevice": {"StartSize": [8, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "XAdvance": [-40, 0]}}, "5": {"Value1": {"XAdvance": [0, -40]}}, "10": {"Value1": {"XAdvance": [0, -10]}}, "11": {"Value1": {"XAdvDevice": {"StartSize": [3, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, -40]}}, "12": {"Value1": {"XAdvDevice": {"StartSize": [3, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "XAdvance": [-60, -10]}}, "14": {"Value1": {"XAdvance": [0, -26]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "11": {"Class2Record": {"8": {"Value1": {"XAdvDevice": {"StartSize": [17, null], "EndSize": [9, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, -19]}}, "17": {"Value1": {"XAdvDevice": {"StartSize": [12, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "12": {"Class2Record": {"4": {"Value1": {"XAdvDevice": {"StartSize": [22, null], "EndSize": [17, null], "DeltaFormat": [32768, null]}, "XAdvance": [-50, -6]}}, "7": {"Value1": {"XAdvDevice": {"StartSize": [1, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, 0]}}, "11": {"Value1": {"XAdvDevice": {"StartSize": [11, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-50, 0]}}, "12": {"Value1": {"XAdvDevice": {"StartSize": [2, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "XAdvance": [-50, 0]}}, "16": {"Value1": {"XAdvance": [-10, 0]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "13": {"Class2Record": {"4": {"Value1": {"XAdvance": [-20, 0]}}, "9": {"Value1": {"XAdvance": [0, -10]}}, "12": {"Value1": {"XAdvDevice": {"StartSize": [11, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "XAdvance": [-40, 0]}}, "15": {"Value1": {"XAdvance": [0, -10]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "14": {"Class2Record": {"8": {"Value1": {"XAdvance": [0, -20]}}, "12": {"Value1": {"XAdvDevice": {"StartSize": [3, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}}}, "20": {"Value1": {"XAdvance": [-40, null], "XAdvDevice": {"StartSize": [3, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}}}}}, "15": {"Class2Record": {"5": {"Value1": {"XAdvance": [0, -20]}}, "8": {"Value1": {"XAdvDevice": {"StartSize": [4, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, 0]}}, "9": {"Value1": {"XAdvDevice": {"StartSize": [3, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}}}, "11": {"Value1": {"XAdvance": [0, -40]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "16": {"Class2Record": {"6": {"Value1": {"XAdvance": [0, -8]}}, "9": {"Value1": {"XAdvance": [-10, 0]}}, "13": {"Value1": {"XAdvance": [0, -16]}}, "17": {"Value1": {"XAdvance": [-10, 0]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "17": {"Class2Record": {"8": {"Value1": {"XAdvDevice": {"StartSize": [2, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, 0]}}, "14": {"Value1": {"XAdvDevice": {"StartSize": [4, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}}}, "16": {"Value1": {"XAdvance": [0, -10]}}, "17": {"Value1": {"XAdvance": [0, -26]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "18": {"Class2Record": {"5": {"Value1": {"XAdvDevice": {"StartSize": [9, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "XAdvance": [-10, 0]}}, "15": {"Value1": {"XAdvDevice": {"StartSize": [1, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-20, 0]}}, "19": {"Value1": {"XAdvance": [0, -40]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "19": {"Class2Record": {"5": {"Value1": {"XAdvance": [0, -60]}}, "10": {"Value1": {"XAdvance": [0, -24]}}, "11": {"Value1": {"XAdvance": [0, -52]}}, "14": {"Value1": {"XAdvance": [0, -50]}}, "18": {"Value1": {"XAdvDevice": {"StartSize": [1, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "XAdvance": [-30, -10]}}, "19": {"Value1": {"XAdvDevice": {"StartSize": [11, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "XAdvance": [-10, 0]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "20": {"Class2Record": {"1": {"Value1": {"XAdvance": [0, -20]}}, "2": {"Value1": {"XAdvance": [0, -10]}}, "4": {"Value1": {"XAdvance": [0, -53]}}, "6": {"Value1": {"XAdvDevice": {"StartSize": [20, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}}}, "7": {"Value1": {"XAdvance": [0, -10]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "21": {"Class2Record": {"4": {"Value1": {"XAdvance": [-20, 0]}}, "5": {"Value1": {"XAdvance": [0, -20]}}, "11": {"Value1": {"XAdvance": [0, -34]}}, "12": {"Value1": {"XAdvDevice": {"StartSize": [1, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "XAdvance": [-30, 0]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}, "22": {"Class2Record": {"0": {"Value1": {"XAdvance": [0, null]}}, "1": {"Value1": {"XAdvance": [-20, null]}}, "2": {"Value1": {"XAdvance": [-10, null]}}, "3": {"Value1": {"XAdvance": [0, null]}}, "4": {"Value1": {"XAdvance": [0, null]}}, "5": {"Value1": {"XAdvance": [0, null]}}, "6": {"Value1": {"XAdvance": [-60, null], "XAdvDevice": {"StartSize": [8, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}}}, "7": {"Value1": {"XAdvance": [0, null]}}, "8": {"Value1": {"XAdvance": [0, null]}}, "9": {"Value1": {"XAdvance": [0, null]}}, "10": {"Value1": {"XAdvance": [-10, null], "XAdvDevice": {"StartSize": [11, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}}}, "11": {"Value1": {"XAdvance": [0, null]}}, "12": {"Value1": {"XAdvance": [0, null]}}, "13": {"Value1": {"XAdvance": [0, null]}}, "14": {"Value1": {"XAdvance": [0, null]}}, "15": {"Value1": {"XAdvance": [0, null]}}, "16": {"Value1": {"XAdvance": [0, null]}}, "17": {"Value1": {"XAdvance": [0, null]}}, "18": {"Value1": {"XAdvance": [0, null]}}, "19": {"Value1": {"XAdvance": [0, null]}}, "20": {"Value1": {"XAdvance": [0, null]}}}}}, "ClassDef2": {"classDefs": {"uni2D0B": [10, 7], "uni1C94": [19, 16], "uni2D1B": [10, 7], "uni1CB8": [5, 6], "uni10A0": [16, 18], "uni10C4": [11, 14], "uni10A1": [11, 14], "uni10B8": [13, 12], "uni10A4": [4, 5], "uni1CAC": [5, 6], "uni2D00": [6, 4], "uni10A5": [4, 5], "uni1C95": [19, 16], "uni10D0": [17, 15], "uni10DA": [14, null], "uni10BA": [7, 10], "uni1C9C": [5, 6], "uni10B1": [13, 12], "uni1CA6": [15, 13], "uni10B6": [13, 12], "uni1C9A": [15, 13], "uni10AD": [7, 10], "uni10B3": [7, 10], "uni10B0": [20, 19], "uni10A2": [4, 5], "uni2D14": [10, 7], "uni1C91": [18, 17], "uni2D15": [6, 4], "uni10A7": [7, 10], "uni10E6": [14, null], "uni1CA1": [5, 6], "uni1CAE": [5, 6], "uni10B7": [11, 14], "uni2D25": [10, 7], "uni10C0": [4, 5], "uni2D0F": [6, 4], "uni10D3": [14, null], "uni1CAB": [18, 17], "uni10A6": [12, 11], "uni1C93": [15, 13], "uni2D0E": [6, 4], "uni10AE": [12, 11], "uni2D08": [6, 4], "uni10A8": [12, 11], "uni10AA": [4, 5], "uni10DE": [17, 15], "uni10A3": [16, 18]}}, "Class2Count": [21, 20], "ValueFormat1": [68, 4]}}}, "1": {"SubTable": {"0": {"MarkArray": {"MarkRecord": {"0": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [24, null], "DeltaFormat": [32768, null]}, "XCoordinate": [-19, -21], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}, "1": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [0, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}, "2": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [17, null], "EndSize": [11, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}, "3": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [10, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}}, "BaseArray": {"BaseRecord": {"0": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [8, null], "DeltaFormat": [32768, null]}, "XCoordinate": [300, 263]}}}, "1": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [8, null], "DeltaFormat": [32768, null]}, "XCoordinate": [300, 263], "YDeviceTable": {"StartSize": [19, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [944, 947]}}}, "2": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [8, null], "DeltaFormat": [32768, null]}, "XCoordinate": [300, 263], "YDeviceTable": {"StartSize": [22, null], "EndSize": [11, null], "DeltaFormat": [32768, null]}, "YCoordinate": [892, 880]}}}, "3": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [8, null], "DeltaFormat": [32768, null]}, "XCoordinate": [300, 263], "YDeviceTable": {"StartSize": [22, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 850]}}}, "4": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [8, null], "DeltaFormat": [32768, null]}, "XCoordinate": [300, 263], "YDeviceTable": {"StartSize": [22, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "YCoordinate": [1043, 1016]}}}, "5": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [12, null], "DeltaFormat": [32768, null]}, "XCoordinate": [307, 272]}}}, "6": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [12, null], "DeltaFormat": [32768, null]}, "XCoordinate": [307, 272], "YDeviceTable": {"StartSize": [19, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [944, 947]}}}, "7": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [12, null], "DeltaFormat": [32768, null]}, "XCoordinate": [307, 272], "YDeviceTable": {"StartSize": [22, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 850]}}}, "8": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [13, null], "DeltaFormat": [32768, null]}, "XCoordinate": [318, 283], "YDeviceTable": {"StartSize": [22, null], "EndSize": [19, null], "DeltaFormat": [32768, null]}, "YCoordinate": [724, 717]}}}, "9": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [13, null], "DeltaFormat": [32768, null]}, "XCoordinate": [318, 283], "YDeviceTable": {"StartSize": [22, null], "EndSize": [23, null], "DeltaFormat": [32768, null]}, "YCoordinate": [954, 951]}}}, "10": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [13, null], "DeltaFormat": [32768, null]}, "XCoordinate": [318, 283], "YDeviceTable": {"StartSize": [22, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [875, 853]}}}, "11": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [15, null], "DeltaFormat": [32768, null]}, "XCoordinate": [450, 398]}}}, "12": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [15, null], "DeltaFormat": [32768, null]}, "XCoordinate": [450, 398], "YDeviceTable": {"StartSize": [19, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [944, 947]}}}, "13": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [15, null], "DeltaFormat": [32768, null]}, "XCoordinate": [450, 398], "YDeviceTable": {"StartSize": [22, null], "EndSize": [11, null], "DeltaFormat": [32768, null]}, "YCoordinate": [892, 880]}}}, "14": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [15, null], "DeltaFormat": [32768, null]}, "XCoordinate": [450, 398], "YDeviceTable": {"StartSize": [22, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 850]}}}, "15": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [15, null], "DeltaFormat": [32768, null]}, "XCoordinate": [450, 398], "YDeviceTable": {"StartSize": [22, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "YCoordinate": [1043, 1016]}}}, "16": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [21, null], "DeltaFormat": [32768, null]}, "XCoordinate": [305, 275]}}}, "17": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [21, null], "DeltaFormat": [32768, null]}, "XCoordinate": [305, 275], "YDeviceTable": {"StartSize": [19, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [944, 947]}}}, "18": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [21, null], "DeltaFormat": [32768, null]}, "XCoordinate": [305, 275], "YDeviceTable": {"StartSize": [19, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "YCoordinate": [944, 947]}}}, "19": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [21, null], "DeltaFormat": [32768, null]}, "XCoordinate": [305, 275], "YDeviceTable": {"StartSize": [22, null], "EndSize": [11, null], "DeltaFormat": [32768, null]}, "YCoordinate": [892, 880]}}}, "20": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [21, null], "DeltaFormat": [32768, null]}, "XCoordinate": [305, 275], "YDeviceTable": {"StartSize": [22, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 850]}}}, "21": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [21, null], "DeltaFormat": [32768, null]}, "XCoordinate": [305, 275], "YDeviceTable": {"StartSize": [22, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "YCoordinate": [1043, 1016]}}}, "22": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [9, null], "DeltaFormat": [32768, null]}, "XCoordinate": [292, 257]}}}, "23": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [9, null], "DeltaFormat": [32768, null]}, "XCoordinate": [292, 257], "YDeviceTable": {"StartSize": [19, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [944, 947]}}}, "24": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [9, null], "DeltaFormat": [32768, null]}, "XCoordinate": [292, 257], "YDeviceTable": {"StartSize": [22, null], "EndSize": [4, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 850]}}}, "25": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [22, null], "DeltaFormat": [32768, null]}, "XCoordinate": [288, 255]}}}, "26": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [14, null], "DeltaFormat": [32768, null]}, "XCoordinate": [275, 241], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}, "27": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [14, null], "DeltaFormat": [32768, null]}, "XCoordinate": [275, 241], "YDeviceTable": {"StartSize": [2, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "28": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [14, null], "DeltaFormat": [32768, null]}, "XCoordinate": [275, 241], "YDeviceTable": {"StartSize": [22, null], "EndSize": [5, null], "DeltaFormat": [32768, null]}, "YCoordinate": [714, 698]}}}, "29": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [14, null], "DeltaFormat": [32768, null]}, "XCoordinate": [275, 241], "YDeviceTable": {"StartSize": [22, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [687, 668]}}}, "30": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [14, null], "DeltaFormat": [32768, null]}, "XCoordinate": [275, 241], "YDeviceTable": {"StartSize": [22, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 834]}}}, "31": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [16, null], "DeltaFormat": [32768, null]}, "XCoordinate": [294, 261], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}, "32": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [16, null], "DeltaFormat": [32768, null]}, "XCoordinate": [294, 261], "YDeviceTable": {"StartSize": [2, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "33": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [16, null], "DeltaFormat": [32768, null]}, "XCoordinate": [294, 261], "YDeviceTable": {"StartSize": [22, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [687, 668]}}}, "34": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [7, null], "DeltaFormat": [32768, null]}, "XCoordinate": [287, 250], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}, "35": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [7, null], "DeltaFormat": [32768, null]}, "XCoordinate": [287, 250], "YDeviceTable": {"StartSize": [2, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "36": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [7, null], "DeltaFormat": [32768, null]}, "XCoordinate": [287, 250], "YDeviceTable": {"StartSize": [22, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [687, 668]}}}, "37": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}, "XCoordinate": [402, 348], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}, "38": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}, "XCoordinate": [402, 348], "YDeviceTable": {"StartSize": [2, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "39": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}, "XCoordinate": [402, 348], "YDeviceTable": {"StartSize": [22, null], "EndSize": [5, null], "DeltaFormat": [32768, null]}, "YCoordinate": [714, 698]}}}, "40": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}, "XCoordinate": [402, 348], "YDeviceTable": {"StartSize": [22, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [687, 668]}}}, "41": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [6, null], "DeltaFormat": [32768, null]}, "XCoordinate": [402, 348], "YDeviceTable": {"StartSize": [22, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 834]}}}, "42": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [25, null], "DeltaFormat": [32768, null]}, "XCoordinate": [285, 262], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}, "43": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [25, null], "DeltaFormat": [32768, null]}, "XCoordinate": [285, 262], "YDeviceTable": {"StartSize": [2, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "44": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [25, null], "DeltaFormat": [32768, null]}, "XCoordinate": [285, 262], "YDeviceTable": {"StartSize": [23, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "45": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [25, null], "DeltaFormat": [32768, null]}, "XCoordinate": [285, 262], "YDeviceTable": {"StartSize": [22, null], "EndSize": [5, null], "DeltaFormat": [32768, null]}, "YCoordinate": [714, 698]}}}, "46": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [25, null], "DeltaFormat": [32768, null]}, "XCoordinate": [285, 262], "YDeviceTable": {"StartSize": [22, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [687, 668]}}}, "47": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [25, null], "DeltaFormat": [32768, null]}, "XCoordinate": [285, 262], "YDeviceTable": {"StartSize": [22, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [865, 834]}}}, "48": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [10, null], "DeltaFormat": [32768, null]}, "XCoordinate": [277, 240], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}, "49": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [10, null], "DeltaFormat": [32768, null]}, "XCoordinate": [277, 240], "YDeviceTable": {"StartSize": [2, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "50": {"BaseAnchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [10, null], "DeltaFormat": [32768, null]}, "XCoordinate": [277, 240], "YDeviceTable": {"StartSize": [22, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [687, 668]}}}}}}}}, "2": {"SubTable": {"0": {"Mark2Array": {"Mark2Record": {"0": {"Mark2Anchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [24, null], "DeltaFormat": [32768, null]}, "XCoordinate": [-19, -21], "YDeviceTable": {"StartSize": [2, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "1": {"Mark2Anchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [0, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [23, null], "EndSize": [2, null], "DeltaFormat": [32768, null]}, "YCoordinate": [766, 765]}}}, "2": {"Mark2Anchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [17, null], "EndSize": [11, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [22, null], "EndSize": [5, null], "DeltaFormat": [32768, null]}, "YCoordinate": [714, 698]}}}, "3": {"Mark2Anchor": {"0": {"Format": [3, 1], "XDeviceTable": {"StartSize": [10, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [22, null], "EndSize": [3, null], "DeltaFormat": [32768, null]}, "YCoordinate": [687, 668]}}}}}, "Mark1Array": {"MarkRecord": {"0": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [22, null], "EndSize": [24, null], "DeltaFormat": [32768, null]}, "XCoordinate": [-19, -21], "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}, "1": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [0, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}, "2": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [17, null], "EndSize": [11, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}, "3": {"MarkAnchor": {"Format": [3, 1], "XDeviceTable": {"StartSize": [10, null], "EndSize": [1, null], "DeltaFormat": [32768, null]}, "YDeviceTable": {"StartSize": [19, null], "EndSize": [0, null], "DeltaFormat": [32768, null]}, "YCoordinate": [536, 532]}}}}}}}}}}}, "fpgm": {"tableTag": [null, "fpgm"]}, "gvar": {"tableTag": ["gvar", null], "version": [1, null], "reserved": [0, null], "axisCount": [2, null], "sharedTupleCount": [5, null], "offsetToSharedTuples": [472, null], "glyphCount": [225, null], "flags": [0, null], "offsetToGlyphVariationData": [492, null]}, "hmtx": {"metrics": {"error": ["There are 223 changes, check manually!", ""]}}, "name": {"299/3/1/1033": ["NotoSansGeorgian-SemiBold", null], "286/1/0/0": ["ExtraCondensed ExtraLight", null], "306/1/0/0": ["NotoSansGeorgian-SemiCondensed", null], "295/1/0/0": ["NotoSansGeorgian-ExtraLight", null], "260/1/0/0": ["Light", null], "259/1/0/0": ["ExtraLight", null], "281/1/0/0": ["Condensed SemiBold", null], "318/1/0/0": ["NotoSansGeorgian-CondensedBold", null], "305/3/1/1033": ["NotoSansGeorgian-SemiCondensedLight", null], "287/1/0/0": ["ExtraCondensed Light", null], "262/1/0/0": ["Medium", null], "288/1/0/0": ["ExtraCondensed", null], "263/3/1/1033": ["SemiBold", null], "272/1/0/0": ["SemiCondensed SemiBold", null], "327/3/1/1033": ["NotoSansGeorgian-ExtraCondensedBold", null], "316/3/1/1033": ["NotoSansGeorgian-CondensedMedium", null], "313/1/0/0": ["NotoSansGeorgian-CondensedExtraLight", null], "327/1/0/0": ["NotoSansGeorgian-ExtraCondensedBold", null], "268/3/1/1033": ["SemiCondensed ExtraLight", null], "262/3/1/1033": ["Medium", null], "5/3/1/1033": ["Version 2.002", "Version 2.003; ttfautohint (v1.8.4.7-5d5b)"], "330/1/0/0": ["Normal", null], "260/3/1/1033": ["Light", null], "326/3/1/1033": ["NotoSansGeorgian-ExtraCondensedSemiBold", null], "286/3/1/1033": ["ExtraCondensed ExtraLight", null], "297/1/0/0": ["NotoSansGeorgian-Regular", null], "309/1/0/0": ["NotoSansGeorgian-SemiCondensedBold", null], "273/1/0/0": ["SemiCondensed Bold", null], "322/1/0/0": ["NotoSansGeorgian-ExtraCondensedExtraLight", null], "288/3/1/1033": ["ExtraCondensed", null], "271/3/1/1033": ["SemiCondensed Medium", null], "6/3/1/1033": ["NotoSansGeorgian-Regular", "NotoSansGeorgian-SemiCondensedLight"], "316/1/0/0": ["NotoSansGeorgian-CondensedMedium", null], "324/3/1/1033": ["NotoSansGeorgian-ExtraCondensed", null], "290/1/0/0": ["ExtraCondensed SemiBold", null], "323/1/0/0": ["NotoSansGeorgian-ExtraCondensedLight", null], "325/1/0/0": ["NotoSansGeorgian-ExtraCondensedMedium", null], "264/3/1/1033": ["Bold", null], "261/1/0/0": ["Regular", null], "318/3/1/1033": ["NotoSansGeorgian-CondensedBold", null], "261/3/1/1033": ["Regular", null], "305/1/0/0": ["NotoSansGeorgian-SemiCondensedLight", null], "279/3/1/1033": ["Condensed", null], "264/1/0/0": ["Bold", null], "1/3/1/1033": ["Noto Sans Georgian", "Noto Sans Georgian SemCond Light"], "295/3/1/1033": ["NotoSansGeorgian-ExtraLight", null], "256/1/0/0": ["Weight", null], "257/3/1/1033": ["Width", null], "4/3/1/1033": ["Noto Sans Georgian Regular", "Noto Sans Georgian SemiCondensed Light"], "278/1/0/0": ["Condensed Light", null], "272/3/1/1033": ["SemiCondensed SemiBold", null], "291/3/1/1033": ["ExtraCondensed Bold", null], "271/1/0/0": ["SemiCondensed Medium", null], "280/1/0/0": ["Condensed Medium", null], "277/3/1/1033": ["Condensed ExtraLight", null], "297/3/1/1033": ["NotoSansGeorgian-Regular", null], "281/3/1/1033": ["Condensed SemiBold", null], "330/3/1/1033": ["Normal", null], "324/1/0/0": ["NotoSansGeorgian-ExtraCondensed", null], "282/3/1/1033": ["Condensed Bold", null], "326/1/0/0": ["NotoSansGeorgian-ExtraCondensedSemiBold", null], "304/3/1/1033": ["NotoSansGeorgian-SemiCondensedExtraLight", null], "313/3/1/1033": ["NotoSansGeorgian-CondensedExtraLight", null], "282/1/0/0": ["Condensed Bold", null], "17/3/1/1033": [null, "SemiCondensed Light"], "307/3/1/1033": ["NotoSansGeorgian-SemiCondensedMedium", null], "323/3/1/1033": ["NotoSansGeorgian-ExtraCondensedLight", null], "289/1/0/0": ["ExtraCondensed Medium", null], "278/3/1/1033": ["Condensed Light", null], "25/3/1/1033": ["NotoSansGeorgian", null], "259/3/1/1033": ["ExtraLight", null], "315/1/0/0": ["NotoSansGeorgian-Condensed", null], "300/1/0/0": ["NotoSansGeorgian-Bold", null], "277/1/0/0": ["Condensed ExtraLight", null], "270/1/0/0": ["SemiCondensed", null], "308/1/0/0": ["NotoSansGeorgian-SemiCondensedSemiBold", null], "325/3/1/1033": ["NotoSansGeorgian-ExtraCondensedMedium", null], "299/1/0/0": ["NotoSansGeorgian-SemiBold", null], "296/3/1/1033": ["NotoSansGeorgian-Light", null], "306/3/1/1033": ["NotoSansGeorgian-SemiCondensed", null], "309/3/1/1033": ["NotoSansGeorgian-SemiCondensedBold", null], "315/3/1/1033": ["NotoSansGeorgian-Condensed", null], "314/1/0/0": ["NotoSansGeorgian-CondensedLight", null], "269/3/1/1033": ["SemiCondensed Light", null], "257/1/0/0": ["Width", null], "290/3/1/1033": ["ExtraCondensed SemiBold", null], "308/3/1/1033": ["NotoSansGeorgian-SemiCondensedSemiBold", null], "279/1/0/0": ["Condensed", null], "307/1/0/0": ["NotoSansGeorgian-SemiCondensedMedium", null], "256/3/1/1033": ["Weight", null], "3/3/1/1033": ["2.002;GOOG;NotoSansGeorgian-Regular", "2.003;GOOG;NotoSansGeorgian-SemiCondensedLight"], "289/3/1/1033": ["ExtraCondensed Medium", null], "304/1/0/0": ["NotoSansGeorgian-SemiCondensedExtraLight", null], "287/3/1/1033": ["ExtraCondensed Light", null], "273/3/1/1033": ["SemiCondensed Bold", null], "263/1/0/0": ["SemiBold", null], "314/3/1/1033": ["NotoSansGeorgian-CondensedLight", null], "280/3/1/1033": ["Condensed Medium", null], "270/3/1/1033": ["SemiCondensed", null], "296/1/0/0": ["NotoSansGeorgian-Light", null], "298/3/1/1033": ["NotoSansGeorgian-Medium", null], "322/3/1/1033": ["NotoSansGeorgian-ExtraCondensedExtraLight", null], "300/3/1/1033": ["NotoSansGeorgian-Bold", null], "317/3/1/1033": ["NotoSansGeorgian-CondensedSemiBold", null], "317/1/0/0": ["NotoSansGeorgian-CondensedSemiBold", null], "268/1/0/0": ["SemiCondensed ExtraLight", null], "16/3/1/1033": [null, "Noto Sans Georgian"], "25/1/0/0": ["NotoSansGeorgian", null], "291/1/0/0": ["ExtraCondensed Bold", null], "298/1/0/0": ["NotoSansGeorgian-Medium", null], "269/1/0/0": ["SemiCondensed Light", null]}, "cvt ": {"tableTag": [null, "cvt "]}, "HVAR": {"tableTag": ["HVAR", null], "table": {"Version": [65536, null], "VarStore": {"Format": [1, null], "VarRegionList": {"RegionAxisCount": [2, null], "RegionCount": [5, null], "Region": {"0": {"VarRegionAxis": {"0": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}}}, "1": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}, "2": {"VarRegionAxis": {"0": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}, "3": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [1.0, null], "EndCoord": [1.0, null]}, "1": {"StartCoord": [0.0, null], "PeakCoord": [0.0, null], "EndCoord": [0.0, null]}}}, "4": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [1.0, null], "EndCoord": [1.0, null]}, "1": {"StartCoord": [-1.0, null], "PeakCoord": [-1.0, null], "EndCoord": [0.0, null]}}}}}, "VarDataCount": [5, null], "VarData": {"0": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [3, null], "VarRegionIndex": {"0": [1, null], "1": [2, null], "2": [4, null]}, "Item": {"0": {"0": [-77, null], "1": [-10, null], "2": [12, null]}, "1": {"0": [-48, null], "1": [-9, null], "2": [31, null]}}}, "1": {"ItemCount": [2, null], "NumShorts": [0, null], "VarRegionCount": [4, null], "VarRegionIndex": {"0": [0, null], "1": [1, null], "2": [2, null], "3": [3, null]}, "Item": {"0": {"0": [-14, null], "1": [-58, null], "2": [-9, null], "3": [10, null]}, "1": {"0": [0, null], "1": [0, null], "2": [0, null], "3": [0, null]}}}, "2": {"ItemCount": [3, null], "NumShorts": [1, null], "VarRegionCount": [4, null], "VarRegionIndex": {"0": [1, null], "1": [0, null], "2": [3, null], "3": [4, null]}, "Item": {"0": {"0": [-201, null], "1": [-39, null], "2": [-11, null], "3": [52, null]}, "1": {"0": [-165, null], "1": [-37, null], "2": [37, null], "3": [8, null]}, "2": {"0": [-204, null], "1": [-35, null], "2": [-8, null], "3": [47, null]}}}, "3": {"ItemCount": [7, null], "NumShorts": [0, null], "VarRegionCount": [5, null], "VarRegionIndex": {"0": [0, null], "1": [1, null], "2": [2, null], "3": [3, null], "4": [4, null]}, "Item": {"0": {"0": [-60, null], "1": [-49, null], "2": [29, null], "3": [17, null], "4": [20, null]}, "1": {"0": [-34, null], "1": [-118, null], "2": [-6, null], "3": [33, null], "4": [12, null]}, "2": {"0": [-25, null], "1": [-119, null], "2": [-9, null], "3": [20, null], "4": [19, null]}, "3": {"0": [-24, null], "1": [-124, null], "2": [-30, null], "3": [38, null], "4": [14, null]}, "4": {"0": [-24, null], "1": [-123, null], "2": [-13, null], "3": [31, null], "4": [9, null]}, "5": {"0": [-24, null], "1": [-117, null], "2": [-25, null], "3": [21, null], "4": [25, null]}, "6": {"0": [-15, null], "1": [-125, null], "2": [-35, null], "3": [24, null], "4": [37, null]}}}, "4": {"ItemCount": [138, null], "NumShorts": [1, null], "VarRegionCount": [5, null], "VarRegionIndex": {"0": [1, null], "1": [0, null], "2": [2, null], "3": [3, null], "4": [4, null]}, "Item": {"error": ["There are 138 changes, check manually!", ""]}}}}, "AdvWidthMap": {"mapping": {"error": ["There are 225 changes, check manually!", ""]}}}}};</script><div id="difftable"></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+      <div class="box">
+        <div class="box-title">Modified encoded Glyphs</div>
+        <div class="box-text old-SemiCondensed-Light" style="font-size: 32pt">
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴭ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER AEN<br>
+            unicode: U+2D2D<br>
+            changed pixels: 5.23%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴈ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER IN<br>
+            unicode: U+10A8<br>
+            changed pixels: 3.42%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ტ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER TAR<br>
+            unicode: U+10E2<br>
+            changed pixels: 3.15%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴉ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER KAN<br>
+            unicode: U+2D09<br>
+            changed pixels: 3.00%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ფ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER PHAR<br>
+            unicode: U+1CA4<br>
+            changed pixels: 2.63%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ვ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER VIN<br>
+            unicode: U+10D5<br>
+            changed pixels: 2.62%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჾ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER HARD SIGN<br>
+            unicode: U+1CBE<br>
+            changed pixels: 2.60%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴍ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER ON<br>
+            unicode: U+10AD<br>
+            changed pixels: 2.41%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ძ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER JIL<br>
+            unicode: U+1CAB<br>
+            changed pixels: 2.39%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჹ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER TURNED GAN<br>
+            unicode: U+1CB9<br>
+            changed pixels: 2.31%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ი<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER IN<br>
+            unicode: U+10D8<br>
+            changed pixels: 2.30%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Თ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER TAN<br>
+            unicode: U+1C97<br>
+            changed pixels: 2.29%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ც<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER CAN<br>
+            unicode: U+10EA<br>
+            changed pixels: 2.26%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        მ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER MAN<br>
+            unicode: U+10DB<br>
+            changed pixels: 2.25%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჲ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER HIE<br>
+            unicode: U+1CB2<br>
+            changed pixels: 2.24%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ბ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER BAN<br>
+            unicode: U+1C91<br>
+            changed pixels: 2.20%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჩ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER CHIN<br>
+            unicode: U+1CA9<br>
+            changed pixels: 2.18%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴓ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER UN<br>
+            unicode: U+10B3<br>
+            changed pixels: 2.14%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Კ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER KAN<br>
+            unicode: U+1C99<br>
+            changed pixels: 2.10%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ი<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER IN<br>
+            unicode: U+1C98<br>
+            changed pixels: 2.08%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჱ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER HE<br>
+            unicode: U+1CB1<br>
+            changed pixels: 2.04%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Დ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER DON<br>
+            unicode: U+1C93<br>
+            changed pixels: 2.02%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴣ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER WE<br>
+            unicode: U+2D23<br>
+            changed pixels: 10.00%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჴ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER HAR<br>
+            unicode: U+10F4<br>
+            changed pixels: 1.99%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჲ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER HIE<br>
+            unicode: U+10F2<br>
+            changed pixels: 1.96%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჸ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER ELIFI<br>
+            unicode: U+1CB8<br>
+            changed pixels: 1.91%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Გ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER GAN<br>
+            unicode: U+1C92<br>
+            changed pixels: 1.91%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჱ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER HE<br>
+            unicode: U+10F1<br>
+            changed pixels: 1.90%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჾ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER HARD SIGN<br>
+            unicode: U+10FE<br>
+            changed pixels: 1.89%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ძ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER JIL<br>
+            unicode: U+10EB<br>
+            changed pixels: 1.87%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        დ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER DON<br>
+            unicode: U+10D3<br>
+            changed pixels: 1.86%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჯ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER JHAN<br>
+            unicode: U+10EF<br>
+            changed pixels: 1.86%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Მ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER MAN<br>
+            unicode: U+1C9B<br>
+            changed pixels: 1.86%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ̄<br>
+        <span class="tooltiptext">
+            name: COMBINING MACRON<br>
+            unicode: U+0304<br>
+            changed pixels: 1.85%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        შ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER SHIN<br>
+            unicode: U+10E8<br>
+            changed pixels: 1.82%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჿ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER LABIAL SIGN<br>
+            unicode: U+1CBF<br>
+            changed pixels: 1.81%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        წ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER CIL<br>
+            unicode: U+10EC<br>
+            changed pixels: 1.81%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჺ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER AIN<br>
+            unicode: U+10FA<br>
+            changed pixels: 1.81%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        პ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER PAR<br>
+            unicode: U+10DE<br>
+            changed pixels: 1.80%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴃ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER DON<br>
+            unicode: U+10A3<br>
+            changed pixels: 1.80%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Უ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER UN<br>
+            unicode: U+1CA3<br>
+            changed pixels: 1.76%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ფ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER PHAR<br>
+            unicode: U+10E4<br>
+            changed pixels: 1.76%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴒ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER TAR<br>
+            unicode: U+2D12<br>
+            changed pixels: 1.73%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        კ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER KAN<br>
+            unicode: U+10D9<br>
+            changed pixels: 1.73%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ღ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER GHAN<br>
+            unicode: U+10E6<br>
+            changed pixels: 1.72%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ხ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER XAN<br>
+            unicode: U+1CAE<br>
+            changed pixels: 1.71%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Წ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER CIL<br>
+            unicode: U+1CAC<br>
+            changed pixels: 1.70%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ნ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER NAR<br>
+            unicode: U+1C9C<br>
+            changed pixels: 1.70%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ყ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER QAR<br>
+            unicode: U+10E7<br>
+            changed pixels: 1.68%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჸ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER ELIFI<br>
+            unicode: U+10F8<br>
+            changed pixels: 1.67%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჹ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER TURNED GAN<br>
+            unicode: U+10F9<br>
+            changed pixels: 1.66%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ბ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER BAN<br>
+            unicode: U+10D1<br>
+            changed pixels: 1.63%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ვ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER VIN<br>
+            unicode: U+1C95<br>
+            changed pixels: 1.63%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ზ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER ZEN<br>
+            unicode: U+1C96<br>
+            changed pixels: 1.61%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჶ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER FI<br>
+            unicode: U+1CB6<br>
+            changed pixels: 1.61%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჿ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER LABIAL SIGN<br>
+            unicode: U+10FF<br>
+            changed pixels: 1.61%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴌ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER NAR<br>
+            unicode: U+2D0C<br>
+            changed pixels: 1.60%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Შ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER SHIN<br>
+            unicode: U+1CA8<br>
+            changed pixels: 1.58%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ც<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER CAN<br>
+            unicode: U+1CAA<br>
+            changed pixels: 1.58%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჳ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER WE<br>
+            unicode: U+10F3<br>
+            changed pixels: 1.57%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Პ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER PAR<br>
+            unicode: U+1C9E<br>
+            changed pixels: 1.55%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ₾<br>
+        <span class="tooltiptext">
+            name: LARI SIGN<br>
+            unicode: U+20BE<br>
+            changed pixels: 1.51%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        გ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER GAN<br>
+            unicode: U+10D2<br>
+            changed pixels: 1.48%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ღ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER GHAN<br>
+            unicode: U+1CA6<br>
+            changed pixels: 1.46%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴤ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER HAR<br>
+            unicode: U+10C4<br>
+            changed pixels: 1.43%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ნ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER NAR<br>
+            unicode: U+10DC<br>
+            changed pixels: 1.42%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ტ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER TAR<br>
+            unicode: U+1CA2<br>
+            changed pixels: 1.41%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჽ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER AEN<br>
+            unicode: U+1CBD<br>
+            changed pixels: 1.39%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჟ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER ZHAR<br>
+            unicode: U+10DF<br>
+            changed pixels: 1.39%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴏ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER ZHAR<br>
+            unicode: U+10AF<br>
+            changed pixels: 1.37%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ე<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER EN<br>
+            unicode: U+1C94<br>
+            changed pixels: 1.36%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴑ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER SAN<br>
+            unicode: U+2D11<br>
+            changed pixels: 1.36%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴉ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER KAN<br>
+            unicode: U+10A9<br>
+            changed pixels: 1.35%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჳ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER WE<br>
+            unicode: U+1CB3<br>
+            changed pixels: 1.34%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჷ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER YN<br>
+            unicode: U+1CB7<br>
+            changed pixels: 1.33%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ა<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER AN<br>
+            unicode: U+10D0<br>
+            changed pixels: 1.27%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴖ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER GHAN<br>
+            unicode: U+10B6<br>
+            changed pixels: 1.27%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        უ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER UN<br>
+            unicode: U+10E3<br>
+            changed pixels: 1.25%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჰ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER HAE<br>
+            unicode: U+1CB0<br>
+            changed pixels: 1.25%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ზ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER ZEN<br>
+            unicode: U+10D6<br>
+            changed pixels: 1.22%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴘ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER SHIN<br>
+            unicode: U+10B8<br>
+            changed pixels: 1.22%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ე<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER EN<br>
+            unicode: U+10D4<br>
+            changed pixels: 1.21%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        თ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER TAN<br>
+            unicode: U+10D7<br>
+            changed pixels: 1.20%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ყ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER QAR<br>
+            unicode: U+1CA7<br>
+            changed pixels: 1.18%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჰ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER HAE<br>
+            unicode: U+10F0<br>
+            changed pixels: 1.15%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴇ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER TAN<br>
+            unicode: U+2D07<br>
+            changed pixels: 1.15%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჵ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER HOE<br>
+            unicode: U+1CB5<br>
+            changed pixels: 1.15%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ქ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER KHAR<br>
+            unicode: U+10E5<br>
+            changed pixels: 1.14%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴆ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER ZEN<br>
+            unicode: U+2D06<br>
+            changed pixels: 1.11%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴝ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER CHAR<br>
+            unicode: U+2D1D<br>
+            changed pixels: 1.11%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ო<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER ON<br>
+            unicode: U+1C9D<br>
+            changed pixels: 1.10%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴔ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER PHAR<br>
+            unicode: U+10B4<br>
+            changed pixels: 1.10%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴢ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER HIE<br>
+            unicode: U+10C2<br>
+            changed pixels: 1.09%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჽ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER AEN<br>
+            unicode: U+10FD<br>
+            changed pixels: 1.09%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        რ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER RAE<br>
+            unicode: U+10E0<br>
+            changed pixels: 1.09%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ქ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER KHAR<br>
+            unicode: U+1CA5<br>
+            changed pixels: 1.07%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჟ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER ZHAR<br>
+            unicode: U+1C9F<br>
+            changed pixels: 1.06%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჭ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER CHAR<br>
+            unicode: U+10ED<br>
+            changed pixels: 1.04%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Რ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER RAE<br>
+            unicode: U+1CA0<br>
+            changed pixels: 1.04%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ს<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER SAN<br>
+            unicode: U+1CA1<br>
+            changed pixels: 1.04%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴊ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER LAS<br>
+            unicode: U+10AA<br>
+            changed pixels: 1.02%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ხ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER XAN<br>
+            unicode: U+10EE<br>
+            changed pixels: 1.00%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ⴅ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN SMALL LETTER VIN<br>
+            unicode: U+2D05<br>
+            changed pixels: 0.99%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჭ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER CHAR<br>
+            unicode: U+1CAD<br>
+            changed pixels: 0.99%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴒ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER TAR<br>
+            unicode: U+10B2<br>
+            changed pixels: 0.98%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ჴ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN MTAVRULI CAPITAL LETTER HAR<br>
+            unicode: U+1CB4<br>
+            changed pixels: 0.98%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ჩ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN LETTER CHIN<br>
+            unicode: U+10E9<br>
+            changed pixels: 0.97%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴑ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER SAN<br>
+            unicode: U+10B1<br>
+            changed pixels: 0.97%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴀ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER AN<br>
+            unicode: U+10A0<br>
+            changed pixels: 0.93%
+        </span>
+    </div>
+</div>
+            </div>
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        Ⴧ<br>
+        <span class="tooltiptext">
+            name: GEORGIAN CAPITAL LETTER YN<br>
+            unicode: U+10C7<br>
+            changed pixels: 0.92%
+        </span>
+    </div>
+</div>
+            </div>
+          
+          </div>
+      </div>
+    
+
+    
+      <div class="box">
+        <div class="box-title">Misshapen Georgian words</div>
+        <div class="box-text old-SemiCondensed-Light" style="font-size: 32pt">
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        გიჴსნეს<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=138, pos=(0, 0, 500, 0)<br>gid=155, pos=(0, 0, 451, 0)<br>gid=144, pos=(0, 0, 487, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=174, pos=(0, 0, 518, 0)<br>gid=133, pos=(0, 0, 511, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=138, pos=(0, 0, 519, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=144, pos=(0, 0, 498, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 7.65%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ინჷ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=155, pos=(0, 0, 501, 0)<br>gid=174, pos=(0, 0, 518, 0)<br>gid=217, pos=(0, 0, 480, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=155, pos=(0, 0, 501, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=217, pos=(0, 0, 480, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 7.26%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ააშენებდა<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=196, pos=(0, 0, 513, 0)<br>gid=133, pos=(0, 0, 511, 0)<br>gid=174, pos=(0, 0, 518, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=196, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 7.21%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აგვიღწერს<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 462, 0)<br>gid=138, pos=(0, 0, 529, 0)<br>gid=211, pos=(0, 0, 497, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=140, pos=(0, 0, 696, 0)<br>gid=126, pos=(0, 0, 517, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=138, pos=(0, 0, 519, 0)<br>gid=211, pos=(0, 0, 508, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=140, pos=(0, 0, 696, 0)<br>gid=126, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 7.06%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აგროსატყეო<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 462, 0)<br>gid=138, pos=(0, 0, 500, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=201, pos=(0, 0, 670, 0)<br>gid=190, pos=(0, 0, 527, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=138, pos=(0, 0, 519, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=201, pos=(0, 0, 670, 0)<br>gid=190, pos=(0, 0, 527, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 7.06%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ავჭალამდე<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 461, 0)<br>gid=211, pos=(0, 0, 507, 0)<br>gid=122, pos=(0, 0, 500, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=172, pos=(0, 0, 535, 0)<br>gid=130, pos=(0, 0, 752, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=211, pos=(0, 0, 508, 0)<br>gid=122, pos=(0, 0, 519, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=172, pos=(0, 0, 536, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.92%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აანალიზებდნენ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=155, pos=(0, 0, 491, 0)<br>gid=221, pos=(0, 0, 530, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=174, pos=(0, 0, 518, 0)<br>gid=133, pos=(0, 0, 511, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.86%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბაზანებისათვის<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 461, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=174, pos=(0, 0, 518, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=199, pos=(0, 0, 757, 0)<br>gid=211, pos=(0, 0, 497, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=211, pos=(0, 0, 508, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.75%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბიტურიენტებს<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=201, pos=(0, 0, 670, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=155, pos=(0, 0, 489, 0)<br>gid=133, pos=(0, 0, 511, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>gid=201, pos=(0, 0, 670, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=201, pos=(0, 0, 670, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=201, pos=(0, 0, 670, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.65%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბაზგების<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 461, 0)<br>gid=221, pos=(0, 0, 527, 0)<br>gid=138, pos=(0, 0, 529, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=138, pos=(0, 0, 519, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.60%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ააღორძინეს<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=140, pos=(0, 0, 696, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=161, pos=(0, 0, 535, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=174, pos=(0, 0, 518, 0)<br>gid=133, pos=(0, 0, 511, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=140, pos=(0, 0, 696, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=161, pos=(0, 0, 536, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.60%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        არაგჳთგან<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=112, pos=(0, 0, 462, 0)<br>gid=138, pos=(0, 0, 519, 0)<br>gid=213, pos=(0, 0, 496, 0)<br>gid=199, pos=(0, 0, 759, 0)<br>gid=138, pos=(0, 0, 500, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=138, pos=(0, 0, 519, 0)<br>gid=213, pos=(0, 0, 508, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=138, pos=(0, 0, 519, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.52%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბზაცების<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 519, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=120, pos=(0, 0, 574, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=120, pos=(0, 0, 574, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.52%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბდულმეჯიდის<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 758, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=172, pos=(0, 0, 513, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=159, pos=(0, 0, 495, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=172, pos=(0, 0, 536, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=159, pos=(0, 0, 496, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.44%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ააოხრეს<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=215, pos=(0, 0, 535, 0)<br>gid=192, pos=(0, 0, 683, 0)<br>gid=133, pos=(0, 0, 511, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=215, pos=(0, 0, 536, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.29%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბასთუმნისთვის<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=199, pos=(0, 0, 759, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=172, pos=(0, 0, 535, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=199, pos=(0, 0, 757, 0)<br>gid=211, pos=(0, 0, 497, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=172, pos=(0, 0, 536, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=211, pos=(0, 0, 508, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.25%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ႫႤႴႤ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=61, pos=(0, 0, 646, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=74, pos=(0, 0, 711, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=61, pos=(0, 0, 668, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=74, pos=(0, 0, 710, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.19%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბდულრაზაკ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 758, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=112, pos=(0, 0, 461, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=163, pos=(0, 0, 492, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=221, pos=(0, 0, 547, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=163, pos=(0, 0, 493, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 6.11%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ႦႤႮႤႪႨႬႨ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=105, pos=(0, 0, 664, 0)<br>gid=27, pos=(0, 0, 559, 0)<br>gid=72, pos=(0, 0, 756, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=59, pos=(0, 0, 829, 0)<br>gid=48, pos=(0, 0, 416, 0)<br>gid=64, pos=(0, 0, 573, 0)<br>gid=48, pos=(0, 0, 416, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=105, pos=(0, 0, 708, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=72, pos=(0, 0, 756, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=59, pos=(0, 0, 889, 0)<br>gid=48, pos=(0, 0, 416, 0)<br>gid=64, pos=(0, 0, 613, 0)<br>gid=48, pos=(0, 0, 416, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 5.84%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ႨႪႨႠ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=48, pos=(0, 0, 416, 0)<br>gid=59, pos=(0, 0, 829, 0)<br>gid=48, pos=(0, 0, 409, 0)<br>gid=9, pos=(0, 0, 555, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=48, pos=(0, 0, 416, 0)<br>gid=59, pos=(0, 0, 889, 0)<br>gid=48, pos=(0, 0, 416, 0)<br>gid=9, pos=(0, 0, 555, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 5.80%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ႫႤႳႶႪႤႱႠ჻<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=61, pos=(0, 0, 646, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=93, pos=(0, 0, 681, 0)<br>gid=33, pos=(0, 0, 645, 0)<br>gid=59, pos=(0, 0, 845, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=80, pos=(0, 0, 550, 0)<br>gid=9, pos=(0, 0, 555, 0)<br>gid=186, pos=(0, 0, 460, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=61, pos=(0, 0, 668, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=93, pos=(0, 0, 681, 0)<br>gid=33, pos=(0, 0, 645, 0)<br>gid=59, pos=(0, 0, 889, 0)<br>gid=27, pos=(0, 0, 561, 0)<br>gid=80, pos=(0, 0, 551, 0)<br>gid=9, pos=(0, 0, 555, 0)<br>gid=186, pos=(0, 0, 460, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 4.96%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აჲეთისი<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 471, 0)<br>gid=149, pos=(0, 0, 510, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=149, pos=(0, 0, 510, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 4.60%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ააფეთქებდა<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=188, pos=(0, 0, 751, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=199, pos=(0, 0, 757, 0)<br>gid=165, pos=(0, 0, 521, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=188, pos=(0, 0, 751, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=165, pos=(0, 0, 521, 0)<br>gid=133, pos=(0, 0, 521, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 4.24%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბანოთუბანში<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=199, pos=(0, 0, 759, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>gid=196, pos=(0, 0, 535, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=178, pos=(0, 0, 696, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>gid=196, pos=(0, 0, 536, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 3.95%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბდალაჰის<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=142, pos=(0, 0, 495, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=142, pos=(0, 0, 496, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 2.29%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ააიპ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=184, pos=(0, 0, 502, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=184, pos=(0, 0, 503, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 2.22%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბაჟურის<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=223, pos=(0, 0, 553, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=223, pos=(0, 0, 553, 0)<br>gid=204, pos=(0, 0, 541, 0)<br>gid=192, pos=(0, 0, 695, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=194, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.92%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ჺ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=111, pos=(0, 0, 426, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=111, pos=(0, 0, 426, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.81%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ႸႬႱ჻<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=82, pos=(0, 0, 607, 0)<br>gid=64, pos=(0, 0, 603, 0)<br>gid=80, pos=(0, 0, 550, 0)<br>gid=186, pos=(0, 0, 460, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=82, pos=(0, 0, 607, 0)<br>gid=64, pos=(0, 0, 613, 0)<br>gid=80, pos=(0, 0, 551, 0)<br>gid=186, pos=(0, 0, 460, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.75%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        აბდიჩთან<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=124, pos=(0, 0, 525, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=118, pos=(0, 0, 529, 0)<br>gid=130, pos=(0, 0, 769, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=124, pos=(0, 0, 525, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.75%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ჹ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=203, pos=(0, 0, 529, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=203, pos=(0, 0, 529, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.66%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ალიჶთან<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=112, pos=(0, 0, 481, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=137, pos=(0, 0, 819, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 481, 0)<br>gid=174, pos=(0, 0, 535, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=112, pos=(0, 0, 482, 0)<br>gid=169, pos=(0, 0, 940, 0)<br>gid=155, pos=(0, 0, 501, 0)<br>gid=137, pos=(0, 0, 819, 0)<br>gid=199, pos=(0, 0, 769, 0)<br>gid=112, pos=(0, 0, 482, 0)<br>gid=174, pos=(0, 0, 536, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.48%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        დღჱ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=130, pos=(0, 0, 769, 0)<br>gid=140, pos=(0, 0, 696, 0)<br>gid=147, pos=(0, 0, 579, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=130, pos=(0, 0, 769, 0)<br>gid=140, pos=(0, 0, 696, 0)<br>gid=147, pos=(0, 0, 579, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.45%
+        </div>
+        </span>
+    </div>
+</div>
+          
+              <div class="cell-word" style="font-feature-settings: " lang="None">
+    <div class="tooltip">
+        ჩჾ<br>
+        <span class="tooltiptext">
+        <div class="tooltipleft">
+            Before:<br>
+            gid=124, pos=(0, 0, 525, 0)<br>gid=146, pos=(0, 0, 510, 0)<br>
+            feats=()
+        </div>
+        <div class="tooltipright">
+            After:<br>
+            gid=124, pos=(0, 0, 525, 0)<br>gid=146, pos=(0, 0, 510, 0)<br>
+            feats=()
+        </div>
+        <div>
+            changed pixels: 1.39%
+        </div>
+        </span>
+    </div>
+</div>
+          
+        </div>
+      </div>
+    
+    
+    <div class="box">
+      <div class="box-title">Misshapen user strings</div>
+      <div class="box-text old-SemiCondensed-Light" style="font-size: 32pt">
+        
+      </div>
+    </div>
+    
+
+    
+
+    </div>
+  
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "old"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	boxTitles = document.getElementsByClassName("box-title")
+	items = document.getElementsByClassName("box-text");
+	  
+	if (POSITION === "old") {
+	  POSITION = "new"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("old", "new")
+	    fontToggle.textContent = "new"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("old", "new")
+	  }
+
+	  } else {
+	  POSITION = "old"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("new", "old")
+	    fontToggle.textContent = "old"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("new", "old")
+	  }
+	}
+	}
+	if (fontToggle !== null) {
+		fontToggle.addEventListener("click", switchFonts);
+	}
+
+// apply optional ot feats
+
+function buildFeatureList() {
+	var features = [
+		'aalt', 'c2sc', 'calt', 'case', 'cpsp', 'dlig', 'dnom',
+		'fina', 'frac', 'init', 'kern', 'liga', 'lnum', 'numr', 'onum',
+		'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'sups',
+		'swsh', 'titl', 'tnum', 'zero', 'ss01', 'ss02',
+		'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08',
+		'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14',
+		'ss15', 'ss16', 'ss17', 'ss18', 'ss19', 'ss20'
+	]
+	
+	var otPanel = document.getElementById("ot-panel")
+	for (i=0; i<features.length; i++) {
+		var feat = features[i]
+		
+		var row = document.createElement("div");
+
+		var item = document.createElement("input");
+		item.type = "checkbox"
+		item.value = feat
+		item.classList.add("ot-checkbox")
+		var label = document.createElement("label")
+		label.textContent = feat
+
+		row.appendChild(item)
+		row.appendChild(label)
+
+		otPanel.appendChild(row)
+	}
+}
+
+buildFeatureList()
+
+
+function enableFeatures() {
+	var checkboxes = document.getElementsByClassName("ot-checkbox")
+	var res = []
+	var disableKerning = false
+	for (i=0; i<checkboxes.length; i++) {
+		if (checkboxes[i].checked === true) {
+			var checkbox = checkboxes[i]
+			res.push('"' + checkbox.value + '"')
+
+			if (checkbox.value === "kern") {
+				disableKerning = true
+			}
+		}
+	}	
+
+	var boxText = document.getElementsByClassName("box-text")
+	var otString = res.join(", ")
+	for (j=0; j<boxText.length; j++) {
+		boxText[j].style.fontFeatureSettings = otString
+		if (disableKerning === true) {
+			boxText[j].style.fontKerning = "none"
+		}
+	}
+}
+
+var otButton = document.getElementById("ot-button")
+otButton.addEventListener("click", function() {
+    otPanel = document.getElementById("ot-panel")
+    if (otPanel.style.display !== "block") {
+        otPanel.style.display = "block"
+    } else {
+        otPanel.style.display = "none"
+    }
+})
+var checkboxes = document.getElementsByClassName("ot-checkbox")
+for (i=0; i<checkboxes.length; i++) {
+	cb = checkboxes[i]
+	cb.addEventListener("click", enableFeatures)
+}	
+    
+	function render(node, toplevel) {
+		var wrapper = $("<div> </div>");
+		if (!node) { return wrapper }
+		if (Array.isArray(node)) {
+			var before = $("<span/>");
+			before.addClass("attr-before");
+			before.html(" " + node[0] + " ");
+			var after = $("<span/>");
+			after.addClass("attr-after");
+			after.append(node[1]);
+			wrapper.append(before);
+			wrapper.append(after);
+			return wrapper
+		}
+		for (const [key, value] of Object.entries(node)) {
+			var display = $("<div/>");
+			display.addClass("node")
+			if (!toplevel && ! key.match(/^\d+$/)) {
+				display.hide()
+			}
+			display.append(key);
+			display.append(render(value, false).children());
+			wrapper.append(display)
+		}
+		return wrapper
+
+	}
+	$(function() {
+		$("#difftable").append(render(fontdiff, true).children())
+		$("#difftable .node").on("click", function(event){ $(this).children().toggle(); event.stopPropagation() })
+	});
+
+function wordBreaks() {
+  words = document.getElementsByClassName("cell-word")
+  res = []
+  prevTop = 0
+  for (i=0; i<words.length; i++) {
+      var word = words[i]
+      currentTop = word.getBoundingClientRect().top
+      if (currentTop > prevTop) {
+          res.push(i)
+      }
+      prevTop = currentTop
+  }
+  return res
+}
+
+async function insertBreaks() {
+  switchFonts()
+  await sleep(1)
+  breaksBefore = wordBreaks()
+  switchFonts()
+  await sleep(1)
+  breaksAfter = wordBreaks()
+
+
+  console.log(breaksBefore.length, breaksAfter.length)
+
+  if (breaksBefore.length >= breaksAfter.length) {
+    breaks = breaksBefore
+  } else {
+    breaks = breaksAfter
+  }
+
+  words = document.getElementsByClassName("cell-word")
+  breaks.forEach(function(i) {
+    if (i != 0) {
+      i = i
+    }
+    word = words[i]
+    spacer = document.createElement("div")
+    spacer.className = "spacer"
+    word.parentNode.insertBefore(spacer, word)
+  })
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  
+insertBreaks()
+
+
+    </script>
+</html>
