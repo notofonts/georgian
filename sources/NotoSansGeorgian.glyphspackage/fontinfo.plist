@@ -258,7 +258,7 @@ value = "https://scripts.sil.org/OFL";
 },
 {
 name = versionString;
-value = "Version 2.003";
+value = "Version 2.004";
 },
 {
 name = codePageRanges;
@@ -305,6 +305,10 @@ value = GOOG;
 {
 name = trademarks;
 value = "Noto is a trademark of Google Inc.";
+},
+{
+name = "Use Typo Metrics";
+value = 1;
 }
 );
 date = "2019-07-09 09:54:04 +0000";
@@ -5801,5 +5805,5 @@ name = hStem0;
 );
 unitsPerEm = 1000;
 versionMajor = 2;
-versionMinor = 3;
+versionMinor = 4;
 }
