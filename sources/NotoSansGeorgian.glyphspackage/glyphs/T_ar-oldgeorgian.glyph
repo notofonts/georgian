@@ -1,0 +1,344 @@
+{
+glyphname = "Tar-oldgeorgian";
+kernLeft = "Tar-oldgeorgian";
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(502,0,l),
+(502,25,l),
+(129,25,l),
+(129,305,l),
+(256,305,ls),
+(414,305,o),
+(516,364,o),
+(516,519,cs),
+(516,658,o),
+(429,714,o),
+(270,714,cs),
+(103,714,l),
+(103,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(129,689,l),
+(266,689,ls),
+(418,689,o),
+(489,639,o),
+(489,518,cs),
+(489,372,o),
+(394,330,o),
+(254,330,cs),
+(129,330,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 580;
+},
+{
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(527,0,l),
+(527,78,l),
+(188,78,l),
+(188,278,l),
+(270,278,ls),
+(451,278,o),
+(555,358,o),
+(555,504,cs),
+(555,644,o),
+(466,714,o),
+(287,714,cs),
+(98,714,l),
+(98,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(188,637,l),
+(279,637,ls),
+(404,637,o),
+(462,592,o),
+(462,500,cs),
+(462,398,o),
+(402,355,o),
+(260,355,cs),
+(188,355,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 616;
+},
+{
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(549,0,l),
+(549,126,l),
+(241,126,l),
+(241,254,l),
+(306,254,ls),
+(483,254,o),
+(583,337,o),
+(583,491,cs),
+(583,639,o),
+(491,714,o),
+(318,714,cs),
+(90,714,l),
+(90,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(241,590,l),
+(310,590,ls),
+(393,590,o),
+(430,557,o),
+(430,486,cs),
+(430,416,o),
+(392,378,o),
+(304,378,cs),
+(241,378,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 641;
+},
+{
+layerId = m004;
+shapes = (
+{
+closed = 1;
+nodes = (
+(561,0,l),
+(561,156,l),
+(270,156,l),
+(270,237,l),
+(324,237,ls),
+(527,237,o),
+(595,357,o),
+(595,487,cs),
+(595,632,o),
+(505,714,o),
+(324,714,cs),
+(77,714,l),
+(77,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(270,558,l),
+(320,558,ls),
+(376,558,o),
+(402,527,o),
+(402,482,cs),
+(402,417,o),
+(358,394,o),
+(308,394,cs),
+(270,394,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 647;
+},
+{
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(344,0,l),
+(344,25,l),
+(97,25,l),
+(97,306,l),
+(165,306,ls),
+(296,306,o),
+(355,366,o),
+(355,519,cs),
+(355,663,o),
+(293,714,o),
+(165,714,cs),
+(71,714,l),
+(71,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(97,689,l),
+(164,689,ls),
+(275,689,o),
+(328,645,o),
+(328,520,cs),
+(328,385,o),
+(278,331,o),
+(171,331,cs),
+(97,331,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 409;
+},
+{
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(390,0,l),
+(390,73,l),
+(148,73,l),
+(148,279,l),
+(203,279,ls),
+(344,279,o),
+(408,357,o),
+(408,507,cs),
+(408,651,o),
+(341,714,o),
+(206,714,cs),
+(66,714,l),
+(66,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(148,643,l),
+(199,643,ls),
+(284,643,o),
+(325,605,o),
+(325,507,cs),
+(325,395,o),
+(283,351,o),
+(199,351,cs),
+(148,351,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 456;
+},
+{
+layerId = m007;
+shapes = (
+{
+closed = 1;
+nodes = (
+(435,0,l),
+(435,118,l),
+(198,118,l),
+(198,253,l),
+(239,253,ls),
+(391,253,o),
+(460,349,o),
+(460,495,cs),
+(460,639,o),
+(388,714,o),
+(246,714,cs),
+(62,714,l),
+(62,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(197,598,l),
+(233,598,ls),
+(293,598,o),
+(323,566,o),
+(323,494,cs),
+(323,404,o),
+(287,369,o),
+(226,369,cs),
+(197,369,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 502;
+},
+{
+layerId = m008;
+shapes = (
+{
+closed = 1;
+nodes = (
+(463,0,l),
+(463,147,l),
+(229,147,l),
+(229,237,l),
+(262,237,ls),
+(420,237,o),
+(492,344,o),
+(492,487,cs),
+(492,632,o),
+(418,714,o),
+(271,714,cs),
+(59,714,l),
+(59,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(229,570,l),
+(255,570,ls),
+(300,570,o),
+(322,542,o),
+(322,486,cs),
+(322,410,o),
+(291,381,o),
+(244,381,cs),
+(229,381,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Nar-oldgeorgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
+};
+width = 531;
+}
+);
+note = uni10B2;
+unicode = 4274;
+}

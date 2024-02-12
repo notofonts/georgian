@@ -1,0 +1,780 @@
+{
+color = 0;
+glyphname = "ain-georgian";
+layers = (
+{
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(472,18,l),
+(472,191,l),
+(423,160,o),
+(366,142,o),
+(311,142,cs),
+(253,142,o),
+(213,179,o),
+(213,275,cs),
+(213,368,o),
+(252,413,o),
+(310,413,cs),
+(352,413,o),
+(389,400,o),
+(435,380,c),
+(491,521,l),
+(439,547,o),
+(378,563,o),
+(310,563,cs),
+(143,563,o),
+(19,475,o),
+(19,284,cs),
+(19,174,o),
+(74,90,o),
+(131,62,c),
+(131,58,l),
+(66,34,l),
+(66,-133,l)
+);
+}
+);
+};
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(438,14,l),
+(438,41,l),
+(399,25,o),
+(350,15,o),
+(302,15,cs),
+(159,15,o),
+(86,135,o),
+(86,261,cs),
+(86,409,o),
+(175,513,o),
+(319,513,cs),
+(357,513,o),
+(397,507,o),
+(437,489,c),
+(442,514,l),
+(405,530,o),
+(367,538,o),
+(319,538,cs),
+(157,538,o),
+(59,422,o),
+(59,261,cs),
+(59,119,o),
+(137,-8,o),
+(304,-8,c),
+(304,-10,l),
+(131,-73,l),
+(131,-100,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 471;
+},
+{
+associatedMasterId = m001;
+layerId = "AF9C18A5-BF49-481B-9029-3895091E93D1";
+name = "Jun 26 19, 14:16";
+shapes = (
+{
+closed = 1;
+nodes = (
+(439,0,l),
+(439,25,l),
+(322,25,ls),
+(150,25,o),
+(86,145,o),
+(86,280,cs),
+(86,429,o),
+(175,513,o),
+(309,513,cs),
+(357,513,o),
+(397,507,o),
+(437,489,c),
+(442,514,l),
+(405,530,o),
+(367,538,o),
+(309,538,cs),
+(157,538,o),
+(59,442,o),
+(59,280,cs),
+(59,173,o),
+(98,70,o),
+(202,26,c),
+(202,24,l),
+(105,20,l),
+(105,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 471;
+},
+{
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(471,18,l),
+(471,191,l),
+(422,160,o),
+(365,142,o),
+(310,142,cs),
+(252,142,o),
+(212,179,o),
+(212,275,cs),
+(212,368,o),
+(251,413,o),
+(309,413,cs),
+(351,413,o),
+(388,400,o),
+(434,380,c),
+(490,521,l),
+(438,547,o),
+(377,563,o),
+(309,563,cs),
+(142,563,o),
+(18,475,o),
+(18,284,cs),
+(18,174,o),
+(73,90,o),
+(130,62,c),
+(130,58,l),
+(65,34,l),
+(65,-133,l)
+);
+}
+);
+};
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(438,13,l),
+(438,97,l),
+(401,80,o),
+(357,66,o),
+(299,66,cs),
+(198,66,o),
+(146,137,o),
+(146,266,cs),
+(146,400,o),
+(197,469,o),
+(304,469,cs),
+(341,469,o),
+(388,456,o),
+(420,444,c),
+(447,517,l),
+(415,533,o),
+(360,546,o),
+(306,546,cs),
+(162,546,o),
+(55,463,o),
+(55,265,cs),
+(55,125,o),
+(117,40,o),
+(213,12,c),
+(213,9,l),
+(115,-29,l),
+(115,-108,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 486;
+},
+{
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(471,16,l),
+(471,155,l),
+(427,129,o),
+(373,113,o),
+(319,113,cs),
+(244,113,o),
+(199,163,o),
+(199,272,cs),
+(199,380,o),
+(243,435,o),
+(320,435,cs),
+(362,435,o),
+(404,420,o),
+(441,405,c),
+(486,519,l),
+(442,542,o),
+(381,556,o),
+(321,556,cs),
+(163,556,o),
+(45,470,o),
+(45,277,cs),
+(45,155,o),
+(103,71,o),
+(175,43,c),
+(175,39,l),
+(97,10,l),
+(97,-123,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 506;
+},
+{
+associatedMasterId = m003;
+layerId = "18A9001C-5B38-4921-8075-F89DFC86E6FD";
+name = "Jun 26 19, 14:23";
+shapes = (
+{
+closed = 1;
+nodes = (
+(467,0,l),
+(467,120,l),
+(345,120,ls),
+(252,120,o),
+(197,181,o),
+(197,283,cs),
+(197,379,o),
+(241,434,o),
+(325,434,cs),
+(365,434,o),
+(400,423,o),
+(440,406,c),
+(484,519,l),
+(440,541,o),
+(382,556,o),
+(320,556,cs),
+(162,556,o),
+(45,464,o),
+(45,304,cs),
+(45,223,o),
+(85,150,o),
+(154,113,c),
+(154,110,l),
+(79,100,l),
+(79,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 504;
+},
+{
+layerId = m004;
+shapes = (
+{
+closed = 1;
+nodes = (
+(495,18,l),
+(495,191,l),
+(446,160,o),
+(389,142,o),
+(334,142,cs),
+(276,142,o),
+(236,179,o),
+(236,275,cs),
+(236,368,o),
+(275,413,o),
+(333,413,cs),
+(375,413,o),
+(412,400,o),
+(458,380,c),
+(514,521,l),
+(462,547,o),
+(401,563,o),
+(333,563,cs),
+(166,563,o),
+(42,475,o),
+(42,284,cs),
+(42,174,o),
+(97,90,o),
+(154,62,c),
+(154,58,l),
+(89,34,l),
+(89,-133,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 522;
+},
+{
+associatedMasterId = m004;
+layerId = "067D388D-97E4-4A5D-9E70-30F3939CBBFB";
+name = "Jun 26 19, 14:10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(490,0,l),
+(490,142,l),
+(360,142,ls),
+(287,142,o),
+(236,189,o),
+(236,285,cs),
+(236,371,o),
+(275,416,o),
+(343,416,cs),
+(385,416,o),
+(412,406,o),
+(458,386,c),
+(514,521,l),
+(462,547,o),
+(401,563,o),
+(333,563,cs),
+(166,563,o),
+(42,465,o),
+(42,314,cs),
+(42,242,o),
+(73,169,o),
+(141,130,c),
+(141,126,l),
+(67,116,l),
+(67,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 522;
+},
+{
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(370,29,l),
+(370,177,l),
+(330,145,o),
+(288,128,o),
+(246,128,cs),
+(196,128,o),
+(170,177,o),
+(170,274,cs),
+(170,371,o),
+(198,425,o),
+(250,425,cs),
+(276,425,o),
+(308,414,o),
+(341,392,c),
+(384,521,l),
+(340,549,o),
+(292,563,o),
+(231,563,cs),
+(73,563,o),
+(6,435,o),
+(6,274,cs),
+(6,164,o),
+(46,81,o),
+(106,50,c),
+(106,46,l),
+(52,20,l),
+(52,-115,l)
+);
+}
+);
+};
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(290,4,l),
+(290,32,l),
+(265,21,o),
+(238,15,o),
+(213,15,cs),
+(112,15,o),
+(71,114,o),
+(71,257,cs),
+(71,427,o),
+(128,512,o),
+(220,512,cs),
+(242,512,o),
+(263,507,o),
+(281,496,c),
+(291,519,l),
+(270,531,o),
+(246,537,o),
+(219,537,cs),
+(111,537,o),
+(45,440,o),
+(45,256,cs),
+(45,97,o),
+(98,-3,o),
+(205,-8,c),
+(205,-10,l),
+(102,-57,l),
+(102,-82,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 321;
+},
+{
+associatedMasterId = m005;
+layerId = "E16D44B2-34E9-4ACB-BC5E-EB76D1533ABF";
+name = "Jun 26 19, 14:27";
+shapes = (
+{
+closed = 1;
+nodes = (
+(291,0,l),
+(291,25,l),
+(238,25,ls),
+(154,25,o),
+(71,114,o),
+(71,277,cs),
+(71,427,o),
+(128,512,o),
+(220,512,cs),
+(242,512,o),
+(263,507,o),
+(281,496,c),
+(291,519,l),
+(270,531,o),
+(246,537,o),
+(219,537,cs),
+(111,537,o),
+(45,440,o),
+(45,276,cs),
+(45,143,o),
+(96,53,o),
+(168,27,c),
+(168,25,l),
+(96,21,l),
+(96,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 321;
+},
+{
+associatedMasterId = m005;
+layerId = "E904B4C8-0BD1-4267-8915-1E84F90DBDBB";
+name = "Jun 26 19, 14:27.background";
+shapes = (
+{
+closed = 1;
+nodes = (
+(372,29,l),
+(372,177,l),
+(332,145,o),
+(290,128,o),
+(248,128,cs),
+(198,128,o),
+(172,177,o),
+(172,274,cs),
+(172,371,o),
+(200,425,o),
+(252,425,cs),
+(278,425,o),
+(310,414,o),
+(343,392,c),
+(386,521,l),
+(342,549,o),
+(294,563,o),
+(233,563,cs),
+(75,563,o),
+(8,435,o),
+(8,274,cs),
+(8,164,o),
+(48,81,o),
+(108,50,c),
+(108,46,l),
+(54,20,l),
+(54,-115,l)
+);
+}
+);
+width = 0;
+},
+{
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(361,29,l),
+(361,177,l),
+(321,145,o),
+(279,128,o),
+(237,128,cs),
+(187,128,o),
+(161,177,o),
+(161,274,cs),
+(161,371,o),
+(189,425,o),
+(241,425,cs),
+(267,425,o),
+(299,414,o),
+(332,392,c),
+(375,521,l),
+(331,549,o),
+(283,563,o),
+(222,563,cs),
+(64,563,o),
+(-3,435,o),
+(-3,274,cs),
+(-3,164,o),
+(37,81,o),
+(97,50,c),
+(97,46,l),
+(43,20,l),
+(43,-115,l)
+);
+}
+);
+};
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(319,15,l),
+(319,86,l),
+(288,70,o),
+(258,61,o),
+(229,61,cs),
+(160,61,o),
+(125,129,o),
+(125,266,cs),
+(125,405,o),
+(160,475,o),
+(228,475,cs),
+(251,475,o),
+(275,468,o),
+(300,455,c),
+(325,522,l),
+(297,538,o),
+(264,547,o),
+(222,547,cs),
+(100,547,o),
+(42,441,o),
+(42,265,cs),
+(42,129,o),
+(79,43,o),
+(153,11,c),
+(153,9,l),
+(94,-18,l),
+(94,-87,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 350;
+},
+{
+associatedMasterId = m006;
+layerId = "85B0EE79-2E76-4BCB-8127-92ABAA28CF24";
+name = "Jun 26 19, 14:30";
+shapes = (
+{
+closed = 1;
+nodes = (
+(315,0,l),
+(315,71,l),
+(255,71,ls),
+(190,71,o),
+(125,129,o),
+(125,286,cs),
+(125,404,o),
+(160,475,o),
+(228,475,cs),
+(251,475,o),
+(275,468,o),
+(300,455,c),
+(325,522,l),
+(297,538,o),
+(264,547,o),
+(222,547,cs),
+(100,547,o),
+(42,441,o),
+(42,285,cs),
+(42,185,o),
+(76,111,o),
+(135,69,c),
+(135,66,l),
+(77,59,l),
+(77,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 350;
+},
+{
+layerId = m007;
+shapes = (
+{
+closed = 1;
+nodes = (
+(373,24,l),
+(373,142,l),
+(336,116,o),
+(298,102,o),
+(262,102,cs),
+(204,102,o),
+(175,160,o),
+(175,271,cs),
+(175,384,o),
+(206,444,o),
+(264,444,cs),
+(289,444,o),
+(319,434,o),
+(347,416,c),
+(383,521,l),
+(346,545,o),
+(301,557,o),
+(250,557,cs),
+(106,557,o),
+(42,437,o),
+(42,271,cs),
+(42,151,o),
+(81,66,o),
+(146,35,c),
+(146,32,l),
+(90,5,l),
+(90,-104,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 398;
+},
+{
+layerId = m008;
+shapes = (
+{
+closed = 1;
+nodes = (
+(402,29,l),
+(402,177,l),
+(362,145,o),
+(320,128,o),
+(278,128,cs),
+(228,128,o),
+(202,177,o),
+(202,274,cs),
+(202,371,o),
+(230,425,o),
+(282,425,cs),
+(308,425,o),
+(340,414,o),
+(373,392,c),
+(416,521,l),
+(372,549,o),
+(324,563,o),
+(263,563,cs),
+(105,563,o),
+(38,435,o),
+(38,274,cs),
+(38,164,o),
+(78,81,o),
+(138,50,c),
+(138,46,l),
+(84,20,l),
+(84,-115,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 425;
+},
+{
+associatedMasterId = m008;
+layerId = "923E89B5-72E4-4062-B693-14AF49B7B037";
+name = "Jun 26 19, 14:24";
+shapes = (
+{
+closed = 1;
+nodes = (
+(412,0,l),
+(412,138,l),
+(320,138,ls),
+(240,138,o),
+(202,187,o),
+(202,282,cs),
+(202,371,o),
+(230,425,o),
+(291,425,cs),
+(318,425,o),
+(343,418,o),
+(376,396,c),
+(424,513,l),
+(375,551,o),
+(324,563,o),
+(275,563,cs),
+(115,563,o),
+(38,439,o),
+(38,334,cs),
+(38,223,o),
+(83,164,o),
+(130,129,c),
+(130,125,l),
+(74,115,l),
+(74,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
+};
+width = 433;
+}
+);
+note = uni10FA;
+unicode = 4346;
+}

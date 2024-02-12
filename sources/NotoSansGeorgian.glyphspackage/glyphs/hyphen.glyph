@@ -1,0 +1,150 @@
+{
+glyphname = hyphen;
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(282,259,l),
+(282,284,l),
+(40,284,l),
+(40,259,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 322;
+},
+{
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(282,229,l),
+(282,307,l),
+(40,307,l),
+(40,229,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 322;
+},
+{
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(292,207,l),
+(292,329,l),
+(30,329,l),
+(30,207,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 322;
+},
+{
+layerId = m004;
+shapes = (
+{
+closed = 1;
+nodes = (
+(297,192,l),
+(297,344,l),
+(21,344,l),
+(21,192,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 318;
+},
+{
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(237,259,l),
+(237,286,l),
+(26,286,l),
+(26,259,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 263;
+},
+{
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(247,229,l),
+(247,310,l),
+(27,310,l),
+(27,229,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 274;
+},
+{
+layerId = m007;
+shapes = (
+{
+closed = 1;
+nodes = (
+(277,206,l),
+(277,331,l),
+(28,331,l),
+(28,206,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 305;
+},
+{
+layerId = m008;
+shapes = (
+{
+closed = 1;
+nodes = (
+(296,192,l),
+(296,344,l),
+(29,344,l),
+(29,192,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.subCategory = Dash;
+};
+width = 325;
+}
+);
+unicode = 45;
+}

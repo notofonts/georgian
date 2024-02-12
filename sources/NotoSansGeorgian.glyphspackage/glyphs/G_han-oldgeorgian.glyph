@@ -1,0 +1,273 @@
+{
+glyphname = "Ghan-oldgeorgian";
+kernLeft = "San-oldgeorgian";
+kernRight = "En-oldgeorgian";
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,0,l),
+(124,462,ls),
+(124,623,o),
+(218,699,o),
+(360,699,cs),
+(509,699,o),
+(595,620,o),
+(595,459,cs),
+(595,0,l),
+(621,0,l),
+(621,460,ls),
+(621,633,o),
+(526,724,o),
+(361,724,cs),
+(206,724,o),
+(98,640,o),
+(98,462,cs),
+(98,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 719;
+},
+{
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(182,0,l),
+(182,462,ls),
+(182,581,o),
+(248,646,o),
+(366,646,cs),
+(489,646,o),
+(553,582,o),
+(553,463,cs),
+(553,0,l),
+(643,0,l),
+(643,460,ls),
+(643,624,o),
+(544,724,o),
+(371,724,cs),
+(197,724,o),
+(93,625,o),
+(93,462,cs),
+(93,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 736;
+},
+{
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(236,0,l),
+(236,436,ls),
+(236,547,o),
+(278,597,o),
+(377,597,cs),
+(479,597,o),
+(520,548,o),
+(520,437,cs),
+(520,0,l),
+(671,0,l),
+(671,460,ls),
+(671,624,o),
+(564,724,o),
+(381,724,cs),
+(205,724,o),
+(85,631,o),
+(85,462,cs),
+(85,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 756;
+},
+{
+layerId = m004;
+shapes = (
+{
+closed = 1;
+nodes = (
+(265,0,l),
+(265,418,ls),
+(265,520,o),
+(298,563,o),
+(377,563,cs),
+(451,563,o),
+(489,520,o),
+(489,419,cs),
+(489,0,l),
+(683,0,l),
+(683,434,ls),
+(683,619,o),
+(577,724,o),
+(380,724,cs),
+(174,724,o),
+(72,610,o),
+(72,430,cs),
+(72,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 755;
+},
+{
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(92,0,l),
+(92,493,ls),
+(92,651,o),
+(152,699,o),
+(237,699,cs),
+(328,699,o),
+(382,643,o),
+(382,493,cs),
+(382,0,l),
+(408,0,l),
+(408,497,ls),
+(408,655,o),
+(347,724,o),
+(237,724,cs),
+(142,724,o),
+(66,672,o),
+(66,497,cs),
+(66,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 481;
+},
+{
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(143,0,l),
+(143,483,ls),
+(143,610,o),
+(188,651,o),
+(259,651,cs),
+(332,651,o),
+(373,605,o),
+(373,483,cs),
+(373,0,l),
+(456,0,l),
+(456,489,ls),
+(456,650,o),
+(386,724,o),
+(259,724,cs),
+(141,724,o),
+(61,658,o),
+(61,487,cs),
+(61,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 523;
+},
+{
+layerId = m007;
+shapes = (
+{
+closed = 1;
+nodes = (
+(193,0,l),
+(193,473,ls),
+(193,572,o),
+(223,604,o),
+(280,604,cs),
+(336,604,o),
+(366,569,o),
+(366,474,cs),
+(366,0,l),
+(502,0,l),
+(502,481,ls),
+(502,645,o),
+(423,724,o),
+(281,724,cs),
+(140,724,o),
+(57,645,o),
+(57,478,cs),
+(57,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 561;
+},
+{
+layerId = m008;
+shapes = (
+{
+closed = 1;
+nodes = (
+(224,0,l),
+(224,467,ls),
+(224,547,o),
+(245,575,o),
+(293,575,cs),
+(338,575,o),
+(361,546,o),
+(361,468,cs),
+(361,0,l),
+(531,0,l),
+(531,476,ls),
+(531,642,o),
+(447,724,o),
+(295,724,cs),
+(139,724,o),
+(54,637,o),
+(54,472,cs),
+(54,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Nar-oldgeorgian-5";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=En-oldgeorgian-5";
+};
+width = 585;
+}
+);
+note = uni10B6;
+unicode = 4278;
+}

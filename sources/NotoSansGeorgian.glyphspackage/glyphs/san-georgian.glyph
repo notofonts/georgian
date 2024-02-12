@@ -1,0 +1,353 @@
+{
+glyphname = "san-georgian";
+kernLeft = "nar-georgian";
+kernRight = "an-georgian";
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(446,-10,o),
+(520,94,o),
+(520,217,cs),
+(520,289,o),
+(496,338,o),
+(466,378,cs),
+(431,424,o),
+(403,465,o),
+(403,528,c),
+(377,528,l),
+(377,453,o),
+(409,411,o),
+(443,364,cs),
+(470,326,o),
+(493,284,o),
+(493,217,cs),
+(493,106,o),
+(425,15,o),
+(305,15,cs),
+(176,15,o),
+(111,94,o),
+(111,252,cs),
+(111,760,l),
+(85,760,l),
+(85,252,ls),
+(85,77,o),
+(161,-10,o),
+(305,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 579;
+},
+{
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(453,-10,o),
+(550,83,o),
+(550,228,cs),
+(550,299,o),
+(525,347,o),
+(495,390,cs),
+(463,435,o),
+(435,476,o),
+(435,536,c),
+(347,536,l),
+(347,454,o),
+(380,406,o),
+(412,360,cs),
+(438,323,o),
+(459,286,o),
+(459,231,cs),
+(459,137,o),
+(412,63,o),
+(312,63,cs),
+(207,63,o),
+(163,137,o),
+(163,250,cs),
+(163,760,l),
+(75,760,l),
+(75,259,ls),
+(75,83,o),
+(159,-10,o),
+(312,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 605;
+},
+{
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(480,-10,o),
+(580,90,o),
+(580,245,cs),
+(580,311,o),
+(563,359,o),
+(540,395,cs),
+(508,445,o),
+(483,484,o),
+(482,546,c),
+(333,546,l),
+(333,460,o),
+(365,405,o),
+(395,357,cs),
+(414,326,o),
+(428,293,o),
+(428,239,cs),
+(428,168,o),
+(393,110,o),
+(319,110,cs),
+(245,110,o),
+(209,166,o),
+(209,257,cs),
+(209,760,l),
+(60,760,l),
+(60,267,ls),
+(60,89,o),
+(149,-10,o),
+(320,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 625;
+},
+{
+layerId = m004;
+shapes = (
+{
+closed = 1;
+nodes = (
+(505,-10,o),
+(606,95,o),
+(606,256,cs),
+(606,324,o),
+(594,368,o),
+(567,413,cs),
+(542,455,o),
+(521,493,o),
+(520,553,c),
+(329,553,l),
+(329,467,o),
+(357,410,o),
+(384,364,cs),
+(401,335,o),
+(412,302,o),
+(412,244,cs),
+(412,180,o),
+(386,132,o),
+(330,132,cs),
+(277,132,o),
+(246,176,o),
+(246,262,cs),
+(246,760,l),
+(55,760,l),
+(55,272,ls),
+(55,93,o),
+(148,-10,o),
+(331,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 648;
+},
+{
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(316,-10,o),
+(371,73,o),
+(371,209,cs),
+(371,281,o),
+(359,327,o),
+(331,374,cs),
+(306,416,o),
+(284,455,o),
+(284,527,c),
+(258,527,l),
+(258,447,o),
+(283,407,o),
+(309,362,cs),
+(334,319,o),
+(344,276,o),
+(344,211,cs),
+(344,94,o),
+(300,15,o),
+(219,15,cs),
+(137,15,o),
+(91,92,o),
+(91,235,cs),
+(91,760,l),
+(65,760,l),
+(65,234,ls),
+(65,59,o),
+(128,-10,o),
+(219,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 416;
+},
+{
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(358,-10,o),
+(416,93,o),
+(416,216,cs),
+(416,283,o),
+(400,333,o),
+(377,377,cs),
+(350,429,o),
+(328,476,o),
+(328,537,c),
+(247,537,l),
+(247,454,o),
+(273,405,o),
+(300,353,cs),
+(320,315,o),
+(333,276,o),
+(333,216,cs),
+(333,126,o),
+(304,61,o),
+(239,61,cs),
+(171,61,o),
+(141,126,o),
+(141,239,cs),
+(141,760,l),
+(60,760,l),
+(60,239,ls),
+(60,70,o),
+(124,-10,o),
+(238,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 458;
+},
+{
+layerId = m007;
+shapes = (
+{
+closed = 1;
+nodes = (
+(389,-10,o),
+(463,92,o),
+(463,233,cs),
+(463,302,o),
+(454,350,o),
+(431,399,cs),
+(412,439,o),
+(396,479,o),
+(396,547,c),
+(266,547,l),
+(266,460,o),
+(284,413,o),
+(306,360,cs),
+(321,324,o),
+(331,286,o),
+(331,233,cs),
+(331,155,o),
+(310,100,o),
+(258,100,cs),
+(207,100,o),
+(185,151,o),
+(185,251,cs),
+(185,760,l),
+(55,760,l),
+(55,254,ls),
+(55,82,o),
+(126,-10,o),
+(256,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 505;
+},
+{
+layerId = m008;
+shapes = (
+{
+closed = 1;
+nodes = (
+(408,-10,o),
+(492,92,o),
+(492,244,cs),
+(492,314,o),
+(483,359,o),
+(467,406,cs),
+(449,460,o),
+(438,510,o),
+(438,553,c),
+(276,553,l),
+(276,485,o),
+(288,428,o),
+(310,362,cs),
+(322,327,o),
+(328,291,o),
+(328,244,cs),
+(328,173,o),
+(312,125,o),
+(268,125,cs),
+(228,125,o),
+(212,168,o),
+(212,258,cs),
+(212,760,l),
+(50,760,l),
+(50,264,ls),
+(50,89,o),
+(126,-10,o),
+(266,-10,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
+com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
+};
+width = 530;
+}
+);
+note = uni10E1;
+unicode = 4321;
+}

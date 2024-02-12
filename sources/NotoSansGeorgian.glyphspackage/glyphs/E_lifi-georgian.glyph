@@ -1,0 +1,96 @@
+{
+color = (247,255,0,255);
+glyphname = "Elifi-georgian";
+kernLeft = "Nar-georgian";
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+pos = (605,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 605;
+},
+{
+layerId = m002;
+shapes = (
+{
+pos = (625,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 625;
+},
+{
+layerId = m003;
+shapes = (
+{
+pos = (639,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 639;
+},
+{
+layerId = m004;
+shapes = (
+{
+pos = (656,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 656;
+},
+{
+layerId = m005;
+shapes = (
+{
+pos = (442,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 442;
+},
+{
+layerId = m006;
+shapes = (
+{
+pos = (485,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 485;
+},
+{
+layerId = m007;
+shapes = (
+{
+pos = (537,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 537;
+},
+{
+layerId = m008;
+shapes = (
+{
+pos = (562,0);
+ref = "Qar-georgian";
+scale = (-1,1);
+}
+);
+width = 562;
+}
+);
+unicode = 7352;
+}
