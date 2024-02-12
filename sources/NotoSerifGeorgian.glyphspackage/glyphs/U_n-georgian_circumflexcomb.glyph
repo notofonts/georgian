@@ -1,0 +1,158 @@
+{
+color = 1;
+glyphname = "Un-georgian_circumflexcomb";
+layers = (
+{
+anchors = (
+{
+name = top;
+pos = (306,944);
+}
+);
+layerId = m001;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (306,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 639;
+},
+{
+anchors = (
+{
+name = top;
+pos = (323,944);
+}
+);
+layerId = m002;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (322,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 664;
+},
+{
+anchors = (
+{
+name = top;
+pos = (357,944);
+}
+);
+layerId = m003;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (357,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 733;
+},
+{
+anchors = (
+{
+name = top;
+pos = (392,944);
+}
+);
+layerId = m004;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (392,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 802;
+},
+{
+anchors = (
+{
+name = top;
+pos = (273,944);
+}
+);
+layerId = m005;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (273,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 529;
+},
+{
+anchors = (
+{
+name = top;
+pos = (277,944);
+}
+);
+layerId = m006;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (277,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 570;
+},
+{
+anchors = (
+{
+name = top;
+pos = (313,944);
+}
+);
+layerId = m007;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (312,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 640;
+},
+{
+anchors = (
+{
+name = top;
+pos = (333,944);
+}
+);
+layerId = m008;
+shapes = (
+{
+ref = "Un-georgian";
+},
+{
+pos = (333,178);
+ref = circumflexcomb.geor;
+}
+);
+width = 691;
+}
+);
+}

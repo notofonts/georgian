@@ -1,0 +1,160 @@
+{
+color = (247,255,0,255);
+glyphname = "in-georgian_acutecomb";
+kernLeft = "in-georgian";
+kernRight = "in-georgian";
+layers = (
+{
+anchors = (
+{
+name = top;
+pos = (271,766);
+}
+);
+layerId = m001;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (291,0);
+ref = acutecomb.geor;
+}
+);
+width = 521;
+},
+{
+anchors = (
+{
+name = top;
+pos = (294,766);
+}
+);
+layerId = m002;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (314,0);
+ref = acutecomb.geor;
+}
+);
+width = 567;
+},
+{
+anchors = (
+{
+name = top;
+pos = (331,766);
+}
+);
+layerId = m003;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (351,0);
+ref = acutecomb.geor;
+}
+);
+width = 601;
+},
+{
+anchors = (
+{
+name = top;
+pos = (346,766);
+}
+);
+layerId = m004;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (366,0);
+ref = acutecomb.geor;
+}
+);
+width = 631;
+},
+{
+anchors = (
+{
+name = top;
+pos = (217,766);
+}
+);
+layerId = m005;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (237,0);
+ref = acutecomb.geor;
+}
+);
+width = 400;
+},
+{
+anchors = (
+{
+name = top;
+pos = (247,766);
+}
+);
+layerId = m006;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (266,0);
+ref = acutecomb.geor;
+}
+);
+width = 454;
+},
+{
+anchors = (
+{
+name = top;
+pos = (285,766);
+}
+);
+layerId = m007;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (305,0);
+ref = acutecomb.geor;
+}
+);
+width = 513;
+},
+{
+anchors = (
+{
+name = top;
+pos = (292,766);
+}
+);
+layerId = m008;
+shapes = (
+{
+ref = "in-georgian";
+},
+{
+pos = (312,0);
+ref = acutecomb.geor;
+}
+);
+width = 524;
+}
+);
+}

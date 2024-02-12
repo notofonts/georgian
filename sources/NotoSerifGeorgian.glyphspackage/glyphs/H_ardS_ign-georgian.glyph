@@ -1,0 +1,96 @@
+{
+glyphname = "HardSign-georgian";
+kernLeft = "In-georgian";
+kernRight = "In-georgian";
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 577;
+},
+{
+layerId = m002;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 630;
+},
+{
+layerId = m003;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 662;
+},
+{
+layerId = m004;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 690;
+},
+{
+layerId = m005;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 456;
+},
+{
+layerId = m006;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 518;
+},
+{
+layerId = m007;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 561;
+},
+{
+layerId = m008;
+shapes = (
+{
+pos = (0,714);
+ref = "Hie-georgian";
+scale = (1,-1);
+}
+);
+width = 586;
+}
+);
+unicode = 7358;
+}

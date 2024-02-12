@@ -1,0 +1,94 @@
+{
+glyphname = "GanTurned-georgian";
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+angle = 180;
+pos = (548,714);
+ref = "Gan-georgian";
+}
+);
+width = 548;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = 180;
+pos = (598,714);
+ref = "Gan-georgian";
+}
+);
+width = 598;
+},
+{
+layerId = m003;
+shapes = (
+{
+angle = 180;
+pos = (633,714);
+ref = "Gan-georgian";
+}
+);
+width = 633;
+},
+{
+layerId = m004;
+shapes = (
+{
+angle = 180;
+pos = (663,714);
+ref = "Gan-georgian";
+}
+);
+width = 663;
+},
+{
+layerId = m005;
+shapes = (
+{
+angle = 180;
+pos = (431,714);
+ref = "Gan-georgian";
+}
+);
+width = 431;
+},
+{
+layerId = m006;
+shapes = (
+{
+angle = 180;
+pos = (486,714);
+ref = "Gan-georgian";
+}
+);
+width = 486;
+},
+{
+layerId = m007;
+shapes = (
+{
+angle = 180;
+pos = (532,714);
+ref = "Gan-georgian";
+}
+);
+width = 532;
+},
+{
+layerId = m008;
+shapes = (
+{
+angle = 180;
+pos = (559,714);
+ref = "Gan-georgian";
+}
+);
+width = 559;
+}
+);
+unicode = 7353;
+}

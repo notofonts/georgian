@@ -1,0 +1,158 @@
+{
+color = 1;
+glyphname = "On-georgian_dieresiscomb";
+layers = (
+{
+anchors = (
+{
+name = top;
+pos = (432,916);
+}
+);
+layerId = m001;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (432,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 864;
+},
+{
+anchors = (
+{
+name = top;
+pos = (454,922);
+}
+);
+layerId = m002;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (454,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 909;
+},
+{
+anchors = (
+{
+name = top;
+pos = (472,928);
+}
+);
+layerId = m003;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (472,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 944;
+},
+{
+anchors = (
+{
+name = top;
+pos = (487,940);
+}
+);
+layerId = m004;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (487,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 974;
+},
+{
+anchors = (
+{
+name = top;
+pos = (358,914);
+}
+);
+layerId = m005;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (358,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 716;
+},
+{
+anchors = (
+{
+name = top;
+pos = (391,923);
+}
+);
+layerId = m006;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (391,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 782;
+},
+{
+anchors = (
+{
+name = top;
+pos = (408,930);
+}
+);
+layerId = m007;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (408,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 817;
+},
+{
+anchors = (
+{
+name = top;
+pos = (418,936);
+}
+);
+layerId = m008;
+shapes = (
+{
+ref = "On-georgian";
+},
+{
+pos = (418,178);
+ref = dieresiscomb.geor;
+}
+);
+width = 836;
+}
+);
+}

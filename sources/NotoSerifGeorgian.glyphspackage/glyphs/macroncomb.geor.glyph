@@ -1,0 +1,205 @@
+{
+glyphname = macroncomb.geor;
+layers = (
+{
+anchors = (
+{
+name = _top;
+pos = (0,536);
+},
+{
+name = top;
+pos = (0,663);
+}
+);
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(145,648,l),
+(145,673,l),
+(-145,673,l),
+(-145,648,l)
+);
+}
+);
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (0,536);
+},
+{
+name = top;
+pos = (0,675);
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(145,636,l),
+(145,695,l),
+(-145,695,l),
+(-145,636,l)
+);
+}
+);
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (0,536);
+},
+{
+name = top;
+pos = (0,685);
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(145,616,l),
+(145,695,l),
+(-145,695,l),
+(-145,616,l)
+);
+}
+);
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (0,536);
+},
+{
+name = top;
+pos = (0,692);
+}
+);
+layerId = m004;
+shapes = (
+{
+closed = 1;
+nodes = (
+(145,609,l),
+(145,702,l),
+(-145,702,l),
+(-145,609,l)
+);
+}
+);
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (0,536);
+},
+{
+name = top;
+pos = (0,660);
+}
+);
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(110,642,l),
+(110,670,l),
+(-110,670,l),
+(-110,642,l)
+);
+}
+);
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (1,536);
+},
+{
+name = top;
+pos = (1,674);
+}
+);
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(115,627,l),
+(115,684,l),
+(-114,684,l),
+(-114,627,l)
+);
+}
+);
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (0,536);
+},
+{
+name = top;
+pos = (0,681);
+}
+);
+layerId = m007;
+shapes = (
+{
+closed = 1;
+nodes = (
+(118,620,l),
+(118,691,l),
+(-119,691,l),
+(-119,620,l)
+);
+}
+);
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (0,536);
+},
+{
+name = top;
+pos = (0,687);
+}
+);
+layerId = m008;
+shapes = (
+{
+closed = 1;
+nodes = (
+(121,614,l),
+(121,697,l),
+(-121,697,l),
+(-121,614,l)
+);
+}
+);
+width = 0;
+}
+);
+}
