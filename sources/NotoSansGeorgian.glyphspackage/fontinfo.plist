@@ -323,9 +323,10 @@ code = "table GDEF {
   GlyphClassDef
     [An-georgian An-georgian_acutecomb An-georgian_dieresiscomb An-georgian_macroncomb An-georgian_macroncomb_dieresiscomb En-georgian En-georgian_acutecomb En-georgian_macroncomb In-georgian In-georgian_acutecomb In-georgian_macroncomb On-georgian On-georgian_acutecomb On-georgian_dieresiscomb On-georgian_macroncomb On-georgian_macroncomb_dieresiscomb Un-georgian Un-georgian_acutecomb Un-georgian_circumflexcomb Un-georgian_dieresiscomb Un-georgian_macroncomb Un-georgian_macroncomb_dieresiscomb Yn-georgian Yn-georgian_acutecomb Yn-georgian_macroncomb Yn-oldgeorgian an-georgian an-georgian_acutecomb an-georgian_dieresiscomb an-georgian_macroncomb an-georgian_macroncomb_dieresiscomb en-georgian en-georgian_acutecomb en-georgian_macroncomb in-georgian in-georgian_acutecomb in-georgian_macroncomb on-georgian on-georgian_acutecomb on-georgian_dieresiscomb on-georgian_macroncomb on-georgian_macroncomb_dieresiscomb un-georgian un-georgian_acutecomb un-georgian_circumflexcomb un-georgian_dieresiscomb un-georgian_macroncomb un-georgian_macroncomb_dieresiscomb yn-georgian yn-georgian_acutecomb yn-georgian_macroncomb], # Base
     , # Liga
-    [acutecomb circumflexcomb dieresiscomb macroncomb], # Mark
+    [acutecomb.geor circumflexcomb.geor dieresiscomb.geor macroncomb.geor], # Mark
     ;
-} GDEF;";
+} GDEF;
+";
 name = Prefix;
 }
 );
@@ -336,51 +337,51 @@ code = "feature case;";
 tag = aalt;
 },
 {
-automatic = 1;
 code = "lookup ccmp_geor_1 {
-	lookupflag 0;
-	sub An-georgian macroncomb dieresiscomb by An-georgian_macroncomb_dieresiscomb;
-	sub On-georgian macroncomb dieresiscomb by On-georgian_macroncomb_dieresiscomb;
-	sub Un-georgian macroncomb dieresiscomb by Un-georgian_macroncomb_dieresiscomb;
-	sub an-georgian macroncomb dieresiscomb by an-georgian_macroncomb_dieresiscomb;
-	sub on-georgian macroncomb dieresiscomb by on-georgian_macroncomb_dieresiscomb;
-	sub un-georgian macroncomb dieresiscomb by un-georgian_macroncomb_dieresiscomb;
-	sub An-georgian acutecomb by An-georgian_acutecomb;
-	sub An-georgian dieresiscomb by An-georgian_dieresiscomb;
-	sub An-georgian macroncomb by An-georgian_macroncomb;
-	sub En-georgian acutecomb by En-georgian_acutecomb;
-	sub En-georgian macroncomb by En-georgian_macroncomb;
-	sub In-georgian acutecomb by In-georgian_acutecomb;
-	sub In-georgian macroncomb by In-georgian_macroncomb;
-	sub On-georgian acutecomb by On-georgian_acutecomb;
-	sub On-georgian dieresiscomb by On-georgian_dieresiscomb;
-	sub On-georgian macroncomb by On-georgian_macroncomb;
-	sub Un-georgian acutecomb by Un-georgian_acutecomb;
-	sub Un-georgian circumflexcomb by Un-georgian_circumflexcomb;
-	sub Un-georgian dieresiscomb by Un-georgian_dieresiscomb;
-	sub Un-georgian macroncomb by Un-georgian_macroncomb;
-	sub Yn-georgian acutecomb by Yn-georgian_acutecomb;
-	sub Yn-georgian macroncomb by Yn-georgian_macroncomb;
-	sub an-georgian acutecomb by an-georgian_acutecomb;
-	sub an-georgian dieresiscomb by an-georgian_dieresiscomb;
-	sub an-georgian macroncomb by an-georgian_macroncomb;
-	sub en-georgian acutecomb by en-georgian_acutecomb;
-	sub en-georgian macroncomb by en-georgian_macroncomb;
-	sub in-georgian acutecomb by in-georgian_acutecomb;
-	sub in-georgian macroncomb by in-georgian_macroncomb;
-	sub on-georgian acutecomb by on-georgian_acutecomb;
-	sub on-georgian dieresiscomb by on-georgian_dieresiscomb;
-	sub on-georgian macroncomb by on-georgian_macroncomb;
-	sub un-georgian acutecomb by un-georgian_acutecomb;
-	sub un-georgian circumflexcomb by un-georgian_circumflexcomb;
-	sub un-georgian dieresiscomb by un-georgian_dieresiscomb;
-	sub un-georgian macroncomb by un-georgian_macroncomb;
-	sub yn-georgian acutecomb by yn-georgian_acutecomb;
-	sub yn-georgian macroncomb by yn-georgian_macroncomb;
+    lookupflag 0;
+    sub An-georgian macroncomb.geor dieresiscomb.geor by An-georgian_macroncomb_dieresiscomb;
+    sub On-georgian macroncomb.geor dieresiscomb.geor by On-georgian_macroncomb_dieresiscomb;
+    sub Un-georgian macroncomb.geor dieresiscomb.geor by Un-georgian_macroncomb_dieresiscomb;
+    sub an-georgian macroncomb.geor dieresiscomb.geor by an-georgian_macroncomb_dieresiscomb;
+    sub on-georgian macroncomb.geor dieresiscomb.geor by on-georgian_macroncomb_dieresiscomb;
+    sub un-georgian macroncomb.geor dieresiscomb.geor by un-georgian_macroncomb_dieresiscomb;
+    sub An-georgian acutecomb.geor by An-georgian_acutecomb;
+    sub An-georgian dieresiscomb.geor by An-georgian_dieresiscomb;
+    sub An-georgian macroncomb.geor by An-georgian_macroncomb;
+    sub En-georgian acutecomb.geor by En-georgian_acutecomb;
+    sub En-georgian macroncomb.geor by En-georgian_macroncomb;
+    sub In-georgian acutecomb.geor by In-georgian_acutecomb;
+    sub In-georgian macroncomb.geor by In-georgian_macroncomb;
+    sub On-georgian acutecomb.geor by On-georgian_acutecomb;
+    sub On-georgian dieresiscomb.geor by On-georgian_dieresiscomb;
+    sub On-georgian macroncomb.geor by On-georgian_macroncomb;
+    sub Un-georgian acutecomb.geor by Un-georgian_acutecomb;
+    sub Un-georgian circumflexcomb.geor by Un-georgian_circumflexcomb;
+    sub Un-georgian dieresiscomb.geor by Un-georgian_dieresiscomb;
+    sub Un-georgian macroncomb.geor by Un-georgian_macroncomb;
+    sub Yn-georgian acutecomb.geor by Yn-georgian_acutecomb;
+    sub Yn-georgian macroncomb.geor by Yn-georgian_macroncomb;
+    sub an-georgian acutecomb.geor by an-georgian_acutecomb;
+    sub an-georgian dieresiscomb.geor by an-georgian_dieresiscomb;
+    sub an-georgian macroncomb.geor by an-georgian_macroncomb;
+    sub en-georgian acutecomb.geor by en-georgian_acutecomb;
+    sub en-georgian macroncomb.geor by en-georgian_macroncomb;
+    sub in-georgian acutecomb.geor by in-georgian_acutecomb;
+    sub in-georgian macroncomb.geor by in-georgian_macroncomb;
+    sub on-georgian acutecomb.geor by on-georgian_acutecomb;
+    sub on-georgian dieresiscomb.geor by on-georgian_dieresiscomb;
+    sub on-georgian macroncomb.geor by on-georgian_macroncomb;
+    sub un-georgian acutecomb.geor by un-georgian_acutecomb;
+    sub un-georgian circumflexcomb.geor by un-georgian_circumflexcomb;
+    sub un-georgian dieresiscomb.geor by un-georgian_dieresiscomb;
+    sub un-georgian macroncomb.geor by un-georgian_macroncomb;
+    sub yn-georgian acutecomb.geor by yn-georgian_acutecomb;
+    sub yn-georgian macroncomb.geor by yn-georgian_macroncomb;
 } ccmp_geor_1;
 
 script geor;
-lookup ccmp_geor_1;";
+lookup ccmp_geor_1;
+";
 tag = ccmp;
 },
 {
@@ -1054,6 +1055,7 @@ instanceInterpolations = {
 m001 = 1;
 };
 name = Thin;
+weightClass = 100;
 },
 {
 axesValues = (
@@ -1065,6 +1067,7 @@ m001 = 0.79688;
 m002 = 0.20313;
 };
 name = ExtraLight;
+weightClass = 200;
 },
 {
 axesValues = (
@@ -1076,6 +1079,7 @@ m001 = 0.5;
 m002 = 0.5;
 };
 name = Light;
+weightClass = 300;
 },
 {
 axesValues = (
@@ -1097,6 +1101,7 @@ m002 = 0.82;
 m004 = 0.18;
 };
 name = Medium;
+weightClass = 500;
 },
 {
 axesValues = (
@@ -1108,6 +1113,7 @@ m002 = 0.62;
 m004 = 0.38;
 };
 name = SemiBold;
+weightClass = 600;
 },
 {
 axesValues = (
@@ -1119,6 +1125,7 @@ m002 = 0.39;
 m004 = 0.61;
 };
 name = Bold;
+weightClass = 700;
 },
 {
 axesValues = (
@@ -1130,6 +1137,7 @@ m002 = 0.21;
 m004 = 0.79;
 };
 name = ExtraBold;
+weightClass = 800;
 },
 {
 axesValues = (
@@ -1140,6 +1148,7 @@ instanceInterpolations = {
 m004 = 1;
 };
 name = Black;
+weightClass = 900;
 },
 {
 axesValues = (
@@ -1151,6 +1160,8 @@ m001 = 0.63333;
 m005 = 0.36667;
 };
 name = "SemiCondensed Thin";
+weightClass = 100;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1164,6 +1175,8 @@ m005 = 0.29219;
 m006 = 0.07448;
 };
 name = "SemiCondensed ExtraLight";
+weightClass = 200;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1177,6 +1190,8 @@ m005 = 0.18333;
 m006 = 0.18333;
 };
 name = "SemiCondensed Light";
+weightClass = 300;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1188,6 +1203,7 @@ m002 = 0.63333;
 m006 = 0.36667;
 };
 name = SemiCondensed;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1201,6 +1217,8 @@ m006 = 0.30067;
 m008 = 0.066;
 };
 name = "SemiCondensed Medium";
+weightClass = 500;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1214,6 +1232,8 @@ m006 = 0.22733;
 m008 = 0.13933;
 };
 name = "SemiCondensed SemiBold";
+weightClass = 600;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1227,6 +1247,8 @@ m006 = 0.143;
 m008 = 0.22367;
 };
 name = "SemiCondensed Bold";
+weightClass = 700;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1240,6 +1262,8 @@ m006 = 0.077;
 m008 = 0.28967;
 };
 name = "SemiCondensed ExtraBold";
+weightClass = 800;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1251,6 +1275,8 @@ m004 = 0.63333;
 m008 = 0.36667;
 };
 name = "SemiCondensed Black";
+weightClass = 900;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -1262,6 +1288,8 @@ m001 = 0.3;
 m005 = 0.7;
 };
 name = "Condensed Thin";
+weightClass = 100;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1275,6 +1303,8 @@ m005 = 0.55781;
 m006 = 0.14219;
 };
 name = "Condensed ExtraLight";
+weightClass = 200;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1288,6 +1318,8 @@ m005 = 0.35;
 m006 = 0.35;
 };
 name = "Condensed Light";
+weightClass = 300;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1299,6 +1331,7 @@ m002 = 0.3;
 m006 = 0.7;
 };
 name = Condensed;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1312,6 +1345,8 @@ m006 = 0.574;
 m008 = 0.126;
 };
 name = "Condensed Medium";
+weightClass = 500;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1325,6 +1360,8 @@ m006 = 0.434;
 m008 = 0.266;
 };
 name = "Condensed SemiBold";
+weightClass = 600;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1338,6 +1375,8 @@ m006 = 0.273;
 m008 = 0.427;
 };
 name = "Condensed Bold";
+weightClass = 700;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1351,6 +1390,8 @@ m006 = 0.147;
 m008 = 0.553;
 };
 name = "Condensed ExtraBold";
+weightClass = 800;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1362,6 +1403,8 @@ m004 = 0.3;
 m008 = 0.7;
 };
 name = "Condensed Black";
+weightClass = 900;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -1372,6 +1415,8 @@ instanceInterpolations = {
 m005 = 1;
 };
 name = "ExtraCondensed Thin";
+weightClass = 100;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1383,6 +1428,8 @@ m005 = 0.79688;
 m006 = 0.20313;
 };
 name = "ExtraCondensed ExtraLight";
+weightClass = 200;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1394,6 +1441,8 @@ m005 = 0.5;
 m006 = 0.5;
 };
 name = "ExtraCondensed Light";
+weightClass = 300;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1404,6 +1453,7 @@ instanceInterpolations = {
 m006 = 1;
 };
 name = ExtraCondensed;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1415,6 +1465,8 @@ m006 = 0.82;
 m008 = 0.18;
 };
 name = "ExtraCondensed Medium";
+weightClass = 500;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1426,6 +1478,8 @@ m006 = 0.62;
 m008 = 0.38;
 };
 name = "ExtraCondensed SemiBold";
+weightClass = 600;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1437,6 +1491,8 @@ m006 = 0.39;
 m008 = 0.61;
 };
 name = "ExtraCondensed Bold";
+weightClass = 700;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1448,6 +1504,8 @@ m006 = 0.21;
 m008 = 0.79;
 };
 name = "ExtraCondensed ExtraBold";
+weightClass = 800;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -1458,6 +1516,8 @@ instanceInterpolations = {
 m008 = 1;
 };
 name = "ExtraCondensed Black";
+weightClass = 900;
+widthClass = 2;
 }
 );
 kerningLTR = {
