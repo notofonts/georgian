@@ -11,4 +11,4 @@ includeSubsets:
     - start: 0x2116
       end: 0x2116
 sources:
-- NotoSerifGeorgian.designspace
+- NotoSerifGeorgian.glyphspackage
