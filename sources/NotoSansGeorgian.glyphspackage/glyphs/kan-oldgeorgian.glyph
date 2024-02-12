@@ -124,66 +124,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ghan-oldgeorgian";
 width = 633;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(580,-240,l),
-(580,273,ls),
-(580,454,o),
-(504,556,o),
-(378,556,cs),
-(304,556,o),
-(255,523,o),
-(224,475,c),
-(217,475,l),
-(221,510,o),
-(224,546,o),
-(224,583,cs),
-(224,760,l),
-(75,760,l),
-(75,273,ls),
-(75,91,o),
-(152,-10,o),
-(277,-10,cs),
-(352,-10,o),
-(401,22,o),
-(432,71,c),
-(438,71,l),
-(434,36,o),
-(432,-1,o),
-(432,-37,cs),
-(432,-240,l)
-);
-},
-{
-closed = 1;
-nodes = (
-(258,109,o),
-(224,164,o),
-(224,265,cs),
-(224,281,ls),
-(224,394,o),
-(258,436,o),
-(330,436,cs),
-(397,436,o),
-(432,382,o),
-(432,281,cs),
-(432,263,ls),
-(432,153,o),
-(398,109,o),
-(325,109,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "tan-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ghan-oldgeorgian";
-};
-width = 655;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -362,66 +302,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "tan-oldgeorgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ghan-oldgeorgian";
 };
 width = 478;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(460,-240,l),
-(460,272,ls),
-(460,450,o),
-(403,556,o),
-(303,556,cs),
-(254,556,o),
-(214,532,o),
-(185,476,c),
-(180,476,l),
-(182,518,o),
-(184,549,o),
-(184,570,cs),
-(184,760,l),
-(54,760,l),
-(54,273,ls),
-(54,95,o),
-(111,-10,o),
-(211,-10,cs),
-(260,-10,o),
-(300,15,o),
-(330,71,c),
-(334,71,l),
-(332,28,o),
-(330,-3,o),
-(330,-24,cs),
-(330,-240,l)
-);
-},
-{
-closed = 1;
-nodes = (
-(206,102,o),
-(184,159,o),
-(184,272,cs),
-(184,289,ls),
-(184,387,o),
-(203,444,o),
-(260,444,cs),
-(312,444,o),
-(330,380,o),
-(330,277,cs),
-(330,259,ls),
-(330,161,o),
-(312,102,o),
-(254,102,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "tan-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ghan-oldgeorgian";
-};
-width = 515;
 },
 {
 layerId = m008;

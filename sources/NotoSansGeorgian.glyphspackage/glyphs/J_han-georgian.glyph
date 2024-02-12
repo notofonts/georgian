@@ -219,63 +219,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=jhan-georgian*1.1";
 width = 597;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(472,-10,o),
-(570,79,o),
-(570,200,cs),
-(570,280,o),
-(525,331,o),
-(476,367,cs),
-(410,416,o),
-(380,443,o),
-(380,480,cs),
-(380,489,l),
-(559,463,l),
-(559,581,l),
-(381,607,l),
-(381,714,l),
-(227,714,l),
-(227,633,l),
-(54,659,l),
-(54,541,l),
-(227,516,l),
-(227,488,ls),
-(227,416,o),
-(271,352,o),
-(328,312,cs),
-(377,278,o),
-(413,247,o),
-(413,196,cs),
-(413,149,o),
-(377,110,o),
-(306,110,cs),
-(237,110,o),
-(200,154,o),
-(200,214,cs),
-(200,232,o),
-(202,248,o),
-(207,270,c),
-(56,270,l),
-(48,246,o),
-(44,226,o),
-(44,197,cs),
-(44,84,o),
-(144,-10,o),
-(306,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=jhan-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=jhan-georgian*1.1";
-};
-width = 614;
-},
-{
 background = {
 shapes = (
 {
@@ -598,63 +541,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=jhan-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=jhan-georgian*1.1";
 };
 width = 456;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(393,-10,o),
-(473,70,o),
-(473,178,cs),
-(473,252,o),
-(440,305,o),
-(400,349,cs),
-(360,393,o),
-(326,424,o),
-(326,479,cs),
-(326,490,l),
-(460,464,l),
-(460,569,l),
-(326,594,l),
-(326,714,l),
-(187,714,l),
-(187,623,l),
-(52,649,l),
-(52,544,l),
-(187,519,l),
-(187,480,ls),
-(187,401,o),
-(224,343,o),
-(266,299,cs),
-(297,267,o),
-(331,236,o),
-(331,183,cs),
-(331,138,o),
-(309,105,o),
-(256,105,cs),
-(204,105,o),
-(181,151,o),
-(181,212,cs),
-(181,234,o),
-(184,256,o),
-(188,276,c),
-(53,276,l),
-(45,247,o),
-(41,219,o),
-(41,195,cs),
-(41,70,o),
-(127,-10,o),
-(257,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=jhan-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=jhan-georgian*1.1";
-};
-width = 514;
 },
 {
 background = {

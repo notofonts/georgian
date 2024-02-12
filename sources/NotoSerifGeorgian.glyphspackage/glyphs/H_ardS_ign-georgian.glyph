@@ -26,17 +26,6 @@ scale = (1,-1);
 width = 630;
 },
 {
-layerId = m003;
-shapes = (
-{
-pos = (0,714);
-ref = "Hie-georgian";
-scale = (1,-1);
-}
-);
-width = 662;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -68,17 +57,6 @@ scale = (1,-1);
 }
 );
 width = 518;
-},
-{
-layerId = m007;
-shapes = (
-{
-pos = (0,714);
-ref = "Hie-georgian";
-scale = (1,-1);
-}
-);
-width = 561;
 },
 {
 layerId = m008;

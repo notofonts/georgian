@@ -237,69 +237,6 @@ width = 579;
 anchors = (
 {
 name = top;
-pos = (313,714);
-}
-);
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(449,-10,o),
-(563,73,o),
-(563,224,cs),
-(563,337,o),
-(499,404,o),
-(453,466,cs),
-(417,514,o),
-(381,563,o),
-(381,637,cs),
-(381,662,o),
-(386,686,o),
-(396,703,c),
-(382,714,o),
-(358,725,o),
-(328,725,cs),
-(273,725,o),
-(228,689,o),
-(228,623,cs),
-(228,534,o),
-(273,468,o),
-(317,409,cs),
-(358,354,o),
-(398,296,o),
-(398,209,cs),
-(398,107,o),
-(368,54,o),
-(304,54,cs),
-(247,54,o),
-(210,106,o),
-(210,209,cs),
-(210,263,o),
-(221,306,o),
-(238,341,c),
-(215,355,o),
-(187,362,o),
-(162,362,cs),
-(100,362,o),
-(46,302,o),
-(46,213,cs),
-(46,75,o),
-(148,-10,o),
-(304,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=an-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=an-georgian*1.1";
-};
-width = 615;
-},
-{
-anchors = (
-{
-name = top;
 pos = (323,714);
 }
 );
@@ -641,69 +578,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=an-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=an-georgian*1.1";
 };
 width = 474;
-},
-{
-anchors = (
-{
-name = top;
-pos = (266,714);
-}
-);
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(373,-10,o),
-(473,65,o),
-(473,214,cs),
-(473,327,o),
-(424,401,o),
-(380,468,cs),
-(345,521,o),
-(317,570,o),
-(317,632,cs),
-(317,658,o),
-(323,688,o),
-(333,705,c),
-(320,717,o),
-(304,725,o),
-(277,725,cs),
-(223,725,o),
-(186,685,o),
-(186,623,cs),
-(186,548,o),
-(224,482,o),
-(263,424,cs),
-(299,370,o),
-(332,308,o),
-(332,207,cs),
-(332,99,o),
-(304,51,o),
-(253,51,cs),
-(201,51,o),
-(174,104,o),
-(174,207,cs),
-(174,260,o),
-(184,299,o),
-(203,337,c),
-(184,348,o),
-(166,354,o),
-(144,354,cs),
-(86,354,o),
-(37,294,o),
-(37,205,cs),
-(37,65,o),
-(135,-10,o),
-(254,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=an-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=an-georgian*1.1";
-};
-width = 516;
 },
 {
 anchors = (

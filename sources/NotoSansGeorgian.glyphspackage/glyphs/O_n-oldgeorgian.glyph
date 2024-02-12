@@ -123,66 +123,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Gan-oldgeorgian";
 width = 864;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(486,-10,o),
-(557,11,o),
-(610,50,c),
-(652,14,o),
-(700,-10,o),
-(754,-10,cs),
-(876,-10,o),
-(914,59,o),
-(915,178,c),
-(786,178,l),
-(786,123,o),
-(765,94,o),
-(727,94,cs),
-(707,94,o),
-(691,100,o),
-(671,113,c),
-(716,175,o),
-(738,259,o),
-(738,358,cs),
-(738,579,o),
-(631,724,o),
-(399,724,cs),
-(165,724,o),
-(58,579,o),
-(58,359,cs),
-(58,137,o),
-(165,-10,o),
-(398,-10,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(271,117,o),
-(217,208,o),
-(217,358,cs),
-(217,507,o),
-(271,598,o),
-(399,598,cs),
-(527,598,o),
-(579,507,o),
-(579,358,cs),
-(579,208,o),
-(527,117,o),
-(398,117,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Don-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Gan-oldgeorgian";
-};
-width = 920;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -361,66 +301,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Don-oldgeorgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Gan-oldgeorgian";
 };
 width = 615;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(358,-10,o),
-(405,7,o),
-(444,39,c),
-(475,12,o),
-(515,-10,o),
-(562,-10,cs),
-(659,-10,o),
-(702,55,o),
-(702,170,c),
-(577,170,l),
-(577,126,o),
-(563,95,o),
-(527,95,cs),
-(516,95,o),
-(506,98,o),
-(497,104,c),
-(533,166,o),
-(551,254,o),
-(551,358,cs),
-(551,583,o),
-(470,724,o),
-(298,724,cs),
-(132,724,o),
-(43,598,o),
-(43,359,cs),
-(43,134,o),
-(126,-10,o),
-(298,-10,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(223,111,o),
-(185,194,o),
-(185,358,cs),
-(185,522,o),
-(222,605,o),
-(298,605,cs),
-(372,605,o),
-(408,525,o),
-(408,358,cs),
-(408,190,o),
-(372,111,o),
-(297,111,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Don-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Gan-oldgeorgian";
-};
-width = 707;
 },
 {
 layerId = m008;

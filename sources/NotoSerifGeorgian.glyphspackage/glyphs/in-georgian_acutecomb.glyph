@@ -46,25 +46,6 @@ width = 567;
 anchors = (
 {
 name = top;
-pos = (331,766);
-}
-);
-layerId = m003;
-shapes = (
-{
-ref = "in-georgian";
-},
-{
-pos = (351,0);
-ref = acutecomb.geor;
-}
-);
-width = 601;
-},
-{
-anchors = (
-{
-name = top;
 pos = (346,766);
 }
 );
@@ -117,25 +98,6 @@ ref = acutecomb.geor;
 }
 );
 width = 454;
-},
-{
-anchors = (
-{
-name = top;
-pos = (285,766);
-}
-);
-layerId = m007;
-shapes = (
-{
-ref = "in-georgian";
-},
-{
-pos = (305,0);
-ref = acutecomb.geor;
-}
-);
-width = 513;
 },
 {
 anchors = (

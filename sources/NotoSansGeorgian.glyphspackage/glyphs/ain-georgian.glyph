@@ -201,90 +201,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
 width = 486;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(471,16,l),
-(471,155,l),
-(427,129,o),
-(373,113,o),
-(319,113,cs),
-(244,113,o),
-(199,163,o),
-(199,272,cs),
-(199,380,o),
-(243,435,o),
-(320,435,cs),
-(362,435,o),
-(404,420,o),
-(441,405,c),
-(486,519,l),
-(442,542,o),
-(381,556,o),
-(321,556,cs),
-(163,556,o),
-(45,470,o),
-(45,277,cs),
-(45,155,o),
-(103,71,o),
-(175,43,c),
-(175,39,l),
-(97,10,l),
-(97,-123,l)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
-};
-width = 506;
-},
-{
-associatedMasterId = m003;
-layerId = "18A9001C-5B38-4921-8075-F89DFC86E6FD";
-name = "Jun 26 19, 14:23";
-shapes = (
-{
-closed = 1;
-nodes = (
-(467,0,l),
-(467,120,l),
-(345,120,ls),
-(252,120,o),
-(197,181,o),
-(197,283,cs),
-(197,379,o),
-(241,434,o),
-(325,434,cs),
-(365,434,o),
-(400,423,o),
-(440,406,c),
-(484,519,l),
-(440,541,o),
-(382,556,o),
-(320,556,cs),
-(162,556,o),
-(45,464,o),
-(45,304,cs),
-(45,223,o),
-(85,150,o),
-(154,113,c),
-(154,110,l),
-(79,100,l),
-(79,0,l)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
-};
-width = 504;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -647,48 +563,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
 };
 width = 350;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(373,24,l),
-(373,142,l),
-(336,116,o),
-(298,102,o),
-(262,102,cs),
-(204,102,o),
-(175,160,o),
-(175,271,cs),
-(175,384,o),
-(206,444,o),
-(264,444,cs),
-(289,444,o),
-(319,434,o),
-(347,416,c),
-(383,521,l),
-(346,545,o),
-(301,557,o),
-(250,557,cs),
-(106,557,o),
-(42,437,o),
-(42,271,cs),
-(42,151,o),
-(81,66,o),
-(146,35,c),
-(146,32,l),
-(90,5,l),
-(90,-104,l)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "cil-georgian";
-};
-width = 398;
 },
 {
 layerId = m008;

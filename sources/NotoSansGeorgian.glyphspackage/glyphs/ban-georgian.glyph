@@ -232,69 +232,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
 width = 606;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(398,562,o),
-(403,581,o),
-(403,603,cs),
-(403,646,o),
-(379,671,o),
-(354,692,cs),
-(331,712,o),
-(311,731,o),
-(310,760,c),
-(170,760,l),
-(170,697,o),
-(199,671,o),
-(224,651,cs),
-(244,635,o),
-(260,617,o),
-(260,591,cs),
-(260,574,o),
-(256,562,o),
-(250,551,c),
-(121,528,o),
-(45,431,o),
-(45,274,cs),
-(45,92,o),
-(155,-10,o),
-(308,-10,cs),
-(472,-10,o),
-(574,92,o),
-(574,274,cs),
-(574,422,o),
-(500,517,o),
-(390,546,c)
-);
-},
-{
-closed = 1;
-nodes = (
-(230,109,o),
-(197,171,o),
-(197,274,cs),
-(197,376,o),
-(230,436,o),
-(309,436,cs),
-(389,436,o),
-(422,376,o),
-(422,274,cs),
-(422,171,o),
-(389,109,o),
-(310,109,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
-};
-width = 619;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -482,69 +419,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
 };
 width = 445;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(331,562,o),
-(337,581,o),
-(337,605,cs),
-(337,639,o),
-(320,665,o),
-(302,686,cs),
-(284,707,o),
-(270,726,o),
-(270,760,c),
-(141,760,l),
-(141,701,o),
-(162,674,o),
-(180,651,cs),
-(194,633,o),
-(206,613,o),
-(206,589,cs),
-(206,575,o),
-(203,562,o),
-(199,551,c),
-(89,526,o),
-(42,420,o),
-(42,274,cs),
-(42,120,o),
-(107,-10,o),
-(249,-10,cs),
-(401,-10,o),
-(458,123,o),
-(458,274,cs),
-(458,421,o),
-(406,514,o),
-(320,545,c)
-);
-},
-{
-closed = 1;
-nodes = (
-(197,100,o),
-(174,159,o),
-(174,273,cs),
-(174,391,o),
-(197,447,o),
-(250,447,cs),
-(304,447,o),
-(326,390,o),
-(326,274,cs),
-(326,158,o),
-(304,100,o),
-(250,100,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "on-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
-};
-width = 500;
 },
 {
 layerId = m008;

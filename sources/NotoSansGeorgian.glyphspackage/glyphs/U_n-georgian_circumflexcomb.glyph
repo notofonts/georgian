@@ -44,25 +44,6 @@ width = 625;
 anchors = (
 {
 name = top;
-pos = (326,934);
-}
-);
-layerId = m003;
-shapes = (
-{
-ref = "Un-georgian";
-},
-{
-pos = (326,168);
-ref = circumflexcomb.geor;
-}
-);
-width = 650;
-},
-{
-anchors = (
-{
-name = top;
 pos = (334,927);
 }
 );
@@ -115,25 +96,6 @@ ref = circumflexcomb.geor;
 }
 );
 width = 493;
-},
-{
-anchors = (
-{
-name = top;
-pos = (266,933);
-}
-);
-layerId = m007;
-shapes = (
-{
-ref = "Un-georgian";
-},
-{
-pos = (266,167);
-ref = circumflexcomb.geor;
-}
-);
-width = 538;
 },
 {
 anchors = (

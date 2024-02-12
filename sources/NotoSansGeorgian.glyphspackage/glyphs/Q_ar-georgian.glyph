@@ -126,67 +126,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=qar-georgian*1.1";
 width = 625;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(480,-10,o),
-(573,80,o),
-(573,233,cs),
-(573,714,l),
-(422,714,l),
-(422,587,ls),
-(422,496,o),
-(381,451,o),
-(308,451,cs),
-(246,451,o),
-(209,498,o),
-(209,565,cs),
-(209,625,o),
-(220,666,o),
-(237,714,c),
-(82,714,l),
-(64,673,o),
-(51,620,o),
-(51,558,cs),
-(51,410,o),
-(138,327,o),
-(263,327,cs),
-(338,327,o),
-(393,358,o),
-(424,399,c),
-(427,399,l),
-(423,366,o),
-(422,339,o),
-(422,312,cs),
-(422,230,ls),
-(422,162,o),
-(394,110,o),
-(312,110,cs),
-(243,110,o),
-(206,154,o),
-(206,214,cs),
-(206,231,o),
-(208,248,o),
-(213,270,c),
-(62,270,l),
-(53,245,o),
-(50,221,o),
-(50,197,cs),
-(50,84,o),
-(149,-10,o),
-(312,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=qar-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=qar-georgian*1.1";
-};
-width = 639;
-},
-{
 background = {
 shapes = (
 {
@@ -423,67 +362,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=qar-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=qar-georgian*1.1";
 };
 width = 485;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(399,-10,o),
-(476,76,o),
-(476,219,cs),
-(476,714,l),
-(339,714,l),
-(339,590,ls),
-(339,499,o),
-(307,455,o),
-(259,455,cs),
-(210,455,o),
-(190,490,o),
-(190,556,cs),
-(190,616,o),
-(200,660,o),
-(216,714,c),
-(82,714,l),
-(62,667,o),
-(49,614,o),
-(49,542,cs),
-(49,416,o),
-(113,340,o),
-(214,340,cs),
-(271,340,o),
-(313,366,o),
-(339,409,c),
-(344,409,l),
-(338,359,o),
-(339,327,o),
-(339,285,cs),
-(339,223,ls),
-(339,152,o),
-(322,105,o),
-(262,105,cs),
-(209,105,o),
-(186,151,o),
-(186,211,cs),
-(186,230,o),
-(188,251,o),
-(193,275,c),
-(58,275,l),
-(50,246,o),
-(46,220,o),
-(46,195,cs),
-(46,70,o),
-(132,-10,o),
-(263,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=qar-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=qar-georgian*1.1";
-};
-width = 537;
 },
 {
 layerId = m008;

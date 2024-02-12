@@ -226,65 +226,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=kan-georgian*1.1";
 width = 574;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(466,-10,o),
-(564,92,o),
-(564,209,cs),
-(564,331,o),
-(495,396,o),
-(412,415,c),
-(412,418,l),
-(503,437,o),
-(542,484,o),
-(542,558,cs),
-(542,662,o),
-(442,723,o),
-(292,723,c),
-(292,670,l),
-(349,670,o),
-(382,620,o),
-(382,558,cs),
-(382,496,o),
-(353,451,o),
-(284,451,cs),
-(243,451,l),
-(243,385,l),
-(283,385,ls),
-(340,385,o),
-(400,357,o),
-(400,209,cs),
-(400,95,o),
-(366,54,o),
-(301,54,cs),
-(238,54,o),
-(203,97,o),
-(203,170,cs),
-(203,215,o),
-(213,245,o),
-(230,277,c),
-(206,291,o),
-(182,298,o),
-(159,298,cs),
-(90,298,o),
-(41,239,o),
-(41,180,cs),
-(41,68,o),
-(141,-10,o),
-(302,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=kan-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=kan-georgian*1.1";
-};
-width = 610;
-},
-{
 background = {
 shapes = (
 {
@@ -619,65 +560,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=kan-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=kan-georgian*1.1";
 };
 width = 471;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(387,-9,o),
-(477,66,o),
-(477,212,cs),
-(477,349,o),
-(400,405,o),
-(332,417,c),
-(332,420,l),
-(400,434,o),
-(456,483,o),
-(456,564,cs),
-(456,667,o),
-(366,723,o),
-(240,723,c),
-(240,678,l),
-(289,678,o),
-(319,635,o),
-(319,560,cs),
-(319,474,o),
-(274,450,o),
-(225,450,cs),
-(189,450,l),
-(189,386,l),
-(228,386,ls),
-(286,386,o),
-(337,358,o),
-(337,211,cs),
-(337,96,o),
-(311,50,o),
-(253,50,cs),
-(200,50,o),
-(171,95,o),
-(171,164,cs),
-(171,213,o),
-(183,245,o),
-(196,268,c),
-(183,278,o),
-(163,286,o),
-(140,286,cs),
-(90,286,o),
-(32,252,o),
-(32,163,cs),
-(32,68,o),
-(110,-9,o),
-(253,-9,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=kan-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=kan-georgian*1.1";
-};
-width = 514;
 },
 {
 background = {

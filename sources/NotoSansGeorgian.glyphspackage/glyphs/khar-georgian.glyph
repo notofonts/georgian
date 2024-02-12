@@ -125,67 +125,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "jil-georgian";
 width = 588;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(453,-250,o),
-(544,-153,o),
-(544,12,cs),
-(544,760,l),
-(394,760,l),
-(394,585,ls),
-(394,549,o),
-(398,499,o),
-(402,476,c),
-(397,476,l),
-(367,521,o),
-(324,556,o),
-(246,556,cs),
-(155,556,o),
-(64,481,o),
-(64,351,cs),
-(64,308,o),
-(71,283,o),
-(80,257,c),
-(223,257,l),
-(215,287,o),
-(213,312,o),
-(213,337,cs),
-(213,400,o),
-(248,436,o),
-(296,436,cs),
-(366,436,o),
-(395,376,o),
-(395,285,cs),
-(395,15,ls),
-(395,-73,o),
-(369,-130,o),
-(292,-130,cs),
-(220,-130,o),
-(189,-69,o),
-(189,4,cs),
-(189,33,o),
-(194,69,o),
-(201,96,c),
-(61,96,l),
-(47,65,o),
-(40,32,o),
-(40,-7,cs),
-(40,-150,o),
-(136,-250,o),
-(292,-250,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=on-georgian-5";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "jil-georgian";
-};
-width = 604;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -367,67 +306,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=on-georgian-5";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "jil-georgian";
 };
 width = 441;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(360,-250,o),
-(430,-162,o),
-(430,-11,cs),
-(430,760,l),
-(300,760,l),
-(300,570,ls),
-(300,549,o),
-(302,519,o),
-(304,476,c),
-(300,476,l),
-(274,531,o),
-(236,557,o),
-(190,557,cs),
-(121,557,o),
-(52,495,o),
-(52,370,cs),
-(52,329,o),
-(58,303,o),
-(70,266,c),
-(191,266,l),
-(185,298,o),
-(182,328,o),
-(182,359,cs),
-(182,411,o),
-(200,447,o),
-(234,447,cs),
-(277,447,o),
-(300,396,o),
-(300,306,cs),
-(300,-8,ls),
-(300,-99,o),
-(279,-140,o),
-(233,-140,cs),
-(183,-140,o),
-(166,-79,o),
-(166,-16,cs),
-(166,31,o),
-(174,66,o),
-(180,89,c),
-(58,89,l),
-(46,58,o),
-(37,19,o),
-(37,-26,cs),
-(37,-141,o),
-(104,-250,o),
-(235,-250,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=on-georgian-5";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "jil-georgian";
-};
-width = 485;
 },
 {
 layerId = m008;

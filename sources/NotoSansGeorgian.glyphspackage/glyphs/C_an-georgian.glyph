@@ -186,69 +186,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=can-georgian*1.1";
 width = 700;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(556,-10,o),
-(684,74,o),
-(684,216,cs),
-(684,324,o),
-(624,379,o),
-(556,393,c),
-(556,396,l),
-(623,407,o),
-(671,449,o),
-(671,517,cs),
-(671,582,o),
-(634,613,o),
-(601,639,cs),
-(576,659,o),
-(550,682,o),
-(550,714,c),
-(396,714,l),
-(391,632,o),
-(429,600,o),
-(466,571,cs),
-(490,552,o),
-(514,533,o),
-(514,505,cs),
-(514,473,o),
-(483,453,o),
-(427,453,cs),
-(363,453,l),
-(363,331,l),
-(397,331,ls),
-(482,331,o),
-(527,287,o),
-(527,227,cs),
-(527,158,o),
-(476,116,o),
-(381,116,cs),
-(261,116,o),
-(209,198,o),
-(209,379,cs),
-(209,512,o),
-(233,606,o),
-(275,714,c),
-(124,714,l),
-(78,614,o),
-(50,501,o),
-(50,379,cs),
-(50,105,o),
-(173,-10,o),
-(380,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=can-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=can-georgian*1.1";
-};
-width = 728;
-},
-{
 background = {
 shapes = (
 {
@@ -550,69 +487,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=can-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=can-georgian*1.1";
 };
 width = 532;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(465,-10,o),
-(561,70,o),
-(561,222,cs),
-(561,333,o),
-(506,391,o),
-(445,406,c),
-(445,409,l),
-(505,422,o),
-(546,469,o),
-(546,522,cs),
-(546,582,o),
-(520,611,o),
-(498,639,cs),
-(476,666,o),
-(462,685,o),
-(462,714,c),
-(325,714,l),
-(319,650,o),
-(344,616,o),
-(371,586,cs),
-(395,560,o),
-(407,540,o),
-(407,516,cs),
-(407,484,o),
-(377,466,o),
-(328,466,cs),
-(296,466,l),
-(296,346,l),
-(323,346,ls),
-(382,346,o),
-(419,307,o),
-(419,232,cs),
-(419,149,o),
-(383,109,o),
-(315,109,cs),
-(232,109,o),
-(188,176,o),
-(188,366,cs),
-(188,499,o),
-(202,586,o),
-(246,714,c),
-(110,714,l),
-(66,602,o),
-(46,505,o),
-(46,366,cs),
-(46,91,o),
-(157,-10,o),
-(313,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=can-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=can-georgian*1.1";
-};
-width = 602;
 },
 {
 background = {

@@ -236,67 +236,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=khar-georgian*1.1";
 width = 618;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(473,-10,o),
-(563,83,o),
-(563,238,cs),
-(563,714,l),
-(412,714,l),
-(412,638,ls),
-(412,603,o),
-(415,570,o),
-(419,546,c),
-(415,546,l),
-(386,586,o),
-(342,617,o),
-(262,617,cs),
-(164,617,o),
-(70,545,o),
-(70,433,cs),
-(70,409,o),
-(73,390,o),
-(77,374,c),
-(228,374,l),
-(226,388,o),
-(225,402,o),
-(225,413,cs),
-(225,467,o),
-(260,499,o),
-(314,499,cs),
-(387,499,o),
-(413,441,o),
-(413,368,cs),
-(413,240,ls),
-(413,165,o),
-(385,110,o),
-(306,110,cs),
-(237,110,o),
-(200,154,o),
-(200,214,cs),
-(200,232,o),
-(202,248,o),
-(207,270,c),
-(56,270,l),
-(48,246,o),
-(44,226,o),
-(44,197,cs),
-(44,84,o),
-(143,-10,o),
-(306,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=khar-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=khar-georgian*1.1";
-};
-width = 629;
-},
-{
 background = {
 shapes = (
 {
@@ -643,67 +582,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=khar-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=khar-georgian*1.1";
 };
 width = 479;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(387,-10,o),
-(464,73,o),
-(464,219,cs),
-(464,714,l),
-(327,714,l),
-(327,633,ls),
-(327,616,o),
-(328,585,o),
-(331,552,c),
-(326,552,l),
-(299,600,o),
-(257,617,o),
-(208,617,cs),
-(132,617,o),
-(58,558,o),
-(58,438,cs),
-(58,416,o),
-(59,401,o),
-(63,384,c),
-(198,384,l),
-(196,396,o),
-(195,412,o),
-(195,425,cs),
-(195,469,o),
-(218,502,o),
-(255,502,cs),
-(302,502,o),
-(327,461,o),
-(327,387,cs),
-(327,223,ls),
-(327,152,o),
-(310,105,o),
-(254,105,cs),
-(204,105,o),
-(181,151,o),
-(181,211,cs),
-(181,230,o),
-(183,251,o),
-(188,275,c),
-(53,275,l),
-(45,246,o),
-(41,220,o),
-(41,195,cs),
-(41,70,o),
-(127,-10,o),
-(255,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=khar-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=khar-georgian*1.1";
-};
-width = 525;
 },
 {
 background = {

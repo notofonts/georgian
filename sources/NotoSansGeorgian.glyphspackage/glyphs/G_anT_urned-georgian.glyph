@@ -25,17 +25,6 @@ ref = "Gan-georgian";
 width = 615;
 },
 {
-layerId = m003;
-shapes = (
-{
-angle = 180;
-pos = (624,714);
-ref = "Gan-georgian";
-}
-);
-width = 624;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -67,17 +56,6 @@ ref = "Gan-georgian";
 }
 );
 width = 476;
-},
-{
-layerId = m007;
-shapes = (
-{
-angle = 180;
-pos = (532,714);
-ref = "Gan-georgian";
-}
-);
-width = 532;
 },
 {
 layerId = m008;

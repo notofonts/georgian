@@ -234,69 +234,6 @@ width = 900;
 anchors = (
 {
 name = top;
-pos = (463,714);
-}
-);
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(283,0,l),
-(243,116,o),
-(213,237,o),
-(213,401,cs),
-(213,547,o),
-(249,598,o),
-(303,598,cs),
-(360,598,o),
-(384,548,o),
-(384,460,cs),
-(384,209,l),
-(543,209,l),
-(543,460,ls),
-(543,536,o),
-(560,598,o),
-(622,598,cs),
-(677,598,o),
-(712,546,o),
-(712,401,cs),
-(712,237,o),
-(683,114,o),
-(643,0,c),
-(799,0,l),
-(841,113,o),
-(872,220,o),
-(872,399,cs),
-(872,631,o),
-(763,724,o),
-(637,724,cs),
-(571,724,o),
-(499,699,o),
-(465,618,c),
-(462,618,l),
-(430,701,o),
-(354,724,o),
-(294,724,cs),
-(164,724,o),
-(54,632,o),
-(54,399,cs),
-(54,230,o),
-(83,113,o),
-(127,0,c)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=on-georgian*1.2";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=on-georgian*1.2";
-};
-width = 926;
-},
-{
-anchors = (
-{
-name = top;
 pos = (479,714);
 }
 );
@@ -634,69 +571,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=on-georgian*1.2";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=on-georgian*1.2";
 };
 width = 666;
-},
-{
-anchors = (
-{
-name = top;
-pos = (383,714);
-}
-);
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(258,0,l),
-(224,102,o),
-(191,223,o),
-(191,400,cs),
-(191,553,o),
-(215,605,o),
-(255,605,cs),
-(306,605,o),
-(312,537,o),
-(312,480,cs),
-(312,210,l),
-(453,210,l),
-(453,480,ls),
-(453,536,o),
-(459,605,o),
-(508,605,cs),
-(550,605,o),
-(573,552,o),
-(573,400,cs),
-(573,220,o),
-(540,100,o),
-(507,0,c),
-(647,0,l),
-(689,122,o),
-(715,223,o),
-(715,401,cs),
-(715,610,o),
-(645,724,o),
-(517,724,cs),
-(465,724,o),
-(409,703,o),
-(384,643,c),
-(381,643,l),
-(357,704,o),
-(305,724,o),
-(247,724,cs),
-(119,724,o),
-(50,609,o),
-(50,401,cs),
-(50,214,o),
-(77,122,o),
-(117,0,c)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=on-georgian*1.2";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=on-georgian*1.2";
-};
-width = 765;
 },
 {
 anchors = (

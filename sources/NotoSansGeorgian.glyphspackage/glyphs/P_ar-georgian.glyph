@@ -249,69 +249,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=par-georgian*1.1";
 width = 607;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(475,-10,o),
-(576,83,o),
-(576,210,cs),
-(576,310,o),
-(510,370,o),
-(448,385,c),
-(448,388,l),
-(510,403,o),
-(556,443,o),
-(556,504,cs),
-(556,584,o),
-(504,622,o),
-(454,645,cs),
-(417,662,o),
-(384,682,o),
-(382,714,c),
-(223,714,l),
-(215,627,o),
-(271,583,o),
-(328,561,cs),
-(364,547,o),
-(394,533,o),
-(394,497,cs),
-(394,468,o),
-(370,447,o),
-(308,447,cs),
-(254,447,l),
-(254,329,l),
-(296,329,ls),
-(369,329,o),
-(418,295,o),
-(418,222,cs),
-(418,161,o),
-(385,110,o),
-(310,110,cs),
-(237,110,o),
-(200,154,o),
-(200,214,cs),
-(200,232,o),
-(202,248,o),
-(207,270,c),
-(56,270,l),
-(48,246,o),
-(44,226,o),
-(44,197,cs),
-(44,84,o),
-(143,-10,o),
-(310,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=par-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=par-georgian*1.1";
-};
-width = 626;
-},
-{
 background = {
 shapes = (
 {
@@ -676,69 +613,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=par-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=par-georgian*1.1";
 };
 width = 459;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(388,-10,o),
-(469,83,o),
-(469,210,cs),
-(469,317,o),
-(409,378,o),
-(356,395,c),
-(356,398,l),
-(413,412,o),
-(447,455,o),
-(447,504,cs),
-(447,566,o),
-(415,605,o),
-(375,636,cs),
-(341,663,o),
-(316,684,o),
-(316,714,c),
-(176,714,l),
-(170,647,o),
-(205,607,o),
-(245,578,cs),
-(278,554,o),
-(306,533,o),
-(306,501,cs),
-(306,470,o),
-(284,452,o),
-(233,452,cs),
-(202,452,l),
-(202,338,l),
-(234,338,ls),
-(293,338,o),
-(327,295,o),
-(327,219,cs),
-(327,141,o),
-(304,106,o),
-(252,106,cs),
-(204,106,o),
-(181,151,o),
-(181,212,cs),
-(181,234,o),
-(184,256,o),
-(188,276,c),
-(53,276,l),
-(45,247,o),
-(41,219,o),
-(41,195,cs),
-(41,70,o),
-(127,-10,o),
-(253,-10,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=par-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=par-georgian*1.1";
-};
-width = 515;
 },
 {
 background = {

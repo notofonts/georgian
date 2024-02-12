@@ -124,66 +124,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ban-oldgeorgian";
 width = 652;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(542,-250,o),
-(664,-188,o),
-(664,-50,cs),
-(664,22,o),
-(641,60,o),
-(617,95,cs),
-(597,124,o),
-(582,152,o),
-(582,197,cs),
-(582,355,ls),
-(582,496,o),
-(508,556,o),
-(388,556,cs),
-(314,556,o),
-(254,527,o),
-(219,473,c),
-(213,473,l),
-(192,546,l),
-(78,546,l),
-(78,0,l),
-(227,0,l),
-(227,257,ls),
-(227,373,o),
-(254,437,o),
-(345,437,cs),
-(406,437,o),
-(434,397,o),
-(434,319,cs),
-(434,184,ls),
-(434,123,o),
-(453,87,o),
-(475,57,cs),
-(497,27,o),
-(514,-1,o),
-(514,-36,cs),
-(514,-102,o),
-(458,-131,o),
-(341,-131,cs),
-(254,-131,o),
-(185,-117,o),
-(115,-90,c),
-(115,-215,l),
-(188,-240,o),
-(257,-250,o),
-(355,-250,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "ghan-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ban-oldgeorgian";
-};
-width = 689;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -362,66 +302,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "ghan-oldgeorgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ban-oldgeorgian";
 };
 width = 483;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(453,-250,o),
-(534,-183,o),
-(534,-60,cs),
-(534,5,o),
-(511,45,o),
-(488,83,cs),
-(467,117,o),
-(448,153,o),
-(448,208,cs),
-(448,362,ls),
-(448,489,o),
-(396,557,o),
-(303,557,cs),
-(247,557,o),
-(206,529,o),
-(182,477,c),
-(174,477,l),
-(160,547,l),
-(56,547,l),
-(56,0,l),
-(187,0,l),
-(187,263,ls),
-(187,393,o),
-(205,440,o),
-(261,440,cs),
-(304,440,o),
-(316,400,o),
-(316,323,cs),
-(316,198,ls),
-(316,125,o),
-(340,85,o),
-(362,49,cs),
-(381,18,o),
-(400,-14,o),
-(400,-54,cs),
-(400,-110,o),
-(365,-141,o),
-(270,-141,cs),
-(205,-141,o),
-(154,-128,o),
-(90,-101,c),
-(90,-214,l),
-(149,-237,o),
-(207,-250,o),
-(277,-250,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "ghan-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "ban-oldgeorgian";
-};
-width = 539;
 },
 {
 layerId = m008;

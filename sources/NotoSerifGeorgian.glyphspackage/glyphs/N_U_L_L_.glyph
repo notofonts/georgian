@@ -10,10 +10,6 @@ layerId = m002;
 width = 0;
 },
 {
-layerId = m003;
-width = 0;
-},
-{
 layerId = m004;
 width = 0;
 },
@@ -23,10 +19,6 @@ width = 0;
 },
 {
 layerId = m006;
-width = 0;
-},
-{
-layerId = m007;
 width = 0;
 },
 {

@@ -102,56 +102,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Vin-oldgeorgian";
 width = 750;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(511,-10,o),
-(611,93,o),
-(611,245,cs),
-(611,359,l),
-(752,359,l),
-(752,478,l),
-(611,478,l),
-(611,714,l),
-(110,714,l),
-(110,590,l),
-(461,590,l),
-(461,478,l),
-(342,478,ls),
-(158,478,o),
-(58,393,o),
-(58,235,cs),
-(58,82,o),
-(164,-10,o),
-(337,-10,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(256,115,o),
-(212,157,o),
-(212,237,cs),
-(212,316,o),
-(257,359,o),
-(340,359,cs),
-(461,359,l),
-(461,248,ls),
-(461,168,o),
-(420,115,o),
-(337,115,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Don-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Vin-oldgeorgian";
-};
-width = 791;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -300,56 +250,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Don-oldgeorgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Vin-oldgeorgian";
 };
 width = 563;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(394,-10,o),
-(470,86,o),
-(470,239,cs),
-(470,361,l),
-(584,361,l),
-(584,473,l),
-(470,473,l),
-(470,714,l),
-(83,714,l),
-(83,595,l),
-(333,595,l),
-(333,473,l),
-(266,473,ls),
-(142,473,o),
-(43,408,o),
-(43,234,cs),
-(43,86,o),
-(125,-10,o),
-(256,-10,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(210,105,o),
-(185,154,o),
-(185,237,cs),
-(185,333,o),
-(224,360,o),
-(266,360,cs),
-(332,360,l),
-(332,240,ls),
-(332,154,o),
-(307,105,o),
-(256,105,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "Don-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Vin-oldgeorgian";
-};
-width = 616;
 },
 {
 layerId = m008;

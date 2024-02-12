@@ -126,68 +126,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "in-georgian";
 width = 577;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(69,549,o),
-(51,514,o),
-(51,470,c),
-(110,470,o),
-(160,463,o),
-(218,431,c),
-(110,377,o),
-(47,301,o),
-(47,197,cs),
-(47,83,o),
-(143,-13,o),
-(308,-13,cs),
-(468,-13,o),
-(566,82,o),
-(566,197,cs),
-(566,307,o),
-(510,377,o),
-(398,431,c),
-(461,464,o),
-(506,470,o),
-(563,470,c),
-(562,512,o),
-(545,549,o),
-(496,549,cs),
-(456,549,o),
-(377,526,o),
-(306,481,c),
-(235,526,o),
-(154,549,o),
-(115,549,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(373,338,o),
-(411,265,o),
-(411,186,cs),
-(411,111,o),
-(374,51,o),
-(306,51,cs),
-(239,51,o),
-(203,112,o),
-(203,186,c),
-(203,268,o),
-(239,339,o),
-(308,379,c)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "in-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "in-georgian";
-};
-width = 613;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -372,68 +310,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "in-georgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "in-georgian";
 };
 width = 458;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(54,549,o),
-(42,518,o),
-(42,490,c),
-(91,490,o),
-(142,478,o),
-(187,450,c),
-(101,390,o),
-(39,314,o),
-(39,209,cs),
-(39,78,o),
-(113,-13,o),
-(250,-13,cs),
-(376,-13,o),
-(457,78,o),
-(457,209,cs),
-(457,314,o),
-(396,390,o),
-(307,450,c),
-(353,478,o),
-(404,490,o),
-(454,490,c),
-(454,516,o),
-(442,549,o),
-(401,549,cs),
-(361,549,o),
-(307,529,o),
-(247,493,c),
-(186,529,o),
-(127,549,o),
-(89,549,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(304,359,o),
-(325,289,o),
-(325,204,cs),
-(325,116,o),
-(304,46,o),
-(248,46,cs),
-(192,46,o),
-(171,117,o),
-(171,204,cs),
-(171,287,o),
-(190,358,o),
-(247,406,c)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "in-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "in-georgian";
-};
-width = 496;
 },
 {
 layerId = m008;

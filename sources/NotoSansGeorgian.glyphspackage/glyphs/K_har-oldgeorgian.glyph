@@ -56,33 +56,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
 width = 616;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(406,0,l),
-(406,353,l),
-(614,353,l),
-(614,478,l),
-(406,478,l),
-(406,714,l),
-(256,714,l),
-(256,478,l),
-(48,478,l),
-(48,353,l),
-(256,353,l),
-(256,0,l)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Don-oldgeorgian-10";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
-};
-width = 672;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -162,33 +135,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Don-oldgeorgian-10";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
 };
 width = 468;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(320,0,l),
-(320,360,l),
-(470,360,l),
-(470,473,l),
-(320,473,l),
-(320,714,l),
-(183,714,l),
-(183,473,l),
-(33,473,l),
-(33,360,l),
-(183,360,l),
-(183,0,l)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=Don-oldgeorgian-10";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "Don-oldgeorgian";
-};
-width = 512;
 },
 {
 layerId = m008;

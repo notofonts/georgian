@@ -44,25 +44,6 @@ width = 900;
 anchors = (
 {
 name = top;
-pos = (463,910);
-}
-);
-layerId = m003;
-shapes = (
-{
-ref = "On-georgian";
-},
-{
-pos = (462,168);
-ref = dieresiscomb.geor;
-}
-);
-width = 926;
-},
-{
-anchors = (
-{
-name = top;
 pos = (479,908);
 }
 );
@@ -115,25 +96,6 @@ ref = dieresiscomb.geor;
 }
 );
 width = 666;
-},
-{
-anchors = (
-{
-name = top;
-pos = (383,905);
-}
-);
-layerId = m007;
-shapes = (
-{
-ref = "On-georgian";
-},
-{
-pos = (382,167);
-ref = dieresiscomb.geor;
-}
-);
-width = 765;
 },
 {
 anchors = (

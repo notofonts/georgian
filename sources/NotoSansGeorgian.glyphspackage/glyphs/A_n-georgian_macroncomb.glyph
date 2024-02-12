@@ -44,25 +44,6 @@ width = 602;
 anchors = (
 {
 name = top;
-pos = (308,887);
-}
-);
-layerId = m003;
-shapes = (
-{
-ref = "An-georgian";
-},
-{
-pos = (308,168);
-ref = macroncomb.geor;
-}
-);
-width = 621;
-},
-{
-anchors = (
-{
-name = top;
 pos = (318,892);
 }
 );
@@ -115,25 +96,6 @@ ref = macroncomb.geor;
 }
 );
 width = 463;
-},
-{
-anchors = (
-{
-name = top;
-pos = (257,890);
-}
-);
-layerId = m007;
-shapes = (
-{
-ref = "An-georgian";
-},
-{
-pos = (257,167);
-ref = macroncomb.geor;
-}
-);
-width = 518;
 },
 {
 anchors = (

@@ -120,65 +120,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=in-georgian-5";
 width = 541;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(443,-253,o),
-(539,-151,o),
-(539,-16,cs),
-(539,121,o),
-(456,187,o),
-(363,208,c),
-(363,213,l),
-(456,230,o),
-(518,282,o),
-(518,371,cs),
-(518,467,o),
-(422,542,o),
-(273,542,c),
-(273,486,l),
-(334,486,o),
-(365,434,o),
-(365,363,cs),
-(365,297,o),
-(340,245,o),
-(270,245,cs),
-(231,245,l),
-(231,178,l),
-(270,178,ls),
-(345,178,o),
-(384,115,o),
-(384,-15,cs),
-(384,-138,o),
-(351,-190,o),
-(286,-190,cs),
-(222,-190,o),
-(189,-137,o),
-(189,-57,cs),
-(189,-6,o),
-(198,23,o),
-(215,58,c),
-(192,72,o),
-(170,78,o),
-(149,78,cs),
-(84,78,o),
-(37,19,o),
-(37,-47,cs),
-(37,-169,o),
-(132,-253,o),
-(286,-253,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=in-georgian-10";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=in-georgian-5";
-};
-width = 581;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -354,65 +295,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=in-georgian-10";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=in-georgian-5";
 };
 width = 441;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(367,-253,o),
-(451,-174,o),
-(451,-12,cs),
-(451,135,o),
-(370,195,o),
-(297,212,c),
-(297,214,l),
-(370,236,o),
-(427,284,o),
-(427,370,cs),
-(427,480,o),
-(343,542,o),
-(223,542,c),
-(223,490,l),
-(272,490,o),
-(298,449,o),
-(298,367,cs),
-(298,276,o),
-(260,244,o),
-(212,244,cs),
-(178,244,l),
-(178,179,l),
-(214,179,ls),
-(286,179,o),
-(319,120,o),
-(319,-14,cs),
-(319,-140,o),
-(295,-194,o),
-(238,-194,cs),
-(177,-194,o),
-(159,-140,o),
-(159,-66,cs),
-(159,-11,o),
-(170,25,o),
-(182,49,c),
-(169,59,o),
-(151,65,o),
-(131,65,cs),
-(83,65,o),
-(29,29,o),
-(29,-68,cs),
-(29,-174,o),
-(93,-253,o),
-(238,-253,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=in-georgian-10";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=in-georgian-5";
-};
-width = 485;
 },
 {
 layerId = m008;

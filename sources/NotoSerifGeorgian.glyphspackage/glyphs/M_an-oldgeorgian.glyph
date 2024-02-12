@@ -111,60 +111,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "En-oldgeorgian";
 width = 642;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(478,-13,o),
-(566,69,o),
-(566,237,cs),
-(566,390,l),
-(660,390,l),
-(660,452,l),
-(566,452,l),
-(566,606,ls),
-(566,653,o),
-(588,661,o),
-(617,661,cs),
-(639,661,l),
-(639,714,l),
-(75,714,l),
-(75,643,l),
-(408,643,l),
-(408,452,l),
-(345,452,ls),
-(138,452,o),
-(30,373,o),
-(30,218,cs),
-(30,70,o),
-(126,-13,o),
-(301,-13,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(233,52,o),
-(198,106,o),
-(198,218,cs),
-(198,338,o),
-(228,387,o),
-(341,387,cs),
-(408,387,l),
-(408,230,ls),
-(408,112,o),
-(372,52,o),
-(303,52,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "En-oldgeorgian";
-};
-width = 688;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -325,60 +271,6 @@ userData = {
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "En-oldgeorgian";
 };
 width = 560;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(401,-13,o),
-(488,51,o),
-(488,217,cs),
-(488,383,l),
-(578,383,l),
-(578,442,l),
-(488,442,l),
-(488,605,ls),
-(488,650,o),
-(505,663,o),
-(531,663,cs),
-(553,663,l),
-(553,714,l),
-(95,714,l),
-(95,657,l),
-(354,657,l),
-(354,442,l),
-(288,442,ls),
-(112,442,o),
-(44,376,o),
-(44,220,cs),
-(44,82,o),
-(103,-13,o),
-(261,-13,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(203,52,o),
-(177,112,o),
-(177,221,cs),
-(177,335,o),
-(206,383,o),
-(287,383,cs),
-(354,383,l),
-(354,216,ls),
-(354,90,o),
-(324,52,o),
-(262,52,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "En-oldgeorgian";
-};
-width = 599;
 },
 {
 layerId = m008;

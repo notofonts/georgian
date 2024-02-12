@@ -125,66 +125,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=hardsign-georgian*1.1";
 width = 626;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(79,587,l),
-(114,586,o),
-(150,582,o),
-(200,567,c),
-(200,565,l),
-(100,489,o),
-(50,379,o),
-(50,267,cs),
-(50,86,o),
-(167,-10,o),
-(320,-10,cs),
-(474,-10,o),
-(591,86,o),
-(591,267,cs),
-(591,380,o),
-(542,488,o),
-(442,565,c),
-(442,567,l),
-(489,581,o),
-(524,586,o),
-(562,587,c),
-(562,714,l),
-(472,713,o),
-(389,690,o),
-(320,657,c),
-(248,691,o),
-(170,712,o),
-(79,714,c)
-);
-},
-{
-closed = 1;
-nodes = (
-(384,458,o),
-(432,378,o),
-(432,266,cs),
-(432,171,o),
-(390,116,o),
-(320,116,cs),
-(251,116,o),
-(209,170,o),
-(209,266,cs),
-(209,375,o),
-(255,457,o),
-(320,510,c)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=hardsign-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=hardsign-georgian*1.1";
-};
-width = 641;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -363,66 +303,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=hardsign-georgian*1.1";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=hardsign-georgian*1.1";
 };
 width = 490;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(83,597,l),
-(111,595,o),
-(141,589,o),
-(174,576,c),
-(174,574,l),
-(88,500,o),
-(46,385,o),
-(46,273,cs),
-(46,99,o),
-(123,-10,o),
-(274,-10,cs),
-(423,-10,o),
-(501,98,o),
-(501,273,cs),
-(501,385,o),
-(459,500,o),
-(373,574,c),
-(373,576,l),
-(408,590,o),
-(432,594,o),
-(464,597,c),
-(464,714,l),
-(386,710,o),
-(326,691,o),
-(273,663,c),
-(219,693,o),
-(158,710,o),
-(83,714,c)
-);
-},
-{
-closed = 1;
-nodes = (
-(329,458,o),
-(359,377,o),
-(359,270,cs),
-(359,156,o),
-(324,110,o),
-(274,110,cs),
-(223,110,o),
-(188,155,o),
-(188,270,cs),
-(188,375,o),
-(217,458,o),
-(273,516,c)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=hardsign-georgian*1.1";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "=hardsign-georgian*1.1";
-};
-width = 547;
 },
 {
 layerId = m008;

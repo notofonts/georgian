@@ -133,69 +133,6 @@ width = 537;
 anchors = (
 {
 name = top;
-pos = (285,536);
-}
-);
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(419,-13,o),
-(523,54,o),
-(523,179,cs),
-(523,279,o),
-(462,329,o),
-(409,374,cs),
-(371,407,o),
-(338,437,o),
-(338,482,cs),
-(338,499,o),
-(342,515,o),
-(350,531,c),
-(335,542,o),
-(315,549,o),
-(285,549,cs),
-(238,549,o),
-(208,519,o),
-(208,474,cs),
-(208,408,o),
-(259,360,o),
-(303,317,cs),
-(338,283,o),
-(368,241,o),
-(368,174,cs),
-(368,96,o),
-(339,50,o),
-(280,50,cs),
-(223,50,o),
-(192,96,o),
-(192,169,cs),
-(192,206,o),
-(197,233,o),
-(209,261,c),
-(190,273,o),
-(164,281,o),
-(141,281,cs),
-(85,281,o),
-(42,232,o),
-(42,167,cs),
-(42,72,o),
-(108,-13,o),
-(280,-13,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=in-georgian-5";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "in-georgian";
-};
-width = 570;
-},
-{
-anchors = (
-{
-name = top;
 pos = (298,536);
 }
 );
@@ -380,69 +317,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=in-georgian-5";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "in-georgian";
 };
 width = 431;
-},
-{
-anchors = (
-{
-name = top;
-pos = (237,536);
-}
-);
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(346,-13,o),
-(435,44,o),
-(435,175,cs),
-(435,269,o),
-(388,322,o),
-(333,378,cs),
-(307,405,o),
-(288,436,o),
-(288,479,cs),
-(288,497,o),
-(294,518,o),
-(302,532,c),
-(290,543,o),
-(275,549,o),
-(249,549,cs),
-(204,549,o),
-(173,516,o),
-(173,466,cs),
-(173,402,o),
-(204,368,o),
-(235,332,cs),
-(268,293,o),
-(303,253,o),
-(303,172,cs),
-(303,83,o),
-(279,46,o),
-(232,46,cs),
-(187,46,o),
-(164,90,o),
-(164,165,cs),
-(164,199,o),
-(169,227,o),
-(179,253,c),
-(162,264,o),
-(143,269,o),
-(127,269,cs),
-(72,269,o),
-(34,225,o),
-(34,156,cs),
-(34,70,o),
-(87,-13,o),
-(233,-13,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "=in-georgian-5";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "in-georgian";
-};
-width = 474;
 },
 {
 anchors = (

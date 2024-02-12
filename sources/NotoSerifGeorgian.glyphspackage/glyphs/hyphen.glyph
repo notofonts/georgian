@@ -40,24 +40,6 @@ com.schriftgestaltung.Glyphs.subCategory = Dash;
 width = 310;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(285,220,l),
-(285,325,l),
-(25,325,l),
-(25,220,l)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.subCategory = Dash;
-};
-width = 310;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -110,24 +92,6 @@ userData = {
 com.schriftgestaltung.Glyphs.subCategory = Dash;
 };
 width = 246;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(233,225,l),
-(233,320,l),
-(21,320,l),
-(21,225,l)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.subCategory = Dash;
-};
-width = 253;
 },
 {
 layerId = m008;

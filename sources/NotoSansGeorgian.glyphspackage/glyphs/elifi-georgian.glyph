@@ -124,67 +124,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
 width = 596;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(473,-250,o),
-(563,-154,o),
-(563,-37,cs),
-(563,6,o),
-(557,30,o),
-(545,56,c),
-(405,56,l),
-(412,29,o),
-(414,9,o),
-(414,-20,cs),
-(414,-79,o),
-(383,-130,o),
-(311,-130,cs),
-(234,-130,o),
-(208,-79,o),
-(208,11,cs),
-(208,94,ls),
-(208,136,o),
-(206,174,o),
-(202,218,c),
-(208,218,l),
-(238,170,o),
-(289,136,o),
-(363,136,cs),
-(486,136,o),
-(568,219,o),
-(568,371,cs),
-(568,435,o),
-(551,496,o),
-(528,546,c),
-(383,546,l),
-(403,492,o),
-(416,446,o),
-(416,386,cs),
-(416,308,o),
-(381,261,o),
-(319,261,cs),
-(247,261,o),
-(208,313,o),
-(208,405,cs),
-(208,546,l),
-(60,546,l),
-(60,12,ls),
-(60,-153,o),
-(150,-250,o),
-(312,-250,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
-};
-width = 613;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -366,67 +305,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
 };
 width = 448;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(387,-250,o),
-(454,-147,o),
-(454,-44,cs),
-(454,-4,o),
-(448,23,o),
-(435,57,c),
-(313,57,l),
-(320,32,o),
-(325,3,o),
-(325,-34,cs),
-(325,-85,o),
-(308,-140,o),
-(254,-140,cs),
-(205,-140,o),
-(184,-96,o),
-(184,-5,cs),
-(184,80,ls),
-(184,131,o),
-(183,169,o),
-(179,218,c),
-(184,218,l),
-(209,164,o),
-(250,136,o),
-(304,136,cs),
-(399,136,o),
-(457,219,o),
-(457,358,cs),
-(457,433,o),
-(445,492,o),
-(427,547,c),
-(302,547,l),
-(317,484,o),
-(326,435,o),
-(326,371,cs),
-(326,292,o),
-(308,246,o),
-(259,246,cs),
-(212,246,o),
-(184,294,o),
-(184,410,cs),
-(184,547,l),
-(55,547,l),
-(55,-11,ls),
-(55,-162,o),
-(125,-250,o),
-(253,-250,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "xan-georgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "on-georgian";
-};
-width = 499;
 },
 {
 layerId = m008;

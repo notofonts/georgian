@@ -124,66 +124,6 @@ com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "vin-oldgeorgian";
 width = 640;
 },
 {
-layerId = m003;
-shapes = (
-{
-closed = 1;
-nodes = (
-(464,-253,o),
-(573,-209,o),
-(573,-140,cs),
-(573,-97,o),
-(530,-70,o),
-(444,-70,c),
-(444,-150,o),
-(418,-192,o),
-(355,-192,cs),
-(263,-192,o),
-(247,-108,o),
-(247,-9,cs),
-(247,309,ls),
-(247,410,o),
-(278,464,o),
-(334,464,cs),
-(388,464,o),
-(414,424,o),
-(414,329,cs),
-(414,0,l),
-(636,0,l),
-(636,53,l),
-(632,53,ls),
-(579,53,o),
-(566,69,o),
-(566,124,cs),
-(566,356,ls),
-(566,484,o),
-(511,549,o),
-(401,549,cs),
-(327,549,o),
-(284,533,o),
-(248,465,c),
-(243,465,l),
-(230,536,l),
-(20,536,l),
-(20,483,l),
-(25,483,ls),
-(80,483,o),
-(95,465,o),
-(95,418,cs),
-(95,30,ls),
-(95,-154,o),
-(175,-253,o),
-(353,-253,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "en-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "vin-oldgeorgian";
-};
-width = 661;
-},
-{
 layerId = m004;
 shapes = (
 {
@@ -362,66 +302,6 @@ com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "en-oldgeorgian";
 com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "vin-oldgeorgian";
 };
 width = 510;
-},
-{
-layerId = m007;
-shapes = (
-{
-closed = 1;
-nodes = (
-(394,-253,o),
-(457,-219,o),
-(457,-143,cs),
-(457,-113,o),
-(431,-85,o),
-(370,-85,c),
-(370,-158,o),
-(348,-196,o),
-(288,-196,cs),
-(228,-196,o),
-(206,-158,o),
-(206,-67,cs),
-(206,313,ls),
-(206,394,o),
-(223,472,o),
-(277,472,cs),
-(322,472,o),
-(336,421,o),
-(336,336,cs),
-(336,0,l),
-(523,0,l),
-(523,49,l),
-(519,49,ls),
-(483,49,o),
-(466,58,o),
-(466,120,cs),
-(466,355,ls),
-(466,491,o),
-(420,549,o),
-(332,549,cs),
-(265,549,o),
-(231,519,o),
-(207,461,c),
-(203,461,l),
-(192,536,l),
-(15,536,l),
-(15,487,l),
-(19,487,ls),
-(55,487,o),
-(76,478,o),
-(76,420,cs),
-(76,-37,ls),
-(76,-175,o),
-(137,-253,o),
-(277,-253,cs)
-);
-}
-);
-userData = {
-com.schriftgestaltung.Glyphs.glyph.leftMetricsKey = "en-oldgeorgian";
-com.schriftgestaltung.Glyphs.glyph.rightMetricsKey = "vin-oldgeorgian";
-};
-width = 541;
 },
 {
 layerId = m008;
