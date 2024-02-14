@@ -74,7 +74,6 @@ ref = "On-georgian";
 {
 pos = (306,187);
 ref = macroncomb.geor;
-scale = (-1,1);
 }
 );
 width = 612;
