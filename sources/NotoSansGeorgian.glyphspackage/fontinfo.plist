@@ -245,22 +245,6 @@ space,
 );
 },
 {
-name = descriptions;
-value = "Designed by Monotype design team. Georgian characters design by Akaki Razmadze.";
-},
-{
-name = licenses;
-value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
-},
-{
-name = licenseURL;
-value = "https://scripts.sil.org/OFL";
-},
-{
-name = versionString;
-value = "Version 2.004";
-},
-{
 name = codePageRanges;
 value = (
 "1252"
@@ -297,14 +281,6 @@ value = (
 31,
 33
 );
-},
-{
-name = vendorID;
-value = GOOG;
-},
-{
-name = trademarks;
-value = "Noto is a trademark of Google Inc.";
 },
 {
 name = "Use Typo Metrics";
@@ -5717,7 +5693,7 @@ value = GOOG;
 },
 {
 key = versionString;
-value = "Version 2.004";
+value = "Version 2.005";
 }
 );
 settings = {
@@ -5805,5 +5781,5 @@ name = hStem0;
 );
 unitsPerEm = 1000;
 versionMajor = 2;
-versionMinor = 4;
+versionMinor = 5;
 }
