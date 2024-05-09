@@ -1,5 +1,5 @@
 {
-.appVersion = "3227";
+.appVersion = "3243";
 .formatVersion = 3;
 axes = (
 {
@@ -1104,6 +1104,8 @@ instanceInterpolations = {
 m002 = 0.39;
 m004 = 0.61;
 };
+isBold = 1;
+linkStyle = Regular;
 name = Bold;
 weightClass = 700;
 },
@@ -1226,6 +1228,8 @@ m004 = 0.38633;
 m006 = 0.143;
 m008 = 0.22367;
 };
+isBold = 1;
+linkStyle = SemiCondensed;
 name = "SemiCondensed Bold";
 weightClass = 700;
 widthClass = 4;
@@ -1354,6 +1358,8 @@ m004 = 0.183;
 m006 = 0.273;
 m008 = 0.427;
 };
+isBold = 1;
+linkStyle = Condensed;
 name = "Condensed Bold";
 weightClass = 700;
 widthClass = 3;
@@ -1470,6 +1476,8 @@ instanceInterpolations = {
 m006 = 0.39;
 m008 = 0.61;
 };
+isBold = 1;
+linkStyle = ExtraCondensed;
 name = "ExtraCondensed Bold";
 weightClass = 700;
 widthClass = 2;
