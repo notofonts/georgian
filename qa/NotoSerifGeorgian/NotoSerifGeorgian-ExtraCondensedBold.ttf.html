@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Diffenator3</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		@font-face {
+      font-family: "Font Before";
+      src: url();
+    }
+
+    @font-face {
+      font-family: "Font After";
+      src: url();
+    }
+
+    .font-before, .font-after {
+      font-variation-settings: "wght" 400, "wdth" 100;
+    }
+
+    .font-before {
+      font-family: "Font Before", "Adobe Notdef";
+    }
+
+    .font-after {
+      font-family: "Font After", "Adobe Notdef";
+    }
+
+	:root {
+	--node-pt-size: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #b3d4f5 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+    background-color: #ced9e4 !important;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.nav-pills .nav-link{
+    background-color: #9fcaf5 !important;
+}
+h4 {
+    color: #6f7882 !important;
+}
+
+@font-face {
+    font-family: "Adobe NotDef";
+    src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+}
+
+.box-title {
+    width: 100%;
+    font-size: 8pt;
+    font-weight: 700;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 10pt;
+    display: block;
+}
+
+.box {
+    margin-bottom: 20pt;
+    width: 100%;
+    float: left;
+}
+
+.box-text {}
+
+#ui-nav {
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+
+#font-toggle {}
+
+.ui-nav-item {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Stuff needed for the table differ */
+body {
+    font-family: Helvetica;
+}
+
+.node {
+    font-family: courier;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    padding: 5px;
+    display: block;
+    border: 1px dashed grey;
+    background-color: #e9e9ee;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.attr-before {
+    color: green;
+    cursor: text;
+}
+
+.attr-after {
+    color: red;
+    cursor: text;
+}
+
+.leaf {
+    font-weight: bold;
+}
+
+.old .cell .new {
+    display: none;
+}
+
+.new .cell .old {
+    display: none;
+}
+
+.both .cell .old {
+    opacity: 0.75;
+    color: red;
+}
+
+.both .cell .new {
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    color: green;
+}
+
+.spacer {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ot-panel {
+    max-height: 400px;
+    overflow-y: scroll;
+    background: white;
+    padding: 10px;
+    display: none;
+   }
+
+   .cell{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    width: 50pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+  }
+  .cell-word{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .cell-glyph{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    border-radius: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5pt;
+    margin: 5pt;
+    width: calc(var(--node-pt-size) * 2);
+    min-height: calc(var(--node-pt-size) * 2);
+    font-size: var(--node-pt-size);
+  }
+  .cell-glyph.font-before, .cell-word.font-before {
+    background: #eff6f2;
+  }
+  .cell-glyph.font-after, .cell-word.font-after {
+    background: #f7f4f4;
+  }
+
+  .cell-glyph:hover {
+    box-shadow: none;
+    background: #f0f0f5;
+  }
+  .cat-strings .cell {
+    clear: both;
+    position: static;
+    float: none;
+    text-align: left;
+  }
+  .codepoint {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 10pt;
+  }
+  .box-title {
+    clear: both;
+  }
+  .node.closed::before {
+    content: "+";
+    margin-right: 5pt;
+  }
+  .node.open::before {
+    content: "-";
+    margin-right: 5pt;
+  }
+
+  .tooltip pre {
+    background-color: #6f7882;
+    padding: 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .tooltip {
+    line-height: 1em;
+  }
+  .tooltip-inner {
+    max-width: 300px;
+  }
+
+  h1,h2,h3,h4,h5 {
+    clear: both;
+  }
+
+  #locationnav li {
+    white-space: wrap;
+  }
+
+  #userdefined div { width: 100%; }
+  
+/* The following rules are used in the WASM version, not in the CLI version.
+   But we keep them here so we can share them between the two versions. */
+
+   .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+
+  .fontdrop {
+    padding: 30px;
+    border-radius: 20px;
+    outline: 3px dashed #ffffffff;
+    outline-offset: -20px;
+  }
+
+  #fontbefore {
+    background-color: #ddffdddd;
+  }
+
+  #fontafter {
+    background-color: #ffdddddd;
+  }
+
+  .dragging {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+    outline: 5px dashed #ffffffff;
+  }
+
+  #diffkerns {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+		<div id="ui-nav">
+		  <div class="ui-nav-item" id="fonttoggle">Old</div>
+		  <div class="ui-nav-item" id="fontanimate">Animate</div>
+		  <div id="axes">
+		  </div>
+		</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<ul class="nav nav-pills" id="locationnav">
+			</ul>
+		</div>
+		<div class="col-9 mt-3">
+			<div id="title"></div>
+			<div id="cmapdiff"> </div>
+			<div id="main"></div>
+			<div id="userdefined">
+				<h4>User defined sample text</h4>
+				<div contenteditable="true" class="font-before cell-word">
+					You can type your own text here to see it previewed in the fonts.
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div id="diffkerns"> </div>
+			<div id="difftable"> </div>
+		</div>
+	</div>
+	<script type="module">
+		function renderTableDiff(node, toplevel) {
+  var wrapper = $("<div> </div>");
+  if (!node) {
+    return wrapper;
+  }
+  if (Array.isArray(node) && node.length == 2) {
+    var before = $("<span/>");
+    before.addClass("attr-before");
+    before.html(" " + node[0] + " ");
+    var after = $("<span/>");
+    after.addClass("attr-after");
+    after.append(renderTableDiff(node[1], true).children());
+    wrapper.append(before);
+    wrapper.append(after);
+    return wrapper;
+  }
+  if (node.constructor != Object) {
+    var thing = $("<span/>");
+    thing.html(node);
+    wrapper.append(thing);
+    return wrapper;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    var display = $("<div/>");
+    display.addClass("node");
+    if (!toplevel) {
+      display.hide();
+    }
+    display.append(key);
+    display.append(renderTableDiff(value, false).children());
+    if (display.children(".node").length > 0) {
+      display.addClass("closed");
+    }
+    wrapper.append(display);
+  }
+  return wrapper;
+}
+
+function addAGlyph(glyph, where) {
+  let title = "";
+  if (glyph.name) {
+    title = "name: " + glyph.name;
+  }
+  let cp =
+    "<br>U+" +
+    glyph.string.codePointAt(0).toString(16).padStart(4, "0").toUpperCase();
+  where.append(`
+        <div class="cell-glyph font-before">
+        <div data-toggle="tooltip" data-html="true" data-title="${glyph.differing_pixels} pixels"> ${glyph.string}
+        <div class="codepoint" data-toggle="tooltip" data-html="true" data-title="${title}">
+		${cp}
+        </div>
+        </div>
+    `);
+}
+
+function addAWord(diff, where) {
+  if (!diff.buffer_b) {
+    diff.buffer_b = diff.buffer_a;
+  }
+  where.append(`
+		<div class="cell-word font-before">
+		<span data-toggle="tooltip" data-html="true" data-title="Before: <pre>${diff.buffer_a}</pre>After: <pre>${diff.buffer_b}</pre><br>difference: ${diff.differing_pixels} pixels">
+		${diff.word}
+		</span>
+		</div>
+	`);
+}
+
+function diffTables(report) {
+  $("#difftable").empty();
+  $("#difftable").append(`<h4 class="mt-2 box-title">Table-level details</h4>`);
+  $("#difftable").append(
+    renderTableDiff({ tables: report["tables"] }, true).children()
+  );
+  $("#difftable .node").on("click", function (e) {
+    $(this).toggleClass("closed open");
+    $(this).children(".node").toggle();
+    e.stopPropagation();
+  });
+}
+function diffKerns(report) {
+  $("#diffkerns").empty();
+  $("#diffkerns").append(`<h4 class="mt-2">Modified Kerns</h4>`);
+  $("#diffkerns").append(
+    `<table class="table table-striped" id="diffkerns"><tr><th>Pair</th><th>Old</old><th>New</th></table>`
+  );
+  for (let [pair, value] of Object.entries(report["kerns"])) {
+    if (pair == "error") {
+      $("#diffkerns").append(`<p class="text-danger">Error: ${value}</p>`);
+      continue;
+    } else {
+      let row = $("<tr>");
+      row.append(`<td>${pair}</td>`);
+      row.append(`<td>${serializeKernBefore(value)}</td>`);
+      row.append(`<td>${serializeKernAfter(value)}</td>`);
+      $("#diffkerns table").append(row);
+    }
+  }
+}
+
+function serializeKernBefore(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[0], -1);
+  }
+  return serializeKern(kern, 0);
+}
+
+function serializeKernAfter(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[1], -1);
+  }
+  return serializeKern(kern, 1);
+}
+
+function serializeKern(kern, index) {
+  let string = "";
+  if (kern === null || kern === undefined) {
+    return "(null)";
+  }
+  if (kern.x) {
+    string += serializeKernValue(kern.x, index);
+  } else if (kern.y) {
+    string = "0";
+  }
+
+  if (kern.y) {
+    string += "," + serializeKernValue(kern.y, index);
+  }
+  if (!kern.x_placement && !kern.y_placement) {
+    return string;
+  }
+  string += "@";
+  if (kern.x_placement) {
+    string += serializeKernValue(kern.x_placement, index);
+  } else if (kern.y_placement) {
+    string += "0";
+  }
+  if (kern.y_placement) {
+    string += "," + serializeKernValue(kern.y_placement, index);
+  }
+  return string;
+}
+
+function serializeKernValue(kern, index) {
+  if (typeof kern == "number") {
+    return kern;
+  }
+  let string = "(";
+  let verybig = Object.entries(kern).length > 5;
+  for (let [key, value] of Object.entries(kern)) {
+    if (key == "default") {
+      string += value[index] + " ";
+    } else {
+      string += value[index] + "@" + key + " ";
+    }
+    if (verybig) {
+      string += "<br>";
+    }
+  }
+  return string.trim() + ")";
+}
+
+function cmapDiff(report) {
+  if (report.cmap_diff && (report.cmap_diff.new || report.cmap_diff.missing)) {
+    $("#cmapdiff").append(
+      `<h4 class="mt-2">Added and Removed Encoded Glyphs</h4>`
+    );
+    if (report["cmap_diff"]["new"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Added Glyphs</h4>`);
+      let added = $("<div>");
+      for (let glyph of report["cmap_diff"]["new"]) {
+        addAGlyph(glyph, added);
+      }
+      $("#cmapdiff").append(added);
+    }
+
+    if (report["cmap_diff"]["missing"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Removed Glyphs</h4>`);
+      let missing = $("<div>");
+      for (let glyph of report["cmap_diff"]["missing"]) {
+        addAGlyph(glyph, missing);
+      }
+      $("#cmapdiff").append(missing);
+    }
+  } else {
+    $("#cmapdiff").append(`<p>No changes to encoded glyphs</p>`);
+  }
+}
+
+function setupAnimation() {
+  $("#fonttoggle").click(function () {
+    if ($(this).text() == "Old") {
+      $(this).text("New");
+      $(".font-before").removeClass("font-before").addClass("font-after");
+    } else {
+      $(this).text("Old");
+      $(".font-after").removeClass("font-after").addClass("font-before");
+    }
+  });
+
+  let animationHandle;
+  function animate() {
+    $("#fonttoggle").click();
+    animationHandle = setTimeout(animate, 1000);
+  }
+  $("#fontanimate").click(function () {
+    if ($(this).text() == "Animate") {
+      $(this).text("Stop");
+      animate();
+    } else {
+      $(this).text("Animate");
+      clearTimeout(animationHandle);
+    }
+  });
+}
+
+export {
+  renderTableDiff,
+  addAGlyph,
+  addAWord,
+  cmapDiff,
+  diffTables,
+  diffKerns,
+  setupAnimation,
+};
+
+	var report = {"tables":{"GDEF":{"glyph_classes":{"uni0301":["Mark",null],"uni10D003040308":["Base",null],"uni0302":["Mark",null],"uni0308":["Mark",null],"uni10D4":["Base",null],"uni10D40301":["Base",null],"uni10D40304":["Base",null],"uni10D8":["Base",null],"uni10D80301":["Base",null],"uni10D80304":["Base",null],"uni0304":["Mark",null],"uni10DD0301":["Base",null],"uni10DD0308":["Base",null],"uni10DD0304":["Base",null],"uni10DD03040308":["Base",null],"uni10E30302":["Base",null],"uni10E30308":["Base",null],"uni10E30304":["Base",null],"uni10E303040308":["Base",null],"uni10F7":["Base",null],"uni10F70301":["Base",null],"uni10F70304":["Base",null],"uni10FA":[null,"Base"],"uni10D3":[null,"Base"],"uni2D03":[null,"Base"],"uni10F8":[null,"Base"],"uni2D25":[null,"Base"],"hyphen":[null,"Base"],"uni2010":[null,"Base"],"uni10DC":[null,"Base"],"uni2D0C":[null,"Base"],"uni10FC":[null,"Base"],"uni00A0":[null,"Base"],"uni2D07":[null,"Base"],"uni10E2":[null,"Base"],"uni2D12":[null,"Base"],"uni10F9":[null,"Base"],"uni10F3":[null,"Base"],"uni2D23":[null,"Base"],"uni10EE":[null,"Base"],"uni10D6":[null,"Mark"],"uni2D06":[null,"Mark"],"uni10DF":[null,"Mark"],"uni2D0F":[null,"Mark"]},"mark_glyph_sets":{"0":{"0":["uni0301","uni10D6"],"1":["uni0302","uni2D06"],"2":["uni0308","uni10DF"],"3":["uni0304","uni2D0F"]}}},"GPOS":{"script_list":{"DFLT/dflt":{"lookups":{"1":[2,1],"2":[3,2]}},"geor/dflt":{"lookups":{"0":[1,0],"1":[2,1],"2":[3,2]}}},"lookup_list":{"0":{"0":{"error":"There are 170 changes, check manually!"},"1":{"classes":{"@CLASS_L_1":{"0":["uni10D1","uni2D00"],"1":["uni10D3","uni2D1C"],"2":["uni10D8","uni2D25"],"3":["uni10FF","uni2D09"],"4":["uni10DD","uni10DC"],"5":["uni10E0","uni10E4"],"6":["uni10D7","uni2D11"],"7":["uni10F9","uni10D7"],"8":["uni10EE","uni10D5"],"9":["uni10D6","uni10F7"]},"@CLASS_L_2":{"0":["uni2D04","uni1CAA"],"1":["uni2D09","uni1CB0"],"2":["uni2D17","uni1CB4"],"3":["uni2D18","uni1CB1"],"4":["uni2D0F","uni1C9E"]},"@CLASS_L_4":{"0":["uni1CAA","uni10D4"],"1":["uni1CB0","uni10EB"],"2":["uni1CB4","uni0589"],"3":["uni1CB1","uni2D10"],"4":["uni1C9E","uni2D27"]},"@CLASS_L_5":{"0":["uni10D00301","uni1C94"],"1":["uni10D00308","uni1C9B"],"2":["uni10D00304","uni1CA8"],"3":["uni10D003040308","uni1CA3"]},"@CLASS_L_6":{"0":["uni10AB","uni1CAB"],"1":["uni10B0","uni1CA5"],"2":["uni10A7","uni1CA7"],"3":["uni10A5","uni1C9F"]},"@CLASS_L_7":{"0":["uni1CAB","uni10AB"],"1":["uni1CA5","uni10B0"],"2":["uni1CA7","uni10A7"],"3":["uni1C9F","uni10A5"]},"@CLASS_L_8":{"0":["uni1C94","uni10D0"],"1":["uni1C9B","uni10D00301"],"2":["uni1CA8","uni10D00308"],"3":["uni1CA3","uni10D00304"]},"@CLASS_L_10":{"0":["uni2D13","uni10A1"],"1":["uni2D23","uni10A2"]},"@CLASS_L_11":{"0":["uni10DB","uni10BC"],"1":["uni10E8","uni10C5"]},"@CLASS_L_12":{"0":["uni2D25","uni1CA6"],"1":["uni2D0C","uni1C9A"]},"@CLASS_L_13":{"0":["uni10F0","uni10FD"],"1":["uni10F1","uni10D80304"]},"@CLASS_L_14":{"0":["uni10E6","uni10FA"],"1":["uni10DA","uni10E7"]},"@CLASS_L_15":{"0":["uni10D40301","uni10D003040308"],"1":["uni10D40304","uni10ED"]},"@CLASS_L_16":{"0":["uni10D4","uni10D1"],"1":["uni10E3","uni2D04"]},"@CLASS_L_17":{"0":["uni2D1A","uni10EA"],"1":["uni2D08","uni10D8"]},"@CLASS_L_18":{"0":["uni2D01","uni10D3"],"1":["uni2D02","uni2D07"]},"@CLASS_L_19":{"0":["uni2D00","uni2D03"],"1":["uni2D1D","uni10F8"]},"@CLASS_L_20":{"0":["uni10D0","uni10F6"],"1":["uni10E1","uni2D15"]},"@CLASS_L_21":{"0":["uni2D2D","uni2D02"],"1":["uni2D1F","uni10F4"]},"@CLASS_L_22":{"0":["uni1CA6","uni10F2"],"1":["uni1C9A","uni0304"]},"@CLASS_L_23":{"0":["uni10BC","uni20BE"],"1":["uni10C5","uni10E0"]},"@CLASS_L_24":{"0":["uni10A1","uni10E30302"],"1":["uni10A2","uni2D13"]},"@CLASS_L_25":{"0":["uni10D80301","uni1C93"]},"@CLASS_L_26":{"0":["uni1C93","hyphen"]},"@CLASS_R_1":{"0":["uni10D1","uni2D00"],"1":["uni10D8","uni2D25"],"2":["uni10EB","uni2D08"],"3":["uni10FF","uni2D09"],"4":["uni10DD","uni10DC"],"5":["uni10E4","uni10DE"],"6":["uni10D7","uni2D11"],"7":["uni10F9","uni10D7"]},"@CLASS_R_2":{"0":["uni1CAA","uni1CBD"],"1":["uni1CBE","uni1C94"],"2":["uni1CB1","uni1CB4"],"3":["uni1C98","uni1CB5"],"4":["uni1CBF","uni1C95"],"5":["uni1C9D","uni1CB3"],"6":["uni1C97","uni1CB7"]},"@CLASS_R_3":{"0":["uni1CBD","uni1CAA"],"1":["uni1C94","uni1CBE"],"2":["uni1CB4","uni1CB1"],"3":["uni1CB5","uni1C98"],"4":["uni1C95","uni1CBF"],"5":["uni1CB3","uni1C9D"],"6":["uni1CB7","uni1C97"]},"@CLASS_R_4":{"0":["uni2D24","uni10D4"],"1":["uni2D0D","uni2D04"],"2":["uni2D17","uni10D2"],"3":["uni2D10","uni10E6"],"4":["uni2D13","uni10FF"],"5":["uni2D23","uni10E30304"]},"@CLASS_R_5":{"0":["uni2D04","uni10F0"],"1":["uni2D02","uni10DD0301"],"2":["uni2D16","uni0589"],"3":["uni2D20","uni2D14"],"4":["uni2D0A","uni10E30302"],"5":["uni2D05","uni2D13"]},"@CLASS_R_7":{"0":["uni2D1A","uni10BA"],"1":["uni2D1D","uni10AD"],"2":["uni2D1C","uni10A7"],"3":["uni2D1E","uni10B3"]},"@CLASS_R_8":{"0":["uni2D00","uni10D0"],"1":["uni2D08","uni10D00301"],"2":["uni2D0E","uni10D00308"],"3":["uni2D0F","uni10D00304"]},"@CLASS_R_9":{"0":["uni10D00301","uni10D003040308"],"1":["uni10D00308","uni10D8"],"2":["uni10D00304","uni10DD0304"],"3":["uni10D003040308","uni2D27"]},"@CLASS_R_10":{"0":["uni10BA","uni10EA"],"1":["uni10AD","uni10ED"],"2":["uni10A7","uni10EC"],"3":["uni10B3","uni2D05"]},"@CLASS_R_11":{"0":["uni2D25","uni1C93"],"1":["uni2D1B","uni1CA6"],"2":["uni2D14","uni1C9A"]},"@CLASS_R_12":{"0":["uni2D01","uni10C1"],"1":["uni2D18","uni10A9"],"2":["uni2D12","uni10B1"]},"@CLASS_R_14":{"0":["uni10C1","uni10D1"],"1":["uni10A9","uni2D10"],"2":["uni10B1","space"]},"@CLASS_R_15":{"0":["uni1C93","uni10F2"],"1":["uni1CA6","uni10EF"],"2":["uni1C9A","uni2D0E"]},"@CLASS_R_16":{"0":["uni10D5","uni1C91"],"1":["uni10F3","uni1CAB"]},"@CLASS_R_17":{"0":["uni10E1","uni10BC"],"1":["uni10EE","uni10B2"]},"@CLASS_R_18":{"0":["uni2D09","uni1CB8"],"1":["uni2D11","uni1C9C"]},"@CLASS_R_19":{"0":["uni10D40301","uni10C4"],"1":["uni10D40304","uni10B7"]},"@CLASS_R_20":{"0":["uni10D4","uni1CA1"],"1":["uni10E5","uni1CAE"]},"@CLASS_R_21":{"0":["uni2D03","uni10FA"],"1":["uni2D0B","uni10DD0308"]},"@CLASS_R_22":{"0":["uni2D19","uni2D01"],"1":["uni2D21","uni2D18"]},"@CLASS_R_23":{"0":["uni10EA","uni10E9"],"1":["uni10E2","uni2D24"]},"@CLASS_R_24":{"0":["uni10D0","uni0302"],"1":["uni10DE","uni10DA"]},"@CLASS_R_25":{"0":["uni1CA1","uni10D3"],"1":["uni1CAE","uni2D1B"]},"@CLASS_R_26":{"0":["uni10C4","uni2D03"],"1":["uni10B7","uni10F8"]},"@CLASS_R_27":{"0":["uni1CB8","uni10EB"],"1":["uni1C9C","uni2D17"]},"@CLASS_R_28":{"0":["uni10BC","uni10E7"],"1":["uni10B2","uni10D5"]},"@CLASS_R_29":{"0":["uni1C91","uni10E30308"],"1":["uni1CAB","uni10E303040308"]},"@CLASS_R_30":{"0":["uni2D07","hyphen"]},"@CLASS_R_31":{"0":["uni10D80301","uni10E8"]}},"kerns":{"@CLASS_L_0":{"@CLASS_R_7":{"x":[-10,0]},"@CLASS_R_8":{"x":[-20,0]},"@CLASS_R_9":{"x":[0,-20]},"@CLASS_R_10":{"x":[0,-10]},"@CLASS_R_12":{"x":[-10,0]},"@CLASS_R_14":{"x":[0,-6]},"@CLASS_R_18":{"x":[-10,0]},"@CLASS_R_22":{"x":[-20,0]},"@CLASS_R_23":{"x":[0,-12]},"@CLASS_R_27":{"x":[0,-10]},"@CLASS_R_30":{"x":[-10,0]},"@CLASS_R_31":{"x":[0,-10]}},"@CLASS_L_1":{"@CLASS_R_9":{"x":[-10,0]},"@CLASS_R_16":{"x":[-30,0]},"@CLASS_R_17":{"x":[-20,0]},"@CLASS_R_19":{"x":[-20,0]},"@CLASS_R_20":{"x":[-20,0]},"@CLASS_R_24":{"x":[-10,0]},"@CLASS_R_25":{"x":[0,-20]},"@CLASS_R_26":{"x":[0,-20]},"@CLASS_R_28":{"x":[0,-20]},"@CLASS_R_29":{"x":[0,-30]}},"@CLASS_L_2":{"@CLASS_R_4":{"x":[-10,0]},"@CLASS_R_5":{"x":[-10,0]},"@CLASS_R_8":{"x":[-20,0]},"@CLASS_R_11":{"x":[0,-16]},"@CLASS_R_12":{"x":[-10,0]},"@CLASS_R_18":{"x":[-20,-10]},"@CLASS_R_20":{"x":[0,-4]},"@CLASS_R_21":{"x":[-10,0]},"@CLASS_R_22":{"x":[-10,0]},"@CLASS_R_30":{"x":[-10,0]}},"@CLASS_L_3":{"@CLASS_R_2":{"x":[0,-4]},"@CLASS_R_3":{"x":[-10,0]},"@CLASS_R_18":{"x":[0,-8]},"@CLASS_R_27":{"x":[-10,0]}},"@CLASS_L_4":{"@CLASS_R_5":{"x":[0,-10]},"@CLASS_R_9":{"x":[0,-24]},"@CLASS_R_14":{"x":[0,-14]},"@CLASS_R_15":{"x":[-10,0]},"@CLASS_R_23":{"x":[0,-10]},"@CLASS_R_24":{"x":[0,-10]},"@CLASS_R_25":{"x":[-10,0]},"@CLASS_R_27":{"x":[-10,-20]},"@CLASS_R_31":{"x":[0,-10]}},"@CLASS_L_5":{"@CLASS_R_1":{"x":[-10,0]},"@CLASS_R_2":{"x":[0,-10]},"@CLASS_R_11":{"x":[0,-10]},"@CLASS_R_16":{"x":[-40,-10]},"@CLASS_R_17":{"x":[-20,0]},"@CLASS_R_18":{"x":[0,-8]},"@CLASS_R_20":{"x":[-30,-6]}},"@CLASS_L_6":{"@CLASS_R_2":{"x":[0,-10]},"@CLASS_R_3":{"x":[0,-4]},"@CLASS_R_6":{"x":[30,0]},"@CLASS_R_11":{"x":[0,-6]},"@CLASS_R_13":{"x":[-70,0]},"@CLASS_R_18":{"x":[0,-4]},"@CLASS_R_26":{"x":[-30,0]}},"@CLASS_L_7":{"@CLASS_R_2":{"x":[-10,0]},"@CLASS_R_3":{"x":[-10,0]},"@CLASS_R_6":{"x":[0,30]},"@CLASS_R_13":{"x":[0,-49]},"@CLASS_R_15":{"x":[-20,0]},"@CLASS_R_19":{"x":[0,-30]},"@CLASS_R_27":{"x":[-10,0]}},"@CLASS_L_8":{"@CLASS_R_1":{"x":[0,-6]},"@CLASS_R_3":{"x":[-10,0]},"@CLASS_R_15":{"x":[-10,0]},"@CLASS_R_25":{"x":[-10,-30]},"@CLASS_R_27":{"x":[-10,0]},"@CLASS_R_28":{"x":[0,-20]},"@CLASS_R_29":{"x":[-10,-40]}},"@CLASS_L_9":{"@CLASS_R_2":{"x":[0,-10]},"@CLASS_R_3":{"x":[-10,0]},"@CLASS_R_11":{"x":[0,-30]},"@CLASS_R_15":{"x":[-20,0]},"@CLASS_R_18":{"x":[0,-20]},"@CLASS_R_20":{"x":[0,-20]},"@CLASS_R_25":{"x":[-20,0]}},"@CLASS_L_10":{"@CLASS_R_5":{"x":[-20,0]},"@CLASS_R_6":{"x":[0,-46]},"@CLASS_R_7":{"x":[0,-53]},"@CLASS_R_12":{"x":[0,-26]},"@CLASS_R_13":{"x":[0,-81]},"@CLASS_R_17":{"x":[0,-26]},"@CLASS_R_19":{"x":[0,-70]}},"@CLASS_L_11":{"@CLASS_R_6":{"x":[0,17]},"@CLASS_R_9":{"x":[-10,0]},"@CLASS_R_16":{"x":[-30,0]},"@CLASS_R_19":{"x":[-20,0]},"@CLASS_R_20":{"x":[-20,0]},"@CLASS_R_23":{"x":[-10,0]},"@CLASS_R_24":{"x":[-10,0]}},"@CLASS_L_12":{"@CLASS_R_2":{"x":[0,-30]},"@CLASS_R_7":{"x":[-10,0]},"@CLASS_R_8":{"x":[-20,0]},"@CLASS_R_12":{"x":[-20,0]},"@CLASS_R_16":{"x":[0,-20]},"@CLASS_R_18":{"x":[-30,-8]}},"@CLASS_L_13":{"@CLASS_R_15":{"x":[0,-20]},"@CLASS_R_16":{"x":[-20,0]},"@CLASS_R_19":{"x":[-10,0]},"@CLASS_R_20":{"x":[-10,0]},"@CLASS_R_24":{"x":[0,-20]},"@CLASS_R_27":{"x":[0,-10]}},"@CLASS_L_14":{"@CLASS_R_1":{"x":[0,-6]},"@CLASS_R_16":{"x":[-20,0]},"@CLASS_R_17":{"x":[-10,0]},"@CLASS_R_19":{"x":[-20,0]},"@CLASS_R_20":{"x":[-20,0]},"@CLASS_R_25":{"x":[0,-30]},"@CLASS_R_26":{"x":[0,-30]},"@CLASS_R_28":{"x":[0,-20]},"@CLASS_R_29":{"x":[0,-40]},"@CLASS_R_30":{"x":[0,-6]}},"@CLASS_L_15":{"@CLASS_R_4":{"x":[0,-16]},"@CLASS_R_5":{"x":[0,-20]},"@CLASS_R_9":{"x":[0,-20]},"@CLASS_R_10":{"x":[0,-10]},"@CLASS_R_14":{"x":[0,-20]},"@CLASS_R_17":{"x":[-40,0]},"@CLASS_R_23":{"x":[0,-16]},"@CLASS_R_27":{"x":[0,-20]}},"@CLASS_L_16":{"@CLASS_R_5":{"x":[0,-27]},"@CLASS_R_9":{"x":[0,-36]},"@CLASS_R_10":{"x":[0,-16]},"@CLASS_R_14":{"x":[0,-16]},"@CLASS_R_15":{"x":[0,-12]},"@CLASS_R_17":{"x":[-40,0]},"@CLASS_R_23":{"x":[0,-12]},"@CLASS_R_24":{"x":[0,-22]},"@CLASS_R_27":{"x":[0,-36]}},"@CLASS_L_17":{"@CLASS_R_8":{"x":[-20,0]},"@CLASS_R_9":{"x":[0,-20]},"@CLASS_R_18":{"x":[-20,0]},"@CLASS_R_27":{"x":[0,-20]}},"@CLASS_L_18":{"@CLASS_R_4":{"x":[-40,0]},"@CLASS_R_7":{"x":[-20,0]},"@CLASS_R_8":{"x":[-40,0]},"@CLASS_R_11":{"x":[-20,0]},"@CLASS_R_12":{"x":[-20,0]},"@CLASS_R_18":{"x":[-40,0]},"@CLASS_R_21":{"x":[-30,0]},"@CLASS_R_22":{"x":[-20,0]},"@CLASS_R_28":{"x":[0,-40]}},"@CLASS_L_19":{"@CLASS_R_4":{"x":[-20,0]},"@CLASS_R_5":{"x":[-20,0]},"@CLASS_R_7":{"x":[-10,0]},"@CLASS_R_8":{"x":[-20,0]},"@CLASS_R_12":{"x":[-20,0]},"@CLASS_R_18":{"x":[-20,0]},"@CLASS_R_22":{"x":[-20,0]},"@CLASS_R_28":{"x":[0,-40]}},"@CLASS_L_20":{"@CLASS_R_1":{"x":[-10,0]},"@CLASS_R_16":{"x":[-40,0]},"@CLASS_R_17":{"x":[-20,0]},"@CLASS_R_19":{"x":[-30,0]},"@CLASS_R_20":{"x":[-30,0]},"@CLASS_R_25":{"x":[0,-20]},"@CLASS_R_26":{"x":[0,-20]},"@CLASS_R_28":{"x":[0,-10]},"@CLASS_R_29":{"x":[0,-12]},"@CLASS_R_31":{"x":[-10,0]}},"@CLASS_L_21":{"@CLASS_R_11":{"x":[-20,0]},"@CLASS_R_18":{"x":[-10,0]},"@CLASS_R_21":{"x":[-20,0]},"@CLASS_R_25":{"x":[0,-6]},"@CLASS_R_26":{"x":[0,-6]},"@CLASS_R_29":{"x":[0,-20]}},"@CLASS_L_22":{"@CLASS_R_3":{"x":[-30,0]},"@CLASS_R_9":{"x":[0,-20]},"@CLASS_R_10":{"x":[0,-10]},"@CLASS_R_14":{"x":[0,-20]},"@CLASS_R_27":{"x":[-20,-17]},"@CLASS_R_29":{"x":[-20,0]}},"@CLASS_L_23":{"@CLASS_R_6":{"x":[30,0]},"@CLASS_R_8":{"x":[0,-10]},"@CLASS_R_21":{"x":[0,-10]},"@CLASS_R_22":{"x":[0,-10]},"@CLASS_R_25":{"x":[0,-20]},"@CLASS_R_26":{"x":[0,-20]},"@CLASS_R_29":{"x":[0,-17]}},"@CLASS_L_24":{"@CLASS_R_4":{"x":[0,-20]},"@CLASS_R_6":{"x":[-80,0]},"@CLASS_R_10":{"x":[-70,0]},"@CLASS_R_13":{"x":[-110,0]},"@CLASS_R_14":{"x":[-40,0]},"@CLASS_R_26":{"x":[-70,0]},"@CLASS_R_28":{"x":[-30,0]}},"@CLASS_L_25":{"@CLASS_R_2":{"x":[0,-30]},"@CLASS_R_3":{"x":[0,-16]},"@CLASS_R_17":{"x":[-20,0]},"@CLASS_R_18":{"x":[0,-20]},"@CLASS_R_20":{"x":[-20,-12]},"@CLASS_R_24":{"x":[-10,0]}},"@CLASS_L_26":{"@CLASS_R_2":{"x":[-10,0]},"@CLASS_R_3":{"x":[-30,0]},"@CLASS_R_25":{"x":[0,-20]},"@CLASS_R_27":{"x":[-20,0]},"@CLASS_R_28":{"x":[0,-20]}}}}},"1":{"0":{"classes":{"@CLASS_L_0":{"0":["uni10D00301","uni10D00308"],"1":["uni10D00304","uni10D00301"],"2":["uni10D00308","uni10D00304"],"3":["uni10D003040308","uni10D0"]},"@CLASS_L_1":{"0":["uni10D80301","hyphen"]},"@CLASS_R_1":{"0":["uni10D00301","uni2D03"],"1":["uni10D00308","uni10F8"],"2":["uni10D00304",null],"3":["uni10D003040308",null]},"@CLASS_R_2":{"0":["uni10D40301","hyphen"],"1":["uni10D40304",null]},"@CLASS_R_3":[["uni10D80301"],null]},"kerns":{"@CLASS_L_0":{"@CLASS_R_1":{"x":[0,-30]},"@CLASS_R_2":{"x":[-30,-6]},"@CLASS_R_3":[{"x":-10},null]},"@CLASS_L_1":{"@CLASS_R_1":{"x":[-10,-20]},"@CLASS_R_2":{"x":[-20,0]},"@CLASS_R_3":[{"x":0},null]}}}},"2":{"0":{"marks":{"anchor_0":{"uni0301":[{"x":-48,"y":536},null],"uni0302":[{"x":1,"y":536},null],"uni0308":[{"x":0,"y":536},null],"uni0304":[{"x":0,"y":536},null],"uni10D6":[null,{"x":0,"y":536}],"uni2D06":[null,{"x":-45,"y":536}],"uni10DF":[null,{"x":0,"y":536}],"uni2D0F":[null,{"x":0,"y":536}]}},"bases":{"uni1C90":{"anchor_0":{"x":[266,263]}},"uni1C900301":{"anchor_0":{"x":[294,289]}},"uni1C900308":{"anchor_0":{"x":[266,263],"y":[930,931]}},"uni1C900304":{"anchor_0":{"x":[266,263],"y":[859,860]}},"uni1C9003040308":{"anchor_0":{"x":[266,263],"y":[1075,1076]}},"uni1C940301":{"anchor_0":{"x":[290,288]}},"uni1C940304":{"anchor_0":{"y":[859,860]}},"uni1C98":{"anchor_0":{"x":[280,279]}},"uni1C980301":{"anchor_0":{"x":[308,305]}},"uni1C980304":{"anchor_0":{"x":[280,279],"y":[869,870]}},"uni1C9D":{"anchor_0":{"x":[408,407]}},"uni1C9D0301":{"anchor_0":{"x":[436,432]}},"uni1C9D0308":{"anchor_0":{"x":[408,407],"y":[930,931]}},"uni1C9D0304":{"anchor_0":{"x":[408,407],"y":[859,860]}},"uni1C9D03040308":{"anchor_0":{"x":[408,407],"y":[1075,1076]}},"uni1CA3":{"anchor_0":{"x":[313,309]}},"uni1CA30301":{"anchor_0":{"x":[341,335]}},"uni1CA30302":{"anchor_0":{"x":[313,309]}},"uni1CA30308":{"anchor_0":{"x":[313,309],"y":[930,931]}},"uni1CA30304":{"anchor_0":{"x":[313,309],"y":[859,860]}},"uni1CA303040308":{"anchor_0":{"x":[313,309],"y":[1075,1076]}},"uni1CB7":{"anchor_0":{"x":[244,243]}},"uni1CB70301":{"anchor_0":{"x":[272,269]}},"uni1CB70304":{"anchor_0":{"x":[244,243],"y":[859,860]}},"uni10D0":{"anchor_0":{"x":[237,264],"y":[536,766]}},"uni10D00301":{"anchor_0":{"x":[265,239],"y":[766,753]}},"uni10D00308":{"anchor_0":{"x":[237,239],"y":[752,682]}},"uni10D00304":{"anchor_0":{"x":[237,239],"y":[681,898]}},"uni10D003040308":[{"anchor_0":{"x":237,"y":897}},null],"uni10D4":[{"anchor_0":{"x":251,"y":536}},null],"uni10D40301":[{"anchor_0":{"x":279,"y":766}},null],"uni10D40304":[{"anchor_0":{"x":251,"y":681}},null],"uni10D8":[{"anchor_0":{"x":257,"y":536}},null],"uni10D80301":[{"anchor_0":{"x":285,"y":766}},null],"uni10D80304":[{"anchor_0":{"x":257,"y":681}},null],"uni10DD":{"anchor_0":{"x":[363,362],"y":[536,898]}},"uni10DD0301":[{"anchor_0":{"x":391,"y":766}},null],"uni10DD0308":[{"anchor_0":{"x":363,"y":752}},null],"uni10DD0304":[{"anchor_0":{"x":363,"y":681}},null],"uni10DD03040308":[{"anchor_0":{"x":363,"y":897}},null],"uni10E3":{"anchor_0":{"x":[296,291],"y":[536,682]}},"uni10E30301":{"anchor_0":{"x":[324,291],"y":[766,898]}},"uni10E30302":[{"anchor_0":{"x":296,"y":766}},null],"uni10E30308":[{"anchor_0":{"x":296,"y":752}},null],"uni10E30304":[{"anchor_0":{"x":296,"y":681}},null],"uni10E303040308":[{"anchor_0":{"x":296,"y":897}},null],"uni10F7":[{"anchor_0":{"x":233,"y":536}},null],"uni10F70301":[{"anchor_0":{"x":261,"y":766}},null],"uni10F70304":[{"anchor_0":{"x":233,"y":681}},null],"uni10FA":[null,{"anchor_0":{"x":239,"y":536}}],"uni10D3":[null,{"anchor_0":{"x":249,"y":536}}],"uni2D03":[null,{"anchor_0":{"x":275,"y":766}}],"uni10F8":[null,{"anchor_0":{"x":249,"y":682}}],"uni2D25":[null,{"anchor_0":{"x":247,"y":536}}],"hyphen":[null,{"anchor_0":{"x":273,"y":766}}],"uni2010":[null,{"anchor_0":{"x":247,"y":682}}],"uni10DC":[null,{"anchor_0":{"x":362,"y":536}}],"uni2D0C":[null,{"anchor_0":{"x":388,"y":766}}],"uni10FC":[null,{"anchor_0":{"x":362,"y":753}}],"uni00A0":[null,{"anchor_0":{"x":362,"y":682}}],"uni2D07":[null,{"anchor_0":{"x":291,"y":536}}],"uni10E2":[null,{"anchor_0":{"x":317,"y":766}}],"uni2D12":[null,{"anchor_0":{"x":291,"y":766}}],"uni10F9":[null,{"anchor_0":{"x":291,"y":753}}],"uni10F3":[null,{"anchor_0":{"x":236,"y":536}}],"uni2D23":[null,{"anchor_0":{"x":261,"y":766}}],"uni10EE":[null,{"anchor_0":{"x":236,"y":682}}]}}},"3":{"0":{"marks":{"anchor_0":{"uni0301":[{"x":-48,"y":536},null],"uni0302":[{"x":1,"y":536},null],"uni0308":[{"x":0,"y":536},null],"uni0304":[{"x":0,"y":536},null],"uni10D6":[null,{"x":0,"y":536}],"uni2D06":[null,{"x":-45,"y":536}],"uni10DF":[null,{"x":0,"y":536}],"uni2D0F":[null,{"x":0,"y":536}]}},"basemarks":{"uni0301":[{"anchor_0":{"x":-20,"y":766}},null],"uni0302":[{"anchor_0":{"x":1,"y":766}},null],"uni0308":[{"anchor_0":{"x":0,"y":752}},null],"uni0304":[{"anchor_0":{"x":0,"y":681}},null],"uni10D6":[null,{"anchor_0":{"x":0,"y":753}}],"uni2D06":[null,{"anchor_0":{"x":-20,"y":766}}],"uni10DF":[null,{"anchor_0":{"x":0,"y":766}}],"uni2D0F":[null,{"anchor_0":{"x":0,"y":682}}]}}}}},"GSUB":{"script_list":{"geor/dflt":{"lookups":{"2":[3,2]}}},"feature_list":{"ccmp":{"1":[1,null]}},"lookup_list":{"0":{"0":{"uni10FD":["uni1CBD",null],"uni10FA":["uni1CBA","uni1C90"],"uni10D0":["uni1C90",null],"uni10D1":["uni1C91",null],"uni10EA":["uni1CAA",null],"uni10ED":["uni1CAD",null],"uni10E9":["uni1CA9",null],"uni10EC":["uni1CAC",null],"uni10D3":["uni1C93","uni1C94"],"uni10F8":["uni1CB8",null],"uni10D4":["uni1C94",null],"uni10F6":["uni1CB6","uni1CA6"],"uni10D2":["uni1C92",null],"uni10E6":["uni1CA6",null],"uni10F0":["uni1CB0",null],"uni10F4":["uni1CB4","uni1CB1"],"uni10FE":["uni1CBE","uni1CB2"],"uni10F1":["uni1CB1",null],"uni10F2":["uni1CB2",null],"uni10F5":["uni1CB5",null],"uni10D8":["uni1C98",null],"uni10EF":["uni1CAF",null],"uni10EB":["uni1CAB",null],"uni10D9":["uni1C99",null],"uni10E5":["uni1CA5",null],"uni10FF":["uni1CBF",null],"uni10DA":["uni1C9A",null],"uni10DB":["uni1C9B",null],"uni10DC":["uni1C9C","uni1C9D"],"uni10DD":["uni1C9D",null],"uni10DE":["uni1C9E","uni1CA4"],"uni10E4":["uni1CA4","uni1CA0"],"uni10E7":["uni1CA7","uni1CA1"],"uni10E0":["uni1CA0","uni1CA8"],"uni10E1":["uni1CA1",null],"uni10E8":["uni1CA8",null],"uni10D7":["uni1C97","uni1CB9"],"uni10E2":["uni1CA2",null],"uni10F9":["uni1CB9",null],"uni10E3":["uni1CA3",null],"uni10D5":["uni1C95","uni1CAE"],"uni10F3":["uni1CB3","uni1CB7"],"uni10EE":["uni1CAE",null],"uni10F7":["uni1CB7","uni1C96"],"uni10D6":["uni1C96",null],"uni10DF":["uni1C9F",null],"uni0301":[null,"uni1CBD"],"uni2D2D":[null,"uni1CBA"],"uni2D00":[null,"uni1C91"],"uni2D01":[null,"uni1CAA"],"uni2D1A":[null,"uni1CAD"],"uni2D1D":[null,"uni1CA9"],"uni2D19":[null,"uni1CAC"],"uni2D1C":[null,"uni1C93"],"uni0308":[null,"uni1CB8"],"uni10D40301":[null,"uni1CB6"],"uni10D40304":[null,"uni1C92"],"uni2D02":[null,"uni1CB0"],"uni2D16":[null,"uni1CB4"],"uni2D20":[null,"uni1CBE"],"uni2D21":[null,"uni1CB5"],"uni2D25":[null,"uni1C98"],"uni10D80301":[null,"uni1CAF"],"uni2D08":[null,"uni1CAB"],"uni2D1F":[null,"uni1C99"],"uni2D1B":[null,"uni1CA5"],"uni2D09":[null,"uni1CBF"],"uni2D15":[null,"uni1C9A"],"uni20BE":[null,"uni1C9B"],"uni2D0A":[null,"uni1C9C"],"uni10DD0308":[null,"uni1C9E"],"uni10FB":[null,"uni1CA7"],"uni2D11":[null,"uni1C97"],"uni2D18":[null,"uni1CA2"],"uni2D07":[null,"uni1CA3"],"uni10E30308":[null,"uni1C95"],"uni10E303040308":[null,"uni1CB3"],"uni10F70304":[null,"uni1C9F"]}},"1":{"0":{"uni1C90 uni0304 uni0308":["uni1C9003040308",null],"uni1C90 uni0301":["uni1C900301",null],"uni1C90 uni0308":["uni1C900308",null],"uni1C90 uni0304":["uni1C900304",null],"uni1C94 uni0301":["uni1C940301",null],"uni1C94 uni0304":["uni1C940304",null],"uni1C98 uni0301":["uni1C980301",null],"uni1C98 uni0304":["uni1C980304",null],"uni1C9D uni0304 uni0308":["uni1C9D03040308",null],"uni1C9D uni0301":["uni1C9D0301",null],"uni1C9D uni0308":["uni1C9D0308",null],"uni1C9D uni0304":["uni1C9D0304",null],"uni1CA3 uni0304 uni0308":["uni1CA303040308",null],"uni1CA3 uni0301":["uni1CA30301",null],"uni1CA3 uni0302":["uni1CA30302",null],"uni1CA3 uni0308":["uni1CA30308",null],"uni1CA3 uni0304":["uni1CA30304",null],"uni1CB7 uni0301":["uni1CB70301",null],"uni1CB7 uni0304":["uni1CB70304",null],"uni10D0 uni0304 uni0308":["uni10D003040308",null],"uni10D0 uni0301":["uni10D00301",null],"uni10D0 uni0308":["uni10D00308",null],"uni10D0 uni0304":["uni10D00304",null],"uni10D4 uni0301":["uni10D40301",null],"uni10D4 uni0304":["uni10D40304",null],"uni10D8 uni0301":["uni10D80301",null],"uni10D8 uni0304":["uni10D80304",null],"uni10DD uni0304 uni0308":["uni10DD03040308",null],"uni10DD uni0301":["uni10DD0301",null],"uni10DD uni0308":["uni10DD0308",null],"uni10DD uni0304":["uni10DD0304",null],"uni10E3 uni0304 uni0308":["uni10E303040308",null],"uni10E3 uni0301":["uni10E30301",null],"uni10E3 uni0302":["uni10E30302",null],"uni10E3 uni0308":["uni10E30308",null],"uni10E3 uni0304":["uni10E30304",null],"uni10F7 uni0301":["uni10F70301",null],"uni10F7 uni0304":["uni10F70304",null],"uni1C90 uni2D0F uni10D6":[null,"uni1C9003040308"],"uni1C90 uni2D06":[null,"uni1C900301"],"uni1C90 uni10D6":[null,"uni1C900308"],"uni1C90 uni2D0F":[null,"uni1C900304"],"uni1C94 uni2D06":[null,"uni1C940301"],"uni1C94 uni2D0F":[null,"uni1C940304"],"uni1C98 uni2D06":[null,"uni1C980301"],"uni1C98 uni2D0F":[null,"uni1C980304"],"uni1C9D uni2D0F uni10D6":[null,"uni1C9D03040308"],"uni1C9D uni2D06":[null,"uni1C9D0301"],"uni1C9D uni10D6":[null,"uni1C9D0308"],"uni1C9D uni2D0F":[null,"uni1C9D0304"],"uni1CA3 uni2D0F uni10D6":[null,"uni1CA303040308"],"uni1CA3 uni2D06":[null,"uni1CA30301"],"uni1CA3 uni10DF":[null,"uni1CA30302"],"uni1CA3 uni10D6":[null,"uni1CA30308"],"uni1CA3 uni2D0F":[null,"uni1CA30304"],"uni1CB7 uni2D06":[null,"uni1CB70301"],"uni1CB7 uni2D0F":[null,"uni1CB70304"],"uni10FA uni2D0F uni10D6":[null,"uni10D00304"],"uni10FA uni2D06":[null,"uni10D0"],"uni10FA uni10D6":[null,"uni10D00301"],"uni10FA uni2D0F":[null,"uni10D00308"],"uni10D3 uni2D06":[null,"uni2D03"],"uni10D3 uni2D0F":[null,"uni10F8"],"uni2D25 uni2D06":[null,"hyphen"],"uni2D25 uni2D0F":[null,"uni2010"],"uni10DC uni2D0F uni10D6":[null,"uni10DD"],"uni10DC uni2D06":[null,"uni2D0C"],"uni10DC uni10D6":[null,"uni10FC"],"uni10DC uni2D0F":[null,"uni00A0"],"uni2D07 uni2D0F uni10D6":[null,"uni10E30301"],"uni2D07 uni2D06":[null,"uni10E2"],"uni2D07 uni10DF":[null,"uni2D12"],"uni2D07 uni10D6":[null,"uni10F9"],"uni2D07 uni2D0F":[null,"uni10E3"],"uni10F3 uni2D06":[null,"uni2D23"],"uni10F3 uni2D0F":[null,"uni10EE"]}},"2":{"0":{"uni10FD":["uni1CBD",null],"uni10FA":["uni1CBA","uni1C90"],"uni10D0":["uni1C90",null],"uni10D1":["uni1C91",null],"uni10EA":["uni1CAA",null],"uni10ED":["uni1CAD",null],"uni10E9":["uni1CA9",null],"uni10EC":["uni1CAC",null],"uni10D3":["uni1C93","uni1C94"],"uni10F8":["uni1CB8",null],"uni10D4":["uni1C94",null],"uni10F6":["uni1CB6","uni1CA6"],"uni10D2":["uni1C92",null],"uni10E6":["uni1CA6",null],"uni10F0":["uni1CB0",null],"uni10F4":["uni1CB4","uni1CB1"],"uni10FE":["uni1CBE","uni1CB2"],"uni10F1":["uni1CB1",null],"uni10F2":["uni1CB2",null],"uni10F5":["uni1CB5",null],"uni10D8":["uni1C98",null],"uni10EF":["uni1CAF",null],"uni10EB":["uni1CAB",null],"uni10D9":["uni1C99",null],"uni10E5":["uni1CA5",null],"uni10FF":["uni1CBF",null],"uni10DA":["uni1C9A",null],"uni10DB":["uni1C9B",null],"uni10DC":["uni1C9C","uni1C9D"],"uni10DD":["uni1C9D",null],"uni10DE":["uni1C9E","uni1CA4"],"uni10E4":["uni1CA4","uni1CA0"],"uni10E7":["uni1CA7","uni1CA1"],"uni10E0":["uni1CA0","uni1CA8"],"uni10E1":["uni1CA1",null],"uni10E8":["uni1CA8",null],"uni10D7":["uni1C97","uni1CB9"],"uni10E2":["uni1CA2",null],"uni10F9":["uni1CB9",null],"uni10E3":["uni1CA3",null],"uni10D5":["uni1C95","uni1CAE"],"uni10F3":["uni1CB3","uni1CB7"],"uni10EE":["uni1CAE",null],"uni10F7":["uni1CB7","uni1C96"],"uni10D6":["uni1C96",null],"uni10DF":["uni1C9F",null],"uni0301":[null,"uni1CBD"],"uni2D2D":[null,"uni1CBA"],"uni2D00":[null,"uni1C91"],"uni2D01":[null,"uni1CAA"],"uni2D1A":[null,"uni1CAD"],"uni2D1D":[null,"uni1CA9"],"uni2D19":[null,"uni1CAC"],"uni2D1C":[null,"uni1C93"],"uni0308":[null,"uni1CB8"],"uni10D40301":[null,"uni1CB6"],"uni10D40304":[null,"uni1C92"],"uni2D02":[null,"uni1CB0"],"uni2D16":[null,"uni1CB4"],"uni2D20":[null,"uni1CBE"],"uni2D21":[null,"uni1CB5"],"uni2D25":[null,"uni1C98"],"uni10D80301":[null,"uni1CAF"],"uni2D08":[null,"uni1CAB"],"uni2D1F":[null,"uni1C99"],"uni2D1B":[null,"uni1CA5"],"uni2D09":[null,"uni1CBF"],"uni2D15":[null,"uni1C9A"],"uni20BE":[null,"uni1C9B"],"uni2D0A":[null,"uni1C9C"],"uni10DD0308":[null,"uni1C9E"],"uni10FB":[null,"uni1CA7"],"uni2D11":[null,"uni1C97"],"uni2D18":[null,"uni1CA2"],"uni2D07":[null,"uni1CA3"],"uni10E30308":[null,"uni1C95"],"uni10E303040308":[null,"uni1CB3"],"uni10F70304":[null,"uni1C9F"]}}}},"OS/2":{"x_avg_char_width":[590,589],"panose_10":{"0":[2,0],"1":[2,0],"2":[8,0],"3":[6,0],"4":[6,0],"5":[5,0],"6":[5,0],"7":[2,0],"8":[2,0],"9":[4,0]},"fs_selection":[416,32]},"cmap":{"U+0020":["space","uni10E1"],"U+002D":["hyphen","uni2D22"],"U+00A0":["uni00A0","uni2D0B"],"U+0301":["uni0301",null],"U+0302":["uni0302",null],"U+0304":["uni0304",null],"U+0308":["uni0308",null],"U+0589":["uni0589","uni2D0D"],"U+10D0":["uni10D0","uni10FA"],"U+10D1":["uni10D1","uni2D00"],"U+10D2":["uni10D2","uni10D40304"],"U+10D3":["uni10D3","uni2D1C"],"U+10D4":["uni10D4","uni10D3"],"U+10D5":["uni10D5","uni10E30308"],"U+10D6":["uni10D6","uni10F7"],"U+10D7":["uni10D7","uni2D11"],"U+10D8":["uni10D8","uni2D25"],"U+10D9":["uni10D9","uni2D1F"],"U+10DA":["uni10DA","uni2D15"],"U+10DB":["uni10DB","uni20BE"],"U+10DC":["uni10DC","uni2D0A"],"U+10DD":["uni10DD","uni10DC"],"U+10DE":["uni10DE","uni10DD0308"],"U+10DF":["uni10DF","uni10F70304"],"U+10E0":["uni10E0","uni10E4"],"U+10E1":["uni10E1","uni10E7"],"U+10E2":["uni10E2","uni2D18"],"U+10E3":["uni10E3","uni2D07"],"U+10E4":["uni10E4","uni10DE"],"U+10E5":["uni10E5","uni2D1B"],"U+10E6":["uni10E6","uni10F6"],"U+10E7":["uni10E7","uni10FB"],"U+10E8":["uni10E8","uni10E0"],"U+10E9":["uni10E9","uni2D1D"],"U+10EA":["uni10EA","uni2D01"],"U+10EB":["uni10EB","uni2D08"],"U+10EC":["uni10EC","uni2D19"],"U+10ED":["uni10ED","uni2D1A"],"U+10EE":["uni10EE","uni10D5"],"U+10EF":["uni10EF","uni10D80301"],"U+10F0":["uni10F0","uni2D02"],"U+10F1":["uni10F1","uni10F4"],"U+10F2":["uni10F2","uni10FE"],"U+10F3":["uni10F3","uni10E303040308"],"U+10F4":["uni10F4","uni2D16"],"U+10F5":["uni10F5","uni2D21"],"U+10F6":["uni10F6","uni10D40301"],"U+10F7":["uni10F7","uni10F3"],"U+10F8":["uni10F8","uni0308"],"U+10F9":["uni10F9","uni10D7"],"U+10FA":["uni10FA","uni2D2D"],"U+10FB":["uni10FB","uni10DD03040308"],"U+10FC":["uni10FC","uni10DB"],"U+10FD":["uni10FD","uni0301"],"U+10FE":["uni10FE","uni2D20"],"U+10FF":["uni10FF","uni2D09"],"U+2010":["uni2010","uni10F5"],"U+20BE":["uni20BE","uni10E5"],"U+2D00":["uni2D00","uni10D003040308"],"U+2D01":["uni2D01","uni10D1"],"U+2D02":["uni2D02","uni2D04"],"U+2D03":["uni2D03","uni0302"],"U+2D04":["uni2D04","uni10D4"],"U+2D05":["uni2D05","uni10E30304"],"U+2D06":["uni2D06","uni10F70301"],"U+2D07":["uni2D07","uni10E8"],"U+2D08":["uni2D08","uni10D8"],"U+2D09":["uni2D09","uni10EB"],"U+2D0A":["uni2D0A","uni10FF"],"U+2D0B":["uni2D0B","uni10DA"],"U+2D0C":["uni2D0C","uni0304"],"U+2D0D":["uni2D0D","uni10DD0301"],"U+2D0E":["uni2D0E","uni10DD0304"],"U+2D0F":["uni2D0F","uni2D27"],"U+2D10":["uni2D10","uni2D14"],"U+2D11":["uni2D11","uni2D17"],"U+2D12":["uni2D12","space"],"U+2D13":["uni2D13","uni10E30302"],"U+2D14":["uni2D14","uni2D0E"],"U+2D15":["uni2D15","uni10D9"],"U+2D16":["uni2D16","uni10D2"],"U+2D17":["uni2D17","uni0589"],"U+2D18":["uni2D18","uni2D10"],"U+2D19":["uni2D19","uni10E9"],"U+2D1A":["uni2D1A","uni10EA"],"U+2D1B":["uni2D1B","uni10EF"],"U+2D1C":["uni2D1C","uni10EC"],"U+2D1D":["uni2D1D","uni10ED"],"U+2D1E":["uni2D1E","uni2D05"],"U+2D1F":["uni2D1F","uni10D80304"],"U+2D20":["uni2D20","uni10E6"],"U+2D21":["uni2D21","uni2D24"],"U+2D22":["uni2D22","uni10F1"],"U+2D23":["uni2D23","uni2D13"],"U+2D24":["uni2D24","uni10F0"],"U+2D25":["uni2D25","uni10F2"],"U+2D27":["uni2D27","uni2D1E"],"U+2D2D":["uni2D2D","uni10FD"]},"cvt ":[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,131,0,131,0,59,0,59,2,37,255,246,2,248,255,3,2,202,255,246,4,62,254,220,2,37,255,246,3,5,255,3,2,213,255,246,4,62,254,220,0,133,0,133,0,253,0,63,0,50,0,50,0,65,2,202,0,0,2,24,0,0,2,248,255,11,4,62,254,220,2,215,255,243,2,37,255,243,2,248,255,11,4,62,254,220],null],"fpgm":[[176,0,44,32,176,0,85,88,69,89,32,32,75,184,0,14,81,75,176,6,83,90,88,176,52,27,176,40,89,96,102,32,138,85,88,176,2,37,97,185,8,0,8,0,99,99,35,98,27,33,33,176,0,89,176,0,67,35,68,178,0,1,0,67,96,66,45,176,1,44,176,32,96,102,45,176,2,44,35,33,35,33,45,176,3,44,32,100,179,3,20,21,0,66,67,176,19,67,32,96,96,66,177,2,20,67,66,177,37,3,67,176,2,67,84,120,32,176,12,35,176,2,67,67,97,100,176,4,80,120,178,2,2,2,67,96,66,176,33,101,28,33,176,2,67,67,178,14,21,1,66,28,32,176,2,67,35,66,178,19,1,19,67,96,66,35,176,0,80,88,101,89,178,22,1,2,67,96,66,45,176,4,44,176,3,43,176,21,67,88,35,33,35,33,176,22,67,67,35,176,0,80,88,101,89,27,32,100,32,176,192,80,176,4,38,90,178,40,1,13,67,69,99,69,176,6,69,88,33,176,3,37,89,82,91,88,33,35,33,27,138,88,32,176,80,80,88,33,176,64,89,27,32,176,56,80,88,33,176,56,89,89,32,177,1,13,67,69,99,69,97,100,176,40,80,88,33,177,1,13,67,69,99,69,32,176,48,80,88,33,176,48,89,27,32,176,192,80,88,32,102,32,138,138,97,32,176,10,80,88,96,27,32,176,32,80,88,33,176,10,96,27,32,176,54,80,88,33,176,54,96,27,96,89,89,89,27,176,2,37,176,12,67,99,176,0,82,88,176,0,75,176,10,80,88,33,176,12,67,27,75,176,30,80,88,33,176,30,75,97,184,16,0,99,176,12,67,99,184,5,0,98,89,89,100,97,89,176,1,43,89,89,35,176,0,80,88,101,89,89,32,100,176,22,67,35,66,89,45,176,5,44,32,69,32,176,4,37,97,100,32,176,7,67,80,88,176,7,35,66,176,8,35,66,27,33,33,89,176,1,96,45,176,6,44,35,33,35,33,176,3,43,32,100,177,7,98,66,32,176,8,35,66,176,6,69,88,27,177,1,13,67,69,99,177,1,13,67,176,2,96,69,99,176,5,42,33,32,176,8,67,32,138,32,138,176,1,43,177,48,5,37,176,4,38,81,88,96,80,27,97,82,89,88,35,89,33,89,32,176,64,83,88,176,1,43,27,33,176,64,89,35,176,0,80,88,101,89,45,176,7,44,176,9,67,43,178,0,2,0,67,96,66,45,176,8,44,176,9,35,66,35,32,176,0,35,66,97,176,2,98,102,176,1,99,176,1,96,176,7,42,45,176,9,44,32,32,69,32,176,14,67,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,68,176,1,96,45,176,10,44,178,9,14,0,67,69,66,42,33,178,0,1,0,67,96,66,45,176,11,44,176,0,67,35,68,178,0,1,0,67,96,66,45,176,12,44,32,32,69,32,176,1,43,35,176,0,67,176,4,37,96,32,69,138,35,97,32,100,32,176,32,80,88,33,176,0,27,176,48,80,88,176,32,27,176,64,89,89,35,176,0,80,88,101,89,176,3,37,35,97,68,68,176,1,96,45,176,13,44,32,32,69,32,176,1,43,35,176,0,67,176,4,37,96,32,69,138,35,97,32,100,176,36,80,88,176,0,27,176,64,89,35,176,0,80,88,101,89,176,3,37,35,97,68,68,176,1,96,45,176,14,44,32,176,0,35,66,179,13,12,0,3,69,80,88,33,27,35,33,89,42,33,45,176,15,44,177,2,2,69,176,100,97,68,45,176,16,44,176,1,96,32,32,176,15,67,74,176,0,80,88,32,176,15,35,66,89,176,16,67,74,176,0,82,88,32,176,16,35,66,89,45,176,17,44,32,176,16,98,102,176,1,99,32,184,4,0,99,138,35,97,176,17,67,96,32,138,96,32,176,17,35,66,35,45,176,18,44,75,84,88,177,4,100,68,89,36,176,13,101,35,120,45,176,19,44,75,81,88,75,83,88,177,4,100,68,89,27,33,89,36,176,19,101,35,120,45,176,20,44,177,0,18,67,85,88,177,18,18,67,176,1,97,66,176,17,43,89,176,0,67,176,2,37,66,177,15,2,37,66,177,16,2,37,66,176,1,22,35,32,176,3,37,80,88,177,1,0,67,96,176,4,37,66,138,138,32,138,35,97,176,16,42,33,35,176,1,97,32,138,35,97,176,16,42,33,27,177,1,0,67,96,176,2,37,66,176,2,37,97,176,16,42,33,89,176,15,67,71,176,16,67,71,96,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,32,176,14,67,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,177,0,0,19,35,68,176,1,67,176,0,62,178,1,1,1,67,96,66,45,176,21,44,0,177,0,2,69,84,88,176,18,35,66,32,69,176,14,35,66,176,13,35,176,2,96,66,32,96,183,24,24,1,0,17,0,19,0,66,66,66,138,96,32,176,20,35,66,176,1,97,177,20,8,43,176,139,43,27,34,89,45,176,22,44,177,0,21,43,45,176,23,44,177,1,21,43,45,176,24,44,177,2,21,43,45,176,25,44,177,3,21,43,45,176,26,44,177,4,21,43,45,176,27,44,177,5,21,43,45,176,28,44,177,6,21,43,45,176,29,44,177,7,21,43,45,176,30,44,177,8,21,43,45,176,31,44,177,9,21,43,45,176,43,44,35,32,176,16,98,102,176,1,99,176,6,96,75,84,88,35,32,46,176,1,93,27,33,33,89,45,176,44,44,35,32,176,16,98,102,176,1,99,176,22,96,75,84,88,35,32,46,176,1,113,27,33,33,89,45,176,45,44,35,32,176,16,98,102,176,1,99,176,38,96,75,84,88,35,32,46,176,1,114,27,33,33,89,45,176,32,44,0,176,15,43,177,0,2,69,84,88,176,18,35,66,32,69,176,14,35,66,176,13,35,176,2,96,66,32,96,176,1,97,181,24,24,1,0,17,0,66,66,138,96,177,20,8,43,176,139,43,27,34,89,45,176,33,44,177,0,32,43,45,176,34,44,177,1,32,43,45,176,35,44,177,2,32,43,45,176,36,44,177,3,32,43,45,176,37,44,177,4,32,43,45,176,38,44,177,5,32,43,45,176,39,44,177,6,32,43,45,176,40,44,177,7,32,43,45,176,41,44,177,8,32,43,45,176,42,44,177,9,32,43,45,176,46,44,32,60,176,1,96,45,176,47,44,32,96,176,24,96,32,67,35,176,1,96,67,176,2,37,97,176,1,96,176,46,42,33,45,176,48,44,176,47,43,176,47,42,45,176,49,44,32,32,71,32,32,176,14,67,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,35,97,56,35,32,138,85,88,32,71,32,32,176,14,67,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,35,97,56,27,33,89,45,176,50,44,0,177,0,2,69,84,88,177,14,7,69,66,176,1,22,176,49,42,177,5,1,21,69,88,48,89,27,34,89,45,176,51,44,0,176,15,43,177,0,2,69,84,88,177,14,7,69,66,176,1,22,176,49,42,177,5,1,21,69,88,48,89,27,34,89,45,176,52,44,32,53,176,1,96,45,176,53,44,0,177,14,7,69,66,176,1,69,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,176,1,43,176,14,67,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,176,1,43,176,0,22,180,0,0,0,0,0,68,62,35,56,177,52,1,21,42,33,45,176,54,44,32,60,32,71,32,176,14,67,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,176,0,67,97,56,45,176,55,44,46,23,60,45,176,56,44,32,60,32,71,32,176,14,67,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,176,0,67,97,176,1,67,99,56,45,176,57,44,177,2,0,22,37,32,46,32,71,176,0,35,66,176,2,37,73,138,138,71,35,71,35,97,32,88,98,27,33,89,176,1,35,66,178,56,1,1,21,20,42,45,176,58,44,176,0,22,176,23,35,66,176,4,37,176,4,37,71,35,71,35,97,177,12,0,66,176,11,67,43,101,138,46,35,32,32,60,138,56,45,176,59,44,176,0,22,176,23,35,66,176,4,37,176,4,37,32,46,71,35,71,35,97,32,176,6,35,66,177,12,0,66,176,11,67,43,32,176,96,80,88,32,176,64,81,88,179,4,32,5,32,27,179,4,38,5,26,89,66,66,35,32,176,10,67,32,138,35,71,35,71,35,97,35,70,96,176,6,67,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,32,176,1,43,32,138,138,97,32,176,4,67,96,100,35,176,5,67,97,100,80,88,176,4,67,97,27,176,5,67,96,89,176,3,37,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,97,35,32,32,176,4,38,35,70,97,56,27,35,176,10,67,70,176,2,37,176,10,67,71,35,71,35,97,96,32,176,6,67,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,35,32,176,1,43,35,176,6,67,96,176,1,43,176,5,37,97,176,5,37,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,176,4,38,97,32,176,4,37,96,100,35,176,3,37,96,100,80,88,33,27,35,33,89,35,32,32,176,4,38,35,70,97,56,89,45,176,60,44,176,0,22,176,23,35,66,32,32,32,176,5,38,32,46,71,35,71,35,97,35,60,56,45,176,61,44,176,0,22,176,23,35,66,32,176,10,35,66,32,32,32,70,35,71,176,1,43,35,97,56,45,176,62,44,176,0,22,176,23,35,66,176,3,37,176,2,37,71,35,71,35,97,176,0,84,88,46,32,60,35,33,27,176,2,37,176,2,37,71,35,71,35,97,32,176,5,37,176,4,37,71,35,71,35,97,176,6,37,176,5,37,73,176,2,37,97,185,8,0,8,0,99,99,35,32,88,98,27,33,89,99,184,4,0,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,35,46,35,32,32,60,138,56,35,33,89,45,176,63,44,176,0,22,176,23,35,66,32,176,10,67,32,46,71,35,71,35,97,32,96,176,32,96,102,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,35,32,32,60,138,56,45,176,64,44,35,32,46,70,176,2,37,70,176,23,67,88,80,27,82,89,88,32,60,89,46,177,48,1,20,43,45,176,65,44,35,32,46,70,176,2,37,70,176,23,67,88,82,27,80,89,88,32,60,89,46,177,48,1,20,43,45,176,66,44,35,32,46,70,176,2,37,70,176,23,67,88,80,27,82,89,88,32,60,89,35,32,46,70,176,2,37,70,176,23,67,88,82,27,80,89,88,32,60,89,46,177,48,1,20,43,45,176,67,44,176,58,43,35,32,46,70,176,2,37,70,176,23,67,88,80,27,82,89,88,32,60,89,46,177,48,1,20,43,45,176,68,44,176,59,43,138,32,32,60,176,6,35,66,138,56,35,32,46,70,176,2,37,70,176,23,67,88,80,27,82,89,88,32,60,89,46,177,48,1,20,43,176,6,67,46,176,48,43,45,176,69,44,176,0,22,176,4,37,176,4,38,32,32,32,70,35,71,97,176,12,35,66,46,71,35,71,35,97,176,11,67,43,35,32,60,32,46,35,56,177,48,1,20,43,45,176,70,44,177,10,4,37,66,176,0,22,176,4,37,176,4,37,32,46,71,35,71,35,97,32,176,6,35,66,177,12,0,66,176,11,67,43,32,176,96,80,88,32,176,64,81,88,179,4,32,5,32,27,179,4,38,5,26,89,66,66,35,32,71,176,6,67,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,96,32,176,1,43,32,138,138,97,32,176,4,67,96,100,35,176,5,67,97,100,80,88,176,4,67,97,27,176,5,67,96,89,176,3,37,176,2,98,32,176,0,80,88,176,64,96,89,102,176,1,99,97,176,2,37,70,97,56,35,32,60,35,56,27,33,32,32,70,35,71,176,1,43,35,97,56,33,89,177,48,1,20,43,45,176,71,44,177,0,58,43,46,177,48,1,20,43,45,176,72,44,177,0,59,43,33,35,32,32,60,176,6,35,66,35,56,177,48,1,20,43,176,6,67,46,176,48,43,45,176,73,44,176,0,21,32,71,176,0,35,66,178,0,1,1,21,20,19,46,176,54,42,45,176,74,44,176,0,21,32,71,176,0,35,66,178,0,1,1,21,20,19,46,176,54,42,45,176,75,44,177,0,1,20,19,176,55,42,45,176,76,44,176,57,42,45,176,77,44,176,0,22,69,35,32,46,32,70,138,35,97,56,177,48,1,20,43,45,176,78,44,176,10,35,66,176,77,43,45,176,79,44,178,0,0,70,43,45,176,80,44,178,0,1,70,43,45,176,81,44,178,1,0,70,43,45,176,82,44,178,1,1,70,43,45,176,83,44,178,0,0,71,43,45,176,84,44,178,0,1,71,43,45,176,85,44,178,1,0,71,43,45,176,86,44,178,1,1,71,43,45,176,87,44,179,0,0,0,67,43,45,176,88,44,179,0,1,0,67,43,45,176,89,44,179,1,0,0,67,43,45,176,90,44,179,1,1,0,67,43,45,176,91,44,179,0,0,1,67,43,45,176,92,44,179,0,1,1,67,43,45,176,93,44,179,1,0,1,67,43,45,176,94,44,179,1,1,1,67,43,45,176,95,44,178,0,0,69,43,45,176,96,44,178,0,1,69,43,45,176,97,44,178,1,0,69,43,45,176,98,44,178,1,1,69,43,45,176,99,44,178,0,0,72,43,45,176,100,44,178,0,1,72,43,45,176,101,44,178,1,0,72,43,45,176,102,44,178,1,1,72,43,45,176,103,44,179,0,0,0,68,43,45,176,104,44,179,0,1,0,68,43,45,176,105,44,179,1,0,0,68,43,45,176,106,44,179,1,1,0,68,43,45,176,107,44,179,0,0,1,68,43,45,176,108,44,179,0,1,1,68,43,45,176,109,44,179,1,0,1,68,43,45,176,110,44,179,1,1,1,68,43,45,176,111,44,177,0,60,43,46,177,48,1,20,43,45,176,112,44,177,0,60,43,176,64,43,45,176,113,44,177,0,60,43,176,65,43,45,176,114,44,176,0,22,177,0,60,43,176,66,43,45,176,115,44,177,1,60,43,176,64,43,45,176,116,44,177,1,60,43,176,65,43,45,176,117,44,176,0,22,177,1,60,43,176,66,43,45,176,118,44,177,0,61,43,46,177,48,1,20,43,45,176,119,44,177,0,61,43,176,64,43,45,176,120,44,177,0,61,43,176,65,43,45,176,121,44,177,0,61,43,176,66,43,45,176,122,44,177,1,61,43,176,64,43,45,176,123,44,177,1,61,43,176,65,43,45,176,124,44,177,1,61,43,176,66,43,45,176,125,44,177,0,62,43,46,177,48,1,20,43,45,176,126,44,177,0,62,43,176,64,43,45,176,127,44,177,0,62,43,176,65,43,45,176,128,44,177,0,62,43,176,66,43,45,176,129,44,177,1,62,43,176,64,43,45,176,130,44,177,1,62,43,176,65,43,45,176,131,44,177,1,62,43,176,66,43,45,176,132,44,177,0,63,43,46,177,48,1,20,43,45,176,133,44,177,0,63,43,176,64,43,45,176,134,44,177,0,63,43,176,65,43,45,176,135,44,177,0,63,43,176,66,43,45,176,136,44,177,1,63,43,176,64,43,45,176,137,44,177,1,63,43,176,65,43,45,176,138,44,177,1,63,43,176,66,43,45,176,139,44,178,11,0,3,69,80,88,176,6,27,178,4,2,3,69,88,35,33,27,33,89,89,66,43,176,8,101,176,3,36,80,120,177,5,1,21,69,88,48,89,45],null],"gasp":[[0,1,0,1,255,255,0,15],null],"head":{"checksum_adjustment":[3583177475,3688940460],"flags":[7,3],"modified":[3778489143,3813908792],"x_min":[-147,-149],"x_max":[1002,1001],"y_max":[1045,1051]},"hhea":{"advance_width_max":[1045,1041],"min_left_side_bearing":[-147,-149],"x_max_extent":[1002,1001],"caret_slope_rise":[1,1000],"number_of_long_metrics":[225,222]},"hmtx":{"error":"There are 212 changes, check manually!"},"loca":{"offsets":{"error":"There are 225 changes, check manually!"}},"maxp":{"max_points":[111,109],"max_composite_points":[92,91],"max_zones":[2,1],"max_twilight_points":[34,0],"max_storage":[75,0],"max_function_defs":[141,0],"max_stack_elements":[140,0],"max_size_of_instructions":[3596,0]},"name":{"FAMILY_NAME":{"en-US":["Noto Serif Georgian XCn","Noto Serif Georgian ExtraCondensed"]},"VERSION_STRING":{"en-US":["Version 2.003; ttfautohint (v1.8.4.7-5d5b)","Version 2.003"]},"LICENSE_DESCRIPTION":{"en-US":["This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL","This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org"]},"LICENSE_URL":{"en-US":["https://scripts.sil.org/OFL","https://openfontlicense.org"]}},"post":{"glyph_name_index":{"150":[407,16],"151":[408,407],"152":[409,408],"153":[16,409],"194":[450,3],"195":[451,450],"196":[452,451],"197":[453,452],"198":[3,453]}},"prep":[[0,75,184,0,200,82,88,177,1,1,142,89,176,1,185,8,0,8,0,99,112,177,0,7,66,179,50,25,2,0,42,177,0,7,66,181,37,9,15,8,2,10,42,177,0,7,66,181,48,6,25,6,2,10,42,177,0,9,66,187,9,128,4,0,0,2,0,11,42,177,0,11,66,187,0,128,0,64,0,2,0,11,42,185,0,3,0,0,68,177,36,1,136,81,88,176,64,136,88,185,0,3,0,100,68,177,40,1,136,81,88,184,8,0,136,88,185,0,3,0,0,68,89,27,177,39,1,136,81,88,186,8,128,0,1,4,64,136,99,84,88,185,0,3,0,0,68,89,89,89,89,89,181,40,8,17,8,2,14,42,184,1,255,133,176,4,141,177,2,0,68,179,5,100,6,0,68,68],null]},"kerns":{"error":"There are 3088 changes, check manually!"},"cmap_diff":{"missing":[{"string":"̂","name":"COMBINING CIRCUMFLEX ACCENT"},{"string":"̄","name":"COMBINING MACRON"},{"string":"̈","name":"COMBINING DIAERESIS"},{"string":"́","name":"COMBINING ACUTE ACCENT"}]},"locations":[{"location":"Default","glyphs":[{"string":"ჭ","name":"GEORGIAN LETTER CHAR","unicode":"U+10ED","differing_pixels":167},{"string":"ჩ","name":"GEORGIAN LETTER CHIN","unicode":"U+10E9","differing_pixels":146},{"string":"Ⴖ","name":"GEORGIAN CAPITAL LETTER GHAN","unicode":"U+10B6","differing_pixels":146},{"string":"ჶ","name":"GEORGIAN LETTER FI","unicode":"U+10F6","differing_pixels":139},{"string":"ნ","name":"GEORGIAN LETTER NAR","unicode":"U+10DC","differing_pixels":138},{"string":"ჸ","name":"GEORGIAN LETTER ELIFI","unicode":"U+10F8","differing_pixels":137},{"string":"Ნ","name":"GEORGIAN MTAVRULI CAPITAL LETTER NAR","unicode":"U+1C9C","differing_pixels":136},{"string":"წ","name":"GEORGIAN LETTER CIL","unicode":"U+10EC","differing_pixels":132},{"string":"Ⴀ","name":"GEORGIAN CAPITAL LETTER AN","unicode":"U+10A0","differing_pixels":131},{"string":"Ⴙ","name":"GEORGIAN CAPITAL LETTER CHIN","unicode":"U+10B9","differing_pixels":128},{"string":"Ჩ","name":"GEORGIAN MTAVRULI CAPITAL LETTER CHIN","unicode":"U+1CA9","differing_pixels":122},{"string":"Თ","name":"GEORGIAN MTAVRULI CAPITAL LETTER TAN","unicode":"U+1C97","differing_pixels":111},{"string":"Ⴂ","name":"GEORGIAN CAPITAL LETTER GAN","unicode":"U+10A2","differing_pixels":109},{"string":"Წ","name":"GEORGIAN MTAVRULI CAPITAL LETTER CIL","unicode":"U+1CAC","differing_pixels":109},{"string":"Ო","name":"GEORGIAN MTAVRULI CAPITAL LETTER ON","unicode":"U+1C9D","differing_pixels":107},{"string":"Ლ","name":"GEORGIAN MTAVRULI CAPITAL LETTER LAS","unicode":"U+1C9A","differing_pixels":100},{"string":"ⴂ","name":"GEORGIAN SMALL LETTER GAN","unicode":"U+2D02","differing_pixels":96},{"string":"Ზ","name":"GEORGIAN MTAVRULI CAPITAL LETTER ZEN","unicode":"U+1C96","differing_pixels":95},{"string":"Დ","name":"GEORGIAN MTAVRULI CAPITAL LETTER DON","unicode":"U+1C93","differing_pixels":93},{"string":"Ⴄ","name":"GEORGIAN CAPITAL LETTER EN","unicode":"U+10A4","differing_pixels":92},{"string":"Ⴌ","name":"GEORGIAN CAPITAL LETTER NAR","unicode":"U+10AC","differing_pixels":90},{"string":"ი","name":"GEORGIAN LETTER IN","unicode":"U+10D8","differing_pixels":90},{"string":"ⴟ","name":"GEORGIAN SMALL LETTER JHAN","unicode":"U+2D1F","differing_pixels":84},{"string":"Რ","name":"GEORGIAN MTAVRULI CAPITAL LETTER RAE","unicode":"U+1CA0","differing_pixels":82},{"string":"Ⴑ","name":"GEORGIAN CAPITAL LETTER SAN","unicode":"U+10B1","differing_pixels":81},{"string":"ⴠ","name":"GEORGIAN SMALL LETTER HAE","unicode":"U+2D20","differing_pixels":79},{"string":"Ფ","name":"GEORGIAN MTAVRULI CAPITAL LETTER PHAR","unicode":"U+1CA4","differing_pixels":79},{"string":"ⴏ","name":"GEORGIAN SMALL LETTER ZHAR","unicode":"U+2D0F","differing_pixels":79},{"string":"Ⴇ","name":"GEORGIAN CAPITAL LETTER TAN","unicode":"U+10A7","differing_pixels":77},{"string":"ჴ","name":"GEORGIAN LETTER HAR","unicode":"U+10F4","differing_pixels":77},{"string":"Ღ","name":"GEORGIAN MTAVRULI CAPITAL LETTER GHAN","unicode":"U+1CA6","differing_pixels":74},{"string":"რ","name":"GEORGIAN LETTER RAE","unicode":"U+10E0","differing_pixels":73},{"string":"ⴧ","name":"GEORGIAN SMALL LETTER YN","unicode":"U+2D27","differing_pixels":71},{"string":"ზ","name":"GEORGIAN LETTER ZEN","unicode":"U+10D6","differing_pixels":70},{"string":"Ⴟ","name":"GEORGIAN CAPITAL LETTER JHAN","unicode":"U+10BF","differing_pixels":69},{"string":"ჯ","name":"GEORGIAN LETTER JHAN","unicode":"U+10EF","differing_pixels":68},{"string":"Ი","name":"GEORGIAN MTAVRULI CAPITAL LETTER IN","unicode":"U+1C98","differing_pixels":67},{"string":"ჷ","name":"GEORGIAN LETTER YN","unicode":"U+10F7","differing_pixels":67},{"string":"ⴎ","name":"GEORGIAN SMALL LETTER PAR","unicode":"U+2D0E","differing_pixels":65},{"string":"დ","name":"GEORGIAN LETTER DON","unicode":"U+10D3","differing_pixels":65},{"string":"ც","name":"GEORGIAN LETTER CAN","unicode":"U+10EA","differing_pixels":65},{"string":"Გ","name":"GEORGIAN MTAVRULI CAPITAL LETTER GAN","unicode":"U+1C92","differing_pixels":64},{"string":"ⴓ","name":"GEORGIAN SMALL LETTER UN","unicode":"U+2D13","differing_pixels":63},{"string":"Ჱ","name":"GEORGIAN MTAVRULI CAPITAL LETTER HE","unicode":"U+1CB1","differing_pixels":60},{"string":"ქ","name":"GEORGIAN LETTER KHAR","unicode":"U+10E5","differing_pixels":60},{"string":"ⴢ","name":"GEORGIAN SMALL LETTER HIE","unicode":"U+2D22","differing_pixels":60},{"string":"Ჹ","name":"GEORGIAN MTAVRULI CAPITAL LETTER TURNED GAN","unicode":"U+1CB9","differing_pixels":60},{"string":"ⴀ","name":"GEORGIAN SMALL LETTER AN","unicode":"U+2D00","differing_pixels":59},{"string":"ⴃ","name":"GEORGIAN SMALL LETTER DON","unicode":"U+2D03","differing_pixels":59},{"string":"Ჾ","name":"GEORGIAN MTAVRULI CAPITAL LETTER HARD SIGN","unicode":"U+1CBE","differing_pixels":58},{"string":"ⴈ","name":"GEORGIAN SMALL LETTER IN","unicode":"U+2D08","differing_pixels":57},{"string":"ⴆ","name":"GEORGIAN SMALL LETTER ZEN","unicode":"U+2D06","differing_pixels":57},{"string":"Ყ","name":"GEORGIAN MTAVRULI CAPITAL LETTER QAR","unicode":"U+1CA7","differing_pixels":56},{"string":"Ⴠ","name":"GEORGIAN CAPITAL LETTER HAE","unicode":"U+10C0","differing_pixels":55},{"string":"Ⴣ","name":"GEORGIAN CAPITAL LETTER WE","unicode":"U+10C3","differing_pixels":55},{"string":"Ⴥ","name":"GEORGIAN CAPITAL LETTER HOE","unicode":"U+10C5","differing_pixels":53},{"string":"Ⴘ","name":"GEORGIAN CAPITAL LETTER SHIN","unicode":"U+10B8","differing_pixels":53},{"string":"ვ","name":"GEORGIAN LETTER VIN","unicode":"U+10D5","differing_pixels":53},{"string":"Ბ","name":"GEORGIAN MTAVRULI CAPITAL LETTER BAN","unicode":"U+1C91","differing_pixels":52},{"string":"უ","name":"GEORGIAN LETTER UN","unicode":"U+10E3","differing_pixels":52},{"string":"ⴁ","name":"GEORGIAN SMALL LETTER BAN","unicode":"U+2D01","differing_pixels":51},{"string":"ჟ","name":"GEORGIAN LETTER ZHAR","unicode":"U+10DF","differing_pixels":51},{"string":"Ძ","name":"GEORGIAN MTAVRULI CAPITAL LETTER JIL","unicode":"U+1CAB","differing_pixels":51},{"string":"ჵ","name":"GEORGIAN LETTER HOE","unicode":"U+10F5","differing_pixels":51},{"string":"Ⴊ","name":"GEORGIAN CAPITAL LETTER LAS","unicode":"U+10AA","differing_pixels":50},{"string":"Ჿ","name":"GEORGIAN MTAVRULI CAPITAL LETTER LABIAL SIGN","unicode":"U+1CBF","differing_pixels":50},{"string":"Ჲ","name":"GEORGIAN MTAVRULI CAPITAL LETTER HIE","unicode":"U+1CB2","differing_pixels":50},{"string":"ფ","name":"GEORGIAN LETTER PHAR","unicode":"U+10E4","differing_pixels":49},{"string":"Მ","name":"GEORGIAN MTAVRULI CAPITAL LETTER MAN","unicode":"U+1C9B","differing_pixels":49},{"string":"Ჵ","name":"GEORGIAN MTAVRULI CAPITAL LETTER HOE","unicode":"U+1CB5","differing_pixels":48},{"string":"Ⴢ","name":"GEORGIAN CAPITAL LETTER HIE","unicode":"U+10C2","differing_pixels":48},{"string":"Ჶ","name":"GEORGIAN MTAVRULI CAPITAL LETTER FI","unicode":"U+1CB6","differing_pixels":47},{"string":"ჱ","name":"GEORGIAN LETTER HE","unicode":"U+10F1","differing_pixels":47},{"string":"ე","name":"GEORGIAN LETTER EN","unicode":"U+10D4","differing_pixels":46},{"string":"ჽ","name":"GEORGIAN LETTER AEN","unicode":"U+10FD","differing_pixels":46},{"string":"Ⴅ","name":"GEORGIAN CAPITAL LETTER VIN","unicode":"U+10A5","differing_pixels":46},{"string":"თ","name":"GEORGIAN LETTER TAN","unicode":"U+10D7","differing_pixels":45},{"string":"ⴅ","name":"GEORGIAN SMALL LETTER VIN","unicode":"U+2D05","differing_pixels":44},{"string":"ყ","name":"GEORGIAN LETTER QAR","unicode":"U+10E7","differing_pixels":43},{"string":"ⴊ","name":"GEORGIAN SMALL LETTER LAS","unicode":"U+2D0A","differing_pixels":42},{"string":"კ","name":"GEORGIAN LETTER KAN","unicode":"U+10D9","differing_pixels":41},{"string":"Ც","name":"GEORGIAN MTAVRULI CAPITAL LETTER CAN","unicode":"U+1CAA","differing_pixels":40},{"string":"Ⴚ","name":"GEORGIAN CAPITAL LETTER CAN","unicode":"U+10BA","differing_pixels":39},{"string":"Ქ","name":"GEORGIAN MTAVRULI CAPITAL LETTER KHAR","unicode":"U+1CA5","differing_pixels":39},{"string":"ⴞ","name":"GEORGIAN SMALL LETTER XAN","unicode":"U+2D1E","differing_pixels":39},{"string":"ⴘ","name":"GEORGIAN SMALL LETTER SHIN","unicode":"U+2D18","differing_pixels":39},{"string":"Ჽ","name":"GEORGIAN MTAVRULI CAPITAL LETTER AEN","unicode":"U+1CBD","differing_pixels":39},{"string":"Ⴔ","name":"GEORGIAN CAPITAL LETTER PHAR","unicode":"U+10B4","differing_pixels":38},{"string":"Ⴏ","name":"GEORGIAN CAPITAL LETTER ZHAR","unicode":"U+10AF","differing_pixels":37},{"string":"ჿ","name":"GEORGIAN LETTER LABIAL SIGN","unicode":"U+10FF","differing_pixels":37},{"string":"Ⴛ","name":"GEORGIAN CAPITAL LETTER JIL","unicode":"U+10BB","differing_pixels":37},{"string":"ღ","name":"GEORGIAN LETTER GHAN","unicode":"U+10E6","differing_pixels":37},{"string":"ტ","name":"GEORGIAN LETTER TAR","unicode":"U+10E2","differing_pixels":36},{"string":"Ⴍ","name":"GEORGIAN CAPITAL LETTER ON","unicode":"U+10AD","differing_pixels":36},{"string":"Ⴓ","name":"GEORGIAN CAPITAL LETTER UN","unicode":"U+10B3","differing_pixels":35},{"string":"Ჭ","name":"GEORGIAN MTAVRULI CAPITAL LETTER CHAR","unicode":"U+1CAD","differing_pixels":35},{"string":"ⴍ","name":"GEORGIAN SMALL LETTER ON","unicode":"U+2D0D","differing_pixels":35},{"string":"Ჺ","name":"GEORGIAN MTAVRULI CAPITAL LETTER AIN","unicode":"U+1CBA","differing_pixels":34},{"string":"Ⴁ","name":"GEORGIAN CAPITAL LETTER BAN","unicode":"U+10A1","differing_pixels":34},{"string":"Ჷ","name":"GEORGIAN MTAVRULI CAPITAL LETTER YN","unicode":"U+1CB7","differing_pixels":33},{"string":"ა","name":"GEORGIAN LETTER AN","unicode":"U+10D0","differing_pixels":32},{"string":"ო","name":"GEORGIAN LETTER ON","unicode":"U+10DD","differing_pixels":32},{"string":"ⴕ","name":"GEORGIAN SMALL LETTER KHAR","unicode":"U+2D15","differing_pixels":32},{"string":"ჰ","name":"GEORGIAN LETTER HAE","unicode":"U+10F0","differing_pixels":31},{"string":"ⴡ","name":"GEORGIAN SMALL LETTER HE","unicode":"U+2D21","differing_pixels":31},{"string":"ⴒ","name":"GEORGIAN SMALL LETTER TAR","unicode":"U+2D12","differing_pixels":31},{"string":"Ⴭ","name":"GEORGIAN CAPITAL LETTER AEN","unicode":"U+10CD","differing_pixels":30},{"string":"Ტ","name":"GEORGIAN MTAVRULI CAPITAL LETTER TAR","unicode":"U+1CA2","differing_pixels":30},{"string":"Ჯ","name":"GEORGIAN MTAVRULI CAPITAL LETTER JHAN","unicode":"U+1CAF","differing_pixels":30},{"string":"ⴝ","name":"GEORGIAN SMALL LETTER CHAR","unicode":"U+2D1D","differing_pixels":29},{"string":"ⴋ","name":"GEORGIAN SMALL LETTER MAN","unicode":"U+2D0B","differing_pixels":29},{"string":"გ","name":"GEORGIAN LETTER GAN","unicode":"U+10D2","differing_pixels":29},{"string":"ლ","name":"GEORGIAN LETTER LAS","unicode":"U+10DA","differing_pixels":28},{"string":"Კ","name":"GEORGIAN MTAVRULI CAPITAL LETTER KAN","unicode":"U+1C99","differing_pixels":28},{"string":"Ⴗ","name":"GEORGIAN CAPITAL LETTER QAR","unicode":"U+10B7","differing_pixels":27},{"string":"Ჴ","name":"GEORGIAN MTAVRULI CAPITAL LETTER HAR","unicode":"U+1CB4","differing_pixels":27},{"string":"Ⴉ","name":"GEORGIAN CAPITAL LETTER KAN","unicode":"U+10A9","differing_pixels":26},{"string":"პ","name":"GEORGIAN LETTER PAR","unicode":"U+10DE","differing_pixels":25},{"string":"ჹ","name":"GEORGIAN LETTER TURNED GAN","unicode":"U+10F9","differing_pixels":24},{"string":"Ე","name":"GEORGIAN MTAVRULI CAPITAL LETTER EN","unicode":"U+1C94","differing_pixels":23},{"string":"ჺ","name":"GEORGIAN LETTER AIN","unicode":"U+10FA","differing_pixels":23},{"string":"მ","name":"GEORGIAN LETTER MAN","unicode":"U+10DB","differing_pixels":23},{"string":"ⴌ","name":"GEORGIAN SMALL LETTER NAR","unicode":"U+2D0C","differing_pixels":23},{"string":"ⴥ","name":"GEORGIAN SMALL LETTER HOE","unicode":"U+2D25","differing_pixels":23},{"string":"Ⴈ","name":"GEORGIAN CAPITAL LETTER IN","unicode":"U+10A8","differing_pixels":22},{"string":"Ა","name":"GEORGIAN MTAVRULI CAPITAL LETTER AN","unicode":"U+1C90","differing_pixels":22},{"string":"ⴐ","name":"GEORGIAN SMALL LETTER RAE","unicode":"U+2D10","differing_pixels":21},{"string":"₾","name":"LARI SIGN","unicode":"U+20BE","differing_pixels":21},{"string":"ხ","name":"GEORGIAN LETTER XAN","unicode":"U+10EE","differing_pixels":20},{"string":"ჳ","name":"GEORGIAN LETTER WE","unicode":"U+10F3","differing_pixels":20},{"string":"Ⴃ","name":"GEORGIAN CAPITAL LETTER DON","unicode":"U+10A3","differing_pixels":20},{"string":"ⴔ","name":"GEORGIAN SMALL LETTER PHAR","unicode":"U+2D14","differing_pixels":19},{"string":"ჲ","name":"GEORGIAN LETTER HIE","unicode":"U+10F2","differing_pixels":19},{"string":"Ⴎ","name":"GEORGIAN CAPITAL LETTER PAR","unicode":"U+10AE","differing_pixels":19},{"string":"Შ","name":"GEORGIAN MTAVRULI CAPITAL LETTER SHIN","unicode":"U+1CA8","differing_pixels":18},{"string":"ჾ","name":"GEORGIAN LETTER HARD SIGN","unicode":"U+10FE","differing_pixels":18},{"string":"შ","name":"GEORGIAN LETTER SHIN","unicode":"U+10E8","differing_pixels":17},{"string":"Ⴤ","name":"GEORGIAN CAPITAL LETTER HAR","unicode":"U+10C4","differing_pixels":17}],"words":{"Georgian":[{"word":"ჩჾ","buffer_a":"124|146|","buffer_b":"123|143|","differing_pixels":44},{"word":"უჩქჷ","buffer_a":"204|124|165|217|","buffer_b":"200|123|162|213|","differing_pixels":41},{"word":"სანდუგაჩევის","buffer_a":"194|112|174|130|204|138|112|124|133|211|155|194|","buffer_b":"190|111|170|127|200|135|111|123|130|207|152|190|","differing_pixels":35},{"word":"ალიჶთან","buffer_a":"112|169|155|137|199|112|174|","buffer_b":"111|166|152|134|195|111|170|","differing_pixels":33},{"word":"ႫႤႳႶႪႤႱႠ჻","buffer_a":"61|27|93|33|59|27|80|9|186|","buffer_b":"61|27|93|33|59|27|80|9|182|","differing_pixels":26},{"word":"ლოზუნგების","buffer_a":"169|178|221|204|174|138|133|118|155|194|","buffer_b":"166|174|217|200|170|135|130|117|152|190|","differing_pixels":25},{"word":"ჴორცთაგან","buffer_a":"144|178|192|120|199|112|138|112|174|","buffer_b":"141|174|188|119|195|111|135|111|170|","differing_pixels":23},{"word":"სანგვინიკური","buffer_a":"194|112|174|138|211|155|174|155|163|204|192|155|","buffer_b":"190|111|170|135|207|152|170|152|160|200|188|152|","differing_pixels":20},{"word":"ლომთათიძემ","buffer_a":"169|178|172|199|112|199|155|161|133|172|","buffer_b":"166|174|168|195|111|195|152|158|130|168|","differing_pixels":20},{"word":"ლობჟანიძემ","buffer_a":"169|178|118|223|112|174|155|161|133|172|","buffer_b":"166|174|117|219|111|170|152|158|130|168|","differing_pixels":20},{"word":"ჵი","buffer_a":"151|155|","buffer_b":"148|152|","differing_pixels":19},{"word":"სამწყსოსთვის","buffer_a":"194|112|172|126|190|194|178|194|199|211|155|194|","buffer_b":"190|111|168|125|186|190|174|190|195|207|152|190|","differing_pixels":16},{"word":"ლენაპეჰოკინგის","buffer_a":"169|133|174|112|184|133|142|178|163|155|174|138|155|194|","buffer_b":"166|130|170|111|180|130|139|174|160|152|170|135|152|190|","differing_pixels":15},{"word":"ლაშქრობისათვის","buffer_a":"169|112|196|165|192|178|118|155|194|112|199|211|155|194|","buffer_b":"166|111|192|162|188|174|117|152|190|111|195|207|152|190|","differing_pixels":15},{"word":"კოჭლამაზაშვილი","buffer_a":"163|178|122|169|112|172|112|221|112|196|211|155|169|155|","buffer_b":"160|174|121|166|111|168|111|217|111|192|207|152|166|152|","differing_pixels":15},{"word":"სამკჳდრებელი","buffer_a":"194|112|172|163|213|130|192|133|118|133|169|155|","buffer_b":"190|111|168|160|209|127|188|130|117|130|166|152|","differing_pixels":15},{"word":"იერუსალჱმს","buffer_a":"155|133|192|204|194|112|169|147|172|194|","buffer_b":"152|130|188|200|190|111|166|144|168|190|","differing_pixels":15},{"word":"ლიდერობისათვის","buffer_a":"169|155|130|133|192|178|118|155|194|112|199|211|155|194|","buffer_b":"166|152|127|130|188|174|117|152|190|111|195|207|152|190|","differing_pixels":14},{"word":"ႸႬႱ჻","buffer_a":"82|64|80|186|","buffer_b":"82|64|80|182|","differing_pixels":13},{"word":"ლოლაშვილის","buffer_a":"169|178|169|112|196|211|155|169|155|194|","buffer_b":"166|174|166|111|192|207|152|166|152|190|","differing_pixels":12},{"word":"ႦႤႮႤႪႨႬႨ","buffer_a":"105|27|72|27|59|48|64|48|","differing_pixels":11},{"word":"ჯავშანტრანსპორტიორებით","buffer_a":"159|112|211|196|112|174|201|192|112|174|194|184|178|192|201|155|178|192|133|118|155|199|","buffer_b":"156|111|207|192|111|170|197|188|111|170|190|180|174|188|197|152|174|188|130|117|152|195|","differing_pixels":10},{"word":"მაღალყოვლადუსამღვდელოესი","buffer_a":"172|112|140|112|169|190|178|211|169|112|130|204|194|112|172|140|211|130|133|169|178|133|194|155|","buffer_b":"168|111|137|111|166|186|174|207|166|111|127|200|190|111|168|137|207|127|130|166|174|130|190|152|","differing_pixels":9},{"word":"ლომაივიტის","buffer_a":"169|178|172|112|155|211|155|201|155|194|","buffer_b":"166|174|168|111|152|207|152|197|152|190|","differing_pixels":9}]}}]};
+		function buildLocation_statichtml(loc) {
+  // Set font styles to appropriate axis locations
+  let rule = document.styleSheets[0].cssRules[2].style;
+  let cssSetting = "";
+  let textLocation = "Default";
+  if (loc.coords) {
+    cssSetting = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `"${axis}" ${value}`;
+      })
+      .join(", ");
+    textLocation = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `${axis}=${value}`;
+      })
+      .join(" ");
+    rule.setProperty("font-variation-settings", cssSetting);
+  }
+
+  $("#main").empty();
+
+  $("#title").html(`<h4 class="mt-2">${textLocation}</h2>`);
+
+  if (loc.glyphs) {
+    $("#main").append("<h4>Modified Glyphs</h4>");
+    let glyphs = $("<div>");
+    for (let glyph of loc.glyphs) {
+      addAGlyph(glyph, glyphs);
+    }
+    $("#main").append(glyphs);
+  }
+
+  if (loc.words) {
+    $("#main").append("<h4>Modified Words</h4>");
+    for (let [script, words] of Object.entries(loc.words)) {
+      let scriptTitle = $(`<h6>${script}</h6>`);
+      $("#main").append(scriptTitle);
+      let worddiv = $("<div>");
+      for (let word of words) {
+        addAWord(word, worddiv);
+      }
+      $("#main").append(worddiv);
+    }
+  }
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+$(function () {
+  if (report["tables"]) {
+    diffTables(report);
+  }
+  if (report["kerns"]) {
+    diffKerns(report);
+  }
+  cmapDiff(report);
+  $('[data-toggle="tooltip"]').tooltip();
+  if (!report["locations"]) {
+    $("#title").html("<h4 class='mt-2'>No differences found</h4>");
+    $("#ui-nav").hide();
+    return;
+  }
+
+  for (var [index, loc] of report["locations"].entries()) {
+    var loc_nav = $(`<li class="nav-item">
+		<a class="nav-link text-secondary" href="#" data-index="${index}">${loc.location.replaceAll(
+      ",",
+      ",\u200b"
+    )}</a>
+	</li>`);
+    $("#locationnav").append(loc_nav);
+  }
+  $("#locationnav li a").on("click", function (e) {
+    $("#locationnav li a").removeClass("active");
+    $(this).addClass("active");
+    buildLocation_statichtml(report.locations[$(this).data("index")]);
+  });
+  $("#locationnav li a").eq(0).click();
+
+  document.styleSheets[0].cssRules[0].style.setProperty(
+    "src",
+    "url(old-NotoSerifGeorgian-ExtraCondensedBold.ttf)"
+  );
+  document.styleSheets[0].cssRules[1].style.setProperty(
+    "src",
+    "url(new-NotoSerifGeorgian-ExtraCondensedBold.ttf)"
+  );
+  setupAnimation();
+});
+
+	</script>
+</body>
+
+</html>
